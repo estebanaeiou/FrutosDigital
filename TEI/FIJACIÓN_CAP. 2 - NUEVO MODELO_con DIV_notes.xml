@@ -1,5 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -34,13 +35,31 @@
             <editorialDecl>
                 <p>Se emplea el elemento <gi>term</gi> en el cuerpo del texto para señalar entradas
                     de glosario, cada una apuntando con el atributo <att>ref</att> al elemento
-                    <gi>item</gi> correspondiente, identificado mediante el atributo
-                    <att>xml:id</att>, en la lista de glosario contenida en <gi>back</gi>. </p>
-                <p>El aparato crítico se anota con el elemento <gi>app</gi>, que agrupa
-                    <gi>lem</gi> y <gi>rdg</gi> para el lema y sus variantes, respectivamente.
-                </p>
+                        <gi>item</gi> correspondiente, identificado mediante el atributo
+                        <att>xml:id</att>, en la lista de glosario contenida en <gi>back</gi>. </p>
+                <p>El aparato crítico se anota con el elemento <gi>app</gi>, que agrupa <gi>lem</gi>
+                    y <gi>rdg</gi> para el lema y sus variantes, respectivamente. </p>
+                <p>Editor: Juan Esteban Hincapié Atehortúa.</p>
             </editorialDecl>
         </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <classCode scheme="DHC">Novel</classCode>
+                <keywords>
+                    <term>novela</term>
+                    <term>siglo XIX</term>
+                    <term>Edición crítica</term>
+                </keywords>
+            </textClass>
+            <abstract>
+                <p>Edición crítico-genética digital de<hi rend="italic">Frutos de mi tierra</hi> (1896) ,con
+                    facsímiles, aparato crítico, glosario y notas explicativas.</p>
+            </abstract>
+        </profileDesc>
+        <revisionDesc>
+            <change when="2025-04-28" who="#JEHA" resp="#editor"> Añadidas notas editoriales y
+                glosario en back matter; documentado facsímil y testimonios. </change>
+        </revisionDesc>
     </teiHeader>
     <facsimile>
         <surface xml:id="f1">
@@ -85,8 +104,8 @@
                 <p rend="center">II</p>
                 <p rend="center">1</p>
                 <p rend="justify">La <term ref="#gls-sena">señá</term> Mónica Seferino quedó viuda
-                    del maestro Alzate, con una <note target="#note1">runfla</note> de siete muchachos
-                    y una casita de mala muerte por único patrimonio.</p>
+                    del maestro Alzate, con una <note target="#note1">runfla</note> de siete
+                    muchachos y una casita de mala muerte por único patrimonio.</p>
                 <p rend="justify">Como no era hembra de lloriqueos ni pataletas, pronto se dejó de
                     lutos, y emprendiólas con el trabajo. Con la labia que Dios le <app>
                         <lem wit="#α">dio</lem>
