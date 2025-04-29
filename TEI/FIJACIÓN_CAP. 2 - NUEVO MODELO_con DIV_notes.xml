@@ -52,13 +52,13 @@
                 </keywords>
             </textClass>
             <abstract>
-                <p>Edición crítico-genética digital de<hi rend="italic">Frutos de mi tierra</hi> (1896) ,con
+                <p>Edición crítico-genética digital de <hi rend="italic">Frutos de mi tierra</hi>(1896), con
                     facsímiles, aparato crítico, glosario y notas explicativas.</p>
             </abstract>
         </profileDesc>
         <revisionDesc>
             <change when="2025-04-28" who="#JEHA" resp="#editor"> Añadidas notas editoriales y
-                glosario en back matter; documentado facsímil y testimonios. </change>
+                glosario, facsímil y testimonios. </change>
         </revisionDesc>
     </teiHeader>
     <facsimile>
@@ -150,7 +150,7 @@
                         <rdg wit="#A">señá</rdg>
                         <rdg wit="#B">seña</rdg>
                         <rdg wit="#C">señá</rdg>
-                    </app><note>Forma de tratamiento que significa "señora"</note> Mónica no había
+                    </app> Mónica no había
                     remilgos.</p>
                 <pb/>
                 <p rend="justify">El cuento del ventorrillo y los puercos prosperaba que era una
