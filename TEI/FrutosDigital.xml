@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd">
     <teiHeader>
@@ -6,91 +5,109 @@
             <titleStmt>
                 <title><hi rend="italic">Frutos de mi tierra</hi></title>
                 <author xml:id="aut-carrasquilla">Tomás Carrasquilla</author>
-                <editor xml:id="ed-JEHA">Juan Esteban Hincapié Atehortúa</editor>
+                <respStmt>
+                    <resp>Editor crítico</resp>
+                    <name xml:id="ed-JEHA">Juan Esteban Hincapié Atehortúa</name>
+                </respStmt>
             </titleStmt>
+            <editionStmt>
+                <edition>Edición crítico-genética digital</edition>
+            </editionStmt>
             <publicationStmt>
                 <publisher>Universidad de Antioquia</publisher>
                 <pubPlace>Medellín, Colombia</pubPlace>
                 <date when="2025">2025</date>
                 <availability>
-                    <p>De libre acceso</p>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY
+                        4.0</licence>
                 </availability>
             </publicationStmt>
+            <notesStmt>
+                <note>El texto principal de esta edición está escrito en español.</note>
+            </notesStmt>
             <sourceDesc>
-                <bibl xml:id="A">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Medellín-Colombia</pubPlace>
-                    <publisher>Imprenta Oficial</publisher>
-                    <date when="1896">1896</date>
-                </bibl>
-                <bibl xml:id="B">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Madrid-España</pubPlace>
-                    <publisher>EPESA</publisher>
-                    <date when="1952">1952</date>
-                </bibl>
-                <bibl xml:id="C">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Medellín-Colombia</pubPlace>
-                    <publisher>Bedout</publisher>
-                    <date when="1958">1958</date>
-                </bibl>
-                <bibl xml:id="D">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Bogotá-Colombia</pubPlace>
-                    <publisher>Caro y Cuervo</publisher>
-                    <date when="1972">1972</date>
-                </bibl>
-                <bibl xml:id="E">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Barcelona-España</pubPlace>
-                    <publisher>Círculo de Lectores</publisher>
-                    <date when="1983">1983</date>
-                </bibl>
-                <bibl xml:id="F">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Bogotá-Colombia</pubPlace>
-                    <publisher>El Áncora</publisher>
-                    <date when="1987">1987</date>
-                </bibl>
-                <bibl xml:id="G">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Medellín-Colombia</pubPlace>
-                    <publisher>Colección Autores Antioqueños</publisher>
-                    <date when="1996">1996</date>
-                </bibl>
-                <bibl xml:id="H">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Bogotá-Colombia</pubPlace>
-                    <publisher>Norma</publisher>
-                    <date when="1997">1997</date>
-                </bibl>
-                <bibl xml:id="I">
-                    <title>Frutos de mi tierra</title>
-                    <author>Tomás Carrasquilla</author>
-                    <pubPlace>Bogotá-Colombia</pubPlace>
-                    <publisher>Norma</publisher>
-                    <date when="2008">2008</date>
-                </bibl>
                 <listWit>
-                    <head>Lista de testimonios</head>
-                    <witness xml:id="A1896" corresp="#A">A1896</witness>
-                    <witness xml:id="B1952" corresp="#B">B1952</witness>
-                    <witness xml:id="C1958" corresp="#C">C1958</witness>
-                    <witness xml:id="D1972" corresp="#D">D1972</witness>
-                    <witness xml:id="E1983" corresp="#E">E1983</witness>
-                    <witness xml:id="F1987" corresp="#F">F1987</witness>
-                    <witness xml:id="G1996" corresp="#G">G1996</witness>
-                    <witness xml:id="H1997" corresp="#H">H1997</witness>
-                    <witness xml:id="I2008" corresp="#I">I2008</witness>
+                    <witness xml:id="A">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Medellín-Colombia</pubPlace>
+                            <publisher>Imprenta Oficial</publisher>
+                            <date when="1896">1896</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="B">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Madrid-España</pubPlace>
+                            <publisher>EPESA</publisher>
+                            <date when="1952">1952</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="C">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Medellín-Colombia</pubPlace>
+                            <publisher>Bedout</publisher>
+                            <date when="1958">1958</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="D">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Bogotá-Colombia</pubPlace>
+                            <publisher>Caro y Cuervo</publisher>
+                            <date when="1972">1972</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="E">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Barcelona-España</pubPlace>
+                            <publisher>Círculo de Lectores</publisher>
+                            <date when="1983">1983</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="F">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Bogotá-Colombia</pubPlace>
+                            <publisher>El Áncora</publisher>
+                            <date when="1987">1987</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="G">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Medellín-Colombia</pubPlace>
+                            <publisher>Colección Autores Antioqueños</publisher>
+                            <date when="1996">1996</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="H">
+                        <bibl>
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Bogotá-Colombia</pubPlace>
+                            <publisher>Norma</publisher>
+                            <date when="1997">1997</date>
+                        </bibl>
+                    </witness>
+                    <witness xml:id="I">
+                        <bibl type="witness">
+                            <title>Frutos de mi tierra</title>
+                            <author>Tomás Carrasquilla</author>
+                            <pubPlace>Bogotá-Colombia</pubPlace>
+                            <publisher>Norma</publisher>
+                            <date when="2008">2008</date>
+                        </bibl>
+                    </witness>
                 </listWit>
             </sourceDesc>
         </fileDesc>
@@ -99,35 +116,36 @@
                 <p>Se emplea el elemento <gi>term</gi> en el cuerpo del texto para señalar entradas
                     de glosario, cada una apuntando con el atributo <att>ref</att> al elemento
                         <gi>item</gi> correspondiente, identificado mediante el atributo
-                        <att>xml:id</att>, en la lista de glosario contenida en <gi>back</gi>. </p>
+                        <att>xml:id</att>, en la lista de glosario contenida en <gi>back</gi>.</p>
                 <p>El aparato crítico se anota con el elemento <gi>app</gi>, que agrupa <gi>lem</gi>
                     y <gi>rdg</gi> para el lema y sus variantes, respectivamente.</p>
-                <p>Esta edición crítica digital emplea el elemento <gi>app</gi> para representar
-                    variantes textuales, según las recomendaciones del apartado 16.3 <hi
+                <p>Esta edición crítico-genética digital emplea el elemento <gi>app</gi> para
+                    representar variantes textuales según las recomendaciones del apartado 16.3 <hi
                         rend="italic">Blocks, Segments, and Anchors</hi> de las directrices TEI P5.
                     Cada conjunto de variantes está anclado a una posición precisa del texto
-                    mediante el uso del elemento <gi>anchor</gi>, lo que permite insertar el aparato
-                    crítico directamente en el flujo del texto codificado.</p>
-                <p>La elección de <gi>anchor</gi> en lugar del atributo <att>corresp</att> responde
-                    a la necesidad de utilizar una referencia puntual, especialmente, en casos en
-                    los que la variante afecta espacios o signos de puntuación (en el caso de
-                    Carrasquilla se hace necesario organizar el control del estilo directo del
-                    narrador omnisciente a las intervenciones de las voces de los personajes por
-                    medio de lo verbos de lengua), o cuando no es conveniente vincular el aparato
-                    crítico a una palabra específica. Esta estrategia asegura una sincronización
-                    entre el texto base y las lecturas de las variantes.<ptr
-                        target="https://www.tei-c.org/Vault/P5/4.5.0/doc/tei-p5-doc/en/html/SA.html#SASE"/>.</p>
+                    mediante el uso del elemento <gi>anchor</gi> con un identificador único, lo que
+                    permite insertar el aparato crítico directamente en el flujo del texto
+                    codificado sin alterar la linealidad de la lectura.</p>
+                <p>La elección de <gi>anchor</gi> responde a la necesidad de establecer una
+                    vinculación entre el texto base y las variantes a partir de unidades
+                    lingüísticas completas —ya sean palabras, sintagmas o estructuras mayores—, en
+                    lugar de señalar un punto abstracto en la secuencia textual.</p>
                 <p>El atributo <att>xml:id</att> asignado a cada <gi>app</gi> permite identificar de
                     forma única cada entrada crítica, posibilitando su navegación y reutilización
                     tanto en interfaces dinámicas como en sistemas de procesamiento textual.</p>
+                <p>Las variantes se clasifican mediante el atributo <att>type</att> de acuerdo con
+                    su naturaleza lingüística: ortográfica (<val>orthographic</val>), morfológica
+                        (<val>morphological</val>), sintáctica (<val>syntactic</val>), semántica
+                        (<val>semantic</val>), pragmática (<val>pragmatic</val>) y tipográfica
+                        (<val>typographic</val>).</p>
             </editorialDecl>
         </encodingDesc>
         <profileDesc xmlns="http://www.tei-c.org/ns/1.0">
-            <langUsage xml:id="LU1" xml:lang="es">
+            <langUsage xml:id="LU1">
                 <language ident="es">Español</language>
             </langUsage>
             <textClass>
-                <classCode scheme="DHC">Novel</classCode>
+                <classCode scheme="DHC">Novela</classCode>
                 <keywords>
                     <term>novela</term>
                     <term>siglos XIX-XX</term>
@@ -148,8 +166,9 @@
     <facsimile>
         <surface xml:id="f1">
             <graphic
-                url="https://raw.githubusercontent.com/estebanaeiou/FrutosDigital/refs/heads/main/facsimiles/C2_1.jpg"/>
-            <label>Manuscrito autógrafo, página X</label>
+                url="https://raw.githubusercontent.com/estebanaeiou/FrutosDigital/refs/heads/main/facsimiles/C2_1.jpg"
+                mimeType="image/jpeg" width="600px"/>
+            <label>Manuscrito autógrafo, página 1</label>
         </surface>
     </facsimile>
     <text xml:lang="es">
@@ -167,125 +186,133 @@
         </front>
         <body>
             <div type="chapter" n="1" xml:id="chapter_1">
-                <head>POR LA MAÑANA</head>
-                <head type="sub">I</head>
+                <head>Capítulo I: POR LA MAÑANA</head>
             </div>
-            <div type="chapter" n="2" xml:id="chapter_2">
-                <head>HISTORIA ANTIGUA</head>
-                <head type="sub">II</head>
-                <head type="subsub">1</head>
-                <p>La <term ref="#gls-sena" type="dialectal"> señá</term> Mónica Seferino quedó
-                    viuda del maestro Alzate, con una runfla<ref type="note" target="#note1">1</ref>
-                    de siete muchachos y una casita de mala muerte por único patrimonio.</p>
-                <p>Como no era hembra de lloriqueos ni pataletas, pronto se dejó de lutos, y
-                    emprendiólas con el trabajo. Con la labia que Dios le dio<anchor xml:id="a_app1"
-                        /><ref target="#f1" type="facsimile" subtype="tooltip"/>, logró sonsacarle,
-                    en calidad de préstamo, dos onzas a<anchor xml:id="a_app2"/> un su compadre.
-                    Alquiló un oficial de carpintería, y, con cuatro tablas viejas y unos cajones de
-                    pino, transformó<anchor xml:id="a_app3"/> la sala en tienda, de la noche a la
-                    mañana. Fuese<anchor xml:id="a_app4"/> al mercado e<anchor xml:id="a_app5"/>hizo
-                    una compra por lo grande, consiguiendo además que le fiaran un tercio de harina
-                    y una damajuana de aguardiente: pues al mes ya tenía la pulpería completamente
-                    montada. Puso a Onofre, el mayor de los tres muchachos, a asistir la venta, en
-                    tanto que ella y Juanita, la mayor de las niñas, se andaban por la cocina,
-                    hinchendo tripa, moliendo cacao, y en aquel brete de amasijo y horno. Al cabo de
-                    cuatro meses había comprado todos los enseres del oficio y hecho construir dos
-                    monumentales chiqueros, en los que aprisionó cuatro puerquitos. Comprometióse
-                    con todo el barrio a pilar un mundo de maíz, a trueque del afrecho y la
-                    aguamasa; se hizo a un par de pilones, y cátame a los zarrapastrosos chiquitines
-                    pegados de las manos de pilón, suda que suda la gota gorda y haciendo pucheros;
-                    pero con el genio y el rejo de la señá<anchor xml:id="a_app6"/> Mónica no había
-                    remilgos.</p>
-                <p>El cuento del ventorrillo y los puercos prosperaba que era una bendición, y la
-                    empresaria, encariñada con el lucro, quiso dar ensanche al negocio. Sacó la
-                    hucha, que yá tenía “a plan de baúl”, y contrató quién le hiciera, en todo el
-                    largo del corral, una media-agua a tejavana, con su canoa y una veintena de
-                    argollas, empotradas en la pared. Hizo clavar en el corredor del patio una
-                    hilera de palitos numerados, a modo de percha, y luégo dio aviso verbal a todo
-                    el que llegaba a su tienda de que cuidaba bestias y guardaba monturas, a real y
-                    medio el día. Divulgada la noticia, principia el efecto.</p>
-                <p>Agustín, el mediano, que corría con el arreglo de escobas para el horno, con
-                    pilada y lavado de maíz, fue promovido a las altas funciones que la nueva
-                    industria reclamaba, con obligación de hacer la chicha y los mandados; y
-                    Pedrito, el menor, quedó en reemplazo de Agustín.</p>
-                <p>¡Y qué hábil y metódico resultó éste!, jamás por alquitara; enviárale Dios
-                    bestias, que dónde acomodarlas no faltaba. ¿Pues, y la chicha? ¿Y eso de ponerse
-                    en un credo en la plaza y volver con aquel costal de compras?… con ser que el
-                    pobre no estaba muy católico de pies, que con las andanzas y trasteos por la
-                    pesebrera, lo cogieron las niguas por su cuenta y no lo dejaron en paz hasta
-                    pararle los dedos y tumbarle las dos uñas grandes; y ni la hiél de vaca, ni el
-                    sebito caliente, ni la otoba, fueron parte a que sanase; pero así, patojito y
-                    todo, se despachaba a las volandas.</p>
-                <p>A más de los cinco o seis pesos que, entre los martes y los viernes —días de
-                    mercado— dejaba el cuido de caballerías y la guarda de monturas, ocasionó esta
-                    industria la venta de almuerzos a las gentes que venían a vender. Por real y
-                    medio daba la seña Mónica ajiaco, tamal y tazón de un brevaje compuesto de
-                    cacao, mucha harina de maíz y su poco de hígado de res. Era cosa de quedar
-                    rendida de servir, soplar y batir; mas no de llevar la paga al bolsillo.</p>
-                <p>Como a la gente principal del barrio se le antojase probar los guisos de la seña
-                    Mónica, quiso esta darles gusto, y los domingos les vendía de lo bueno. ¡Y qué
-                    almuerzos! ¡Todavía se recuerda con gastronómico deleite el espesor de aquel
-                    mondongo, la suculencia de aquellos tamales!…</p>
-                <p>Entre las pesebreras, la cocina y el ventorrillo, fue creciendo la familia,
-                    arrullada por el lucro; y al verlos a todos tan espigaditos, hizo Mónica su
-                    calaverada compróles guacintones de cordobán, trajes de muselina y ajuar de oír
-                    misa a Juanita y Nena, y muda entera a Onofre y Agusto. ¡Qué feliz se sintió el
-                    caballerizo cuando estrenó ese atavío, suyo desde nuevo! ¡Cómo bendijo la
-                    industria copacabaneña cuando vio ocultarse bajo la capellada del alpargate los
-                    estragos de la nigua!</p>
-                <p>Al relegar aquellos nefandos pantalones de dril, que tanto tormento le dieron a
-                    causa de los boquerones de la rodilla y de los anteojos de las posas; al
-                    contemplarse tan peripuesto, digo, se dio cuenta de la dignidad, de la grandeza
-                    del varón. Con la mugre y los remiendos cayó la venda. ¿Cómo había vivido él
-                    diez y siete años con aquellos andrajos? ¿Pensaría su</p>
-                <p>madre que eso iba a ser para los domingos solamente? ¡Eso sí que no!, vestirse
-                    siempre muy bien, como él se merecía. ¡Pues no faltaría más que volver a usar
-                    esa ruana bogotana que se arrollaba por las puntas como hoja de plátano! Eso
-                    para el bobo de Onofre.</p>
-                <p>Había de ser Agusto el Narciso de los Alzates, y este fue el primer preludio.</p>
-                <p>Desde ese día paró moña, y ¡adiós chicha, mandados y pesebrera! Cada rato armaba
-                    un lío con la seña Mónica, hasta que declaró que lo que él quería era botas.
-                    Túvolo esta por loco rematado, y en verdad que botas en esos tiempos, y en mozo
-                    de la laya de Agustín, era para asustar; pero tanta jeta estiró él, tanto
-                    descuidó sus deberes, que, para ver de enderezarlo, accedió ella y contrató unos
-                    borceguíes con el maestro Caleño, zapatero popular en ese entonces.</p>
-                <p>No fueron así no más las torturas y fatigas con la tal invención. Otro hubiera
-                    dado al diablo con los cueros esos; pero al Agusto no lo apearon de las suelas
-                    ni los repelones, ni el agua-sangre que manaban las sacaduras ni la rechifla de
-                    los muchachos cuando lo veían patojín patojeando, “con las niguas en el oscuro”.
-                    A todo se sobrepuso: por sobre ascuas y espinas era, pero daba los primeros
-                    pasos hacia el ideal que perseguía.</p>
-                <p>Con tales aprietos empeoró tanto, que la seña Mónica estuvo “a cantos de coger el
-                    monte”.</p>
-                <p>—¡Liaseguro que el patojo este me está quitando la vida! —exclamó una vez con
-                    amargor maternal.</p>
-                <p>—Pero ¿qué es lo que querés, enemigo malo?</p>
-                <p>—Lo que quiero es que busté me ponga una tienda a yo solo, —replicó Agusto en
-                    tono imperioso.</p>
-                <p>—¡Vean este sofístico!… ¿Y diónde diajos saco yo plata?</p>
-                <p>—¡Del baúl!… o si no, fíe: ¡harto créito tiene!</p>
-                <p>—¡Un veneno pa vos!… —rugió la madre.</p>
-                <p>—¡Pues antós me largo!… —rugió el hijo saliendo apresuradamente, a pesar del
-                    calzado.</p>
-                <p>La seña Mónica se quedó amarilla: por vez primera se le soliviantaba alguno en
-                    esa casa donde su voluntad era ley.</p>
-                <p>El enojo materno se deshizo en llanto. Con los ojos escaldados aún, tercióse el
-                    pañolón y tiró calle abajo, en busca de su compadre Juancho, el de las dos
-                    onzas. Dos horas después volvía serena.</p>
-                <p>—Andá buscate aquel caviloso y decile que a yo que venga, —dijo a Onofre, no bien
-                    entró a la casa.</p>
-                <p>No se andaba Agustín por los antípodas: a la vuelta de la esquina lo encontró
-                    Onofre, dándole palique al herrero. Llegóse a su madre con aire de general a
-                    quien el enemigo pide capitulaciones.</p>
-                <p>—¡Mirá, muchacho, —le dijo ella,— no me atormentés!… sentate yo te cuento: yo no
-                    tengo plata, como vos pensás; pero mi compadre Juancho te abre créitos para que
-                    pongás la tienda. Pero escuchá: si salís con una pata floja y hacés quedar mal a
-                    mi compadre… nos quedamos en la calle; porque él no te fía si yo no le apinoro
-                    la casa. ¡Conque ya sabés!…</p>
-                <p>—Es que busté creye que yo soy como Onofre… ¡bien puede apinorala!</p>
 
-                <div type="section" n="2">
-                    <head type="subsub">...</head>
+            <div type="chapter" n="2" xml:id="chapter_2">
+                <head>Capítulo II: HISTORIA ANTIGUA</head>
+
+                <div type="section" n="1" xml:id="chapter_2_Section_1">
+                    <head>1</head>
+                    <p>La <term corresp="#gls-sena">señá</term>Mónica Seferino quedó viuda del maestro
+                        Alzate, con una runfla<ref xml:id="a_note1" type="note" target="#note1"
+                            >1</ref> de siete muchachos y una casita de mala muerte por único
+                        patrimonio.</p>
+                    <p>Como no era hembra de lloriqueos ni pataletas, pronto se dejó de lutos, y
+                        emprendiólas con el trabajo. Con la labia que Dios le dio<anchor
+                            xml:id="a_app1" corresp="#app1"/>, logró sonsacarle, en calidad de
+                        préstamo, dos onzas a<anchor xml:id="a_app2" corresp="#app2"/> un su
+                        compadre. Alquiló un oficial de carpintería, y, con cuatro tablas viejas y
+                        unos cajones de pino, transformó<anchor xml:id="a_app3" corresp="#app3"/> la
+                        sala en tienda, de la noche a la mañana. Fuese<anchor xml:id="a_app4"
+                            corresp="#app4"/> al mercado e<anchor xml:id="a_app5" corresp="#app5"
+                        />hizo una compra por lo grande, consiguiendo además que le fiaran un tercio
+                        de harina y una damajuana de aguardiente: pues al mes ya tenía la pulpería
+                        completamente montada. Puso a Onofre, el mayor de los tres muchachos, a
+                        asistir la venta, en tanto que ella y Juanita, la mayor de las niñas, se
+                        andaban por la cocina, hinchendo tripa, moliendo cacao, y en aquel brete de
+                        amasijo y horno. Al cabo de cuatro meses había comprado todos los enseres
+                        del oficio y hecho construir dos monumentales chiqueros, en los que
+                        aprisionó cuatro puerquitos. Comprometióse con todo el barrio a pilar un
+                        mundo de maíz, a trueque del afrecho y la aguamasa; se hizo a un par de
+                        pilones, y cátame a los zarrapastrosos chiquitines pegados de las manos de
+                        pilón, suda que suda la gota gorda y haciendo pucheros; pero con el genio y
+                        el rejo de la señá<anchor xml:id="a_app6" corresp="#app6"/> Mónica no había
+                        remilgos.</p>
+                    <p>El cuento del ventorrillo y los puercos prosperaba que era una bendición, y
+                        la empresaria, encariñada con el lucro, quiso dar ensanche al negocio. Sacó
+                        la hucha, que ya<anchor xml:id="a_app7" corresp="#app7"/> tenía “a plan de
+                        baúl”, y contrató quién le hiciera, en todo el largo del corral, una
+                        media-agua a tejavana, con su canoa y una veintena de argollas, empotradas
+                        en la pared. Hizo clavar en el corredor del patio una hilera de palitos
+                        numerados, a modo de percha, y luégo dio aviso verbal a todo el que llegaba
+                        a su tienda de que cuidaba bestias y guardaba monturas, a real y medio el
+                        día. Divulgada la noticia, principia el efecto.</p>
+                    <p>Agustín, el mediano, que corría con el arreglo de escobas para el horno, con
+                        pilada y lavado de maíz, fue promovido a las altas funciones que la nueva
+                        industria reclamaba, con obligación de hacer la chicha y los mandados; y
+                        Pedrito, el menor, quedó en reemplazo de Agustín.</p>
+                    <p>¡Y qué hábil y metódico resultó éste!, jamás por alquitara; enviárale Dios
+                        bestias, que dónde acomodarlas no faltaba. ¿Pues, y la chicha? ¿Y eso de
+                        ponerse en un credo en la plaza y volver con aquel costal de compras?… con
+                        ser que el pobre no estaba muy católico de pies, que con las andanzas y
+                        trasteos por la pesebrera, lo cogieron las niguas por su cuenta y no lo
+                        dejaron en paz hasta pararle los dedos y tumbarle las dos uñas grandes; y ni
+                        la hiél de vaca, ni el sebito caliente, ni la otoba, fueron parte a que
+                        sanase; pero así, patojito y todo, se despachaba a las volandas.</p>
+                    <p>A más de los cinco o seis pesos que, entre los martes y los viernes —días de
+                        mercado— dejaba el cuido de caballerías y la guarda de monturas, ocasionó
+                        esta industria la venta de almuerzos a las gentes que venían a vender. Por
+                        real y medio daba la seña Mónica ajiaco, tamal y tazón de un brevaje
+                        compuesto de cacao, mucha harina de maíz y su poco de hígado de res. Era
+                        cosa de quedar rendida de servir, soplar y batir; mas no de llevar la paga
+                        al bolsillo.</p>
+                    <p>Como a la gente principal del barrio se le antojase probar los guisos de la
+                        seña Mónica, quiso esta darles gusto, y los domingos les vendía de lo bueno.
+                        ¡Y qué almuerzos! ¡Todavía se recuerda con gastronómico deleite el espesor
+                        de aquel mondongo, la suculencia de aquellos tamales!…</p>
+                    <p>Entre las pesebreras, la cocina y el ventorrillo, fue creciendo la familia,
+                        arrullada por el lucro; y al verlos a todos tan espigaditos, hizo Mónica su
+                        calaverada compróles guacintones de cordobán, trajes de muselina y ajuar de
+                        oír misa a Juanita y Nena, y muda entera a Onofre y Agusto. ¡Qué feliz se
+                        sintió el caballerizo cuando estrenó ese atavío, suyo desde nuevo! ¡Cómo
+                        bendijo la industria copacabaneña cuando vio ocultarse bajo la capellada del
+                        alpargate los estragos de la nigua!</p>
+                    <p>Al relegar aquellos nefandos pantalones de dril, que tanto tormento le dieron
+                        a causa de los boquerones de la rodilla y de los anteojos de las posas; al
+                        contemplarse tan peripuesto, digo, se dio cuenta de la dignidad, de la
+                        grandeza del varón. Con la mugre y los remiendos cayó la venda. ¿Cómo había
+                        vivido él diez y siete años con aquellos andrajos? ¿Pensaría su</p>
+                    <p>madre que eso iba a ser para los domingos solamente? ¡Eso sí que no!,
+                        vestirse siempre muy bien, como él se merecía. ¡Pues no faltaría más que
+                        volver a usar esa ruana bogotana que se arrollaba por las puntas como hoja
+                        de plátano! Eso para el bobo de Onofre.</p>
+                    <p>Había de ser Agusto el Narciso de los Alzates, y este fue el primer
+                        preludio.</p>
+                    <p>Desde ese día paró moña, y ¡adiós chicha, mandados y pesebrera! Cada rato
+                        armaba un lío con la seña Mónica, hasta que declaró que lo que él quería era
+                        botas. Túvolo esta por loco rematado, y en verdad que botas en esos tiempos,
+                        y en mozo de la laya de Agustín, era para asustar; pero tanta jeta estiró
+                        él, tanto descuidó sus deberes, que, para ver de enderezarlo, accedió ella y
+                        contrató unos borceguíes con el maestro Caleño, zapatero popular en ese
+                        entonces.</p>
+                    <p>No fueron así no más las torturas y fatigas con la tal invención. Otro
+                        hubiera dado al diablo con los cueros esos; pero al Agusto no lo apearon de
+                        las suelas ni los repelones, ni el agua-sangre que manaban las sacaduras ni
+                        la rechifla de los muchachos cuando lo veían patojín patojeando, “con las
+                        niguas en el oscuro”. A todo se sobrepuso: por sobre ascuas y espinas era,
+                        pero daba los primeros pasos hacia el ideal que perseguía.</p>
+                    <p>Con tales aprietos empeoró tanto, que la seña Mónica estuvo “a cantos de
+                        coger el monte”.</p>
+                        <p><said who="mon">—¡Liaseguro que el patojo este me está quitando la vida!</said></p>
+                    <p>—exclamó una vez con amargor maternal.</p>
+                    <p>—Pero ¿qué es lo que querés, enemigo malo?</p>
+                    <p>—Lo que quiero es que busté me ponga una tienda a yo solo, —replicó Agusto en
+                        tono imperioso.</p>
+                    <p>—¡Vean este sofístico!… ¿Y diónde diajos saco yo plata?</p>
+                    <p>—¡Del baúl!… o si no, fíe: ¡harto créito tiene!</p>
+                    <p>—¡Un veneno pa vos!… —rugió la madre.</p>
+                    <p>—¡Pues antós me largo!… —rugió el hijo saliendo apresuradamente, a pesar del
+                        calzado.</p>
+                    <p>La seña Mónica se quedó amarilla: por vez primera se le soliviantaba alguno
+                        en esa casa donde su voluntad era ley.</p>
+                    <p>El enojo materno se deshizo en llanto. Con los ojos escaldados aún, tercióse
+                        el pañolón y tiró calle abajo, en busca de su compadre Juancho, el de las
+                        dos onzas. Dos horas después volvía serena.</p>
+                    <p>—Andá buscate aquel caviloso y decile que a yo que venga, —dijo a Onofre, no
+                        bien entró a la casa.</p>
+                    <p>No se andaba Agustín por los antípodas: a la vuelta de la esquina lo encontró
+                        Onofre, dándole palique al herrero. Llegóse a su madre con aire de general a
+                        quien el enemigo pide capitulaciones.</p>
+                    <p>—¡Mirá, muchacho, —le dijo ella,— no me atormentés!… sentate yo te cuento: yo
+                        no tengo plata, como vos pensás; pero mi compadre Juancho te abre créitos
+                        para que pongás la tienda. Pero escuchá: si salís con una pata floja y hacés
+                        quedar mal a mi compadre… nos quedamos en la calle; porque él no te fía si
+                        yo no le apinoro la casa. ¡Conque ya sabés!…</p>
+                    <p>—Es que busté creye que yo soy como Onofre… ¡bien puede apinorala!</p>
+                </div>
+                <div type="section" n="2" xml:id="chapter_2_Section_2">
+                    <head>2</head>
                     <p>A cuatro pasos de la plaza principal, donde hoy se encuentra lujoso almacén
                         de novedades, se sentía, cuando pasaban estos sucesos, un olor a rechín que
                         salía de la tienda allí situada. El transeúnte refinado pasaba por junto a
@@ -446,8 +473,9 @@
                     <p>De ahí en adelante se dio al negocio el giro de retroventa, y se acabaron las
                         demandas e impertinencias.</p>
                 </div>
-                <div type="section" n="3">
-                    <head type="subsub">...</head>
+
+                <div type="section" n="3" xml:id="chapter_2_Section_3">
+                    <head>3</head>
                     <p>La señá Mónica también trabajó como una negra. Fueron muchas las barrigas
                         militares que llenó, muchísimas las hambres que les mató, y estupendas las
                         perras que de su casa salieron; pero las mochilas que guardaba en el baúl
@@ -558,8 +586,9 @@
                         negocio siguió como nunca.</p>
                     <p>¡Bien por la hembra de gran corazón!</p>
                 </div>
-                <div type="section" n="4">
-                    <head type="subsub">...</head>
+
+                <div type="section" n="4" xml:id="chapter_2_Section_4">
+                    <head>4</head>
                     <p>En cuanto a Agustín y Filomena, la situación no podía ser más halagüeña.</p>
                     <p>Como cesara la guerra, cesó el bloqueo comercial, y la tienda de efectos del
                         país se complicó, libre el comercio, con vinos, rancho, quincallería, telas
@@ -651,8 +680,9 @@
                     <p>Ocho días después se vendieron en la tienda de los hermanos Alzate el pañolón
                         y los zapatos de la muerta.</p>
                 </div>
-                <div type="section" n="5">
-                    <head type="subsub">...</head>
+
+                <div type="section" n="5" xml:id="chapter_2_Section_5">
+                    <head>5</head>
                     <p>—Amigo: ¡ya han pasao por este trago tan amargo… pero como la vida es vida,
                         mientras se llora hay que brujuliar! ¿Por qué no pega un registrico en los
                         corotos de mi comadre? Yo estoy en que ella tenía sus rialitos…</p>
@@ -749,9 +779,9 @@
         <back>
             <div type="glossary">
                 <head>Glosario</head>
-                <list type="glossary">
-                    <item xml:id="gls-sena">
-                        <term>señá</term>
+                <list type="glossary" subtype="dialectal">
+                    <item>
+                        <term xml:id="gls-sena">señá</term>
                         <gloss>señora</gloss>
                     </item>
                 </list>
@@ -759,7 +789,7 @@
             <div type="notes">
                 <head>Notas explicativas</head>
                 <list>
-                    <item xml:id="note1">
+                    <item xml:id="note1" corresp="#a_note1">
                         <note>Serie de varias cosas de una misma especie (DLE, 2025)</note>
                     </item>
                 </list>
@@ -767,35 +797,40 @@
             <div type="apparatus">
                 <head>Aparato crítico</head>
                 <listApp>
-                    <app xml:id="app1" from="#a_app1">
+                    <app xml:id="app1" corresp="#a_app1" type="orthographic">
                         <lem wit="#A">dio</lem>
                         <rdg wit="#B">dió</rdg>
                         <rdg wit="#C">dio</rdg>
                     </app>
-                    <app xml:id="app2" from="#a_app2">
+                    <app xml:id="app2" corresp="#a_app2" type="orthographic">
                         <lem wit="#A">á</lem>
                         <rdg wit="#B">a</rdg>
                         <rdg wit="#C">a</rdg>
                     </app>
-                    <app xml:id="app3" from="#a_app3">
+                    <app xml:id="app3" corresp="#a_app3" type="typographic">
                         <lem wit="#A">trasformó</lem>
                         <rdg wit="#B">transformó</rdg>
                         <rdg wit="#C">transformó</rdg>
                     </app>
-                    <app xml:id="app4" from="#a_app4">
+                    <app xml:id="app4" corresp="#a_app4" type="orthographic">
                         <lem wit="#A">Fuése</lem>
                         <rdg wit="#B">Fuese</rdg>
                         <rdg wit="#C">Fuese</rdg>
                     </app>
-                    <app xml:id="app5" from="#a_app5">
+                    <app xml:id="app5" corresp="#a_app5" type="orthographic">
                         <lem wit="#A">é</lem>
                         <rdg wit="#B">e</rdg>
                         <rdg wit="#C">e</rdg>
                     </app>
-                    <app xml:id="app6" from="#a_app6">
+                    <app xml:id="app6" corresp="#a_app6" type="pragmatic">
                         <lem wit="#A">señá</lem>
                         <rdg wit="#B">seña</rdg>
                         <rdg wit="#C">señá</rdg>
+                    </app>
+                    <app xml:id="app7" corresp="#a_app7" type="orthographic">
+                        <lem wit="#A">yá</lem>
+                        <rdg wit="#B">ya</rdg>
+                        <rdg wit="#C">ya</rdg>
                     </app>
                 </listApp>
             </div>
