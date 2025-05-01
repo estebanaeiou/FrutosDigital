@@ -18,7 +18,7 @@
                 <pubPlace>Medellín, Colombia</pubPlace>
                 <date when="2025">2025</date>
                 <availability>
-                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY0
                         4.0</licence>
                 </availability>
             </publicationStmt>
@@ -31,7 +31,7 @@
                         <bibl>
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
-                            <pubPlace>Medellín-Colombia</pubPlace>
+                            <pubPlace>Bogotá-Colombia</pubPlace>
                             <publisher>Imprenta Oficial</publisher>
                             <date when="1896">1896</date>
                         </bibl>
@@ -113,12 +113,98 @@
         </fileDesc>
         <encodingDesc>
             <editorialDecl>
-                <p>Se emplea el elemento <gi>term</gi> en el cuerpo del texto para señalar entradas
-                    de glosario, cada una apuntando con el atributo <att>ref</att> al elemento
-                        <gi>item</gi> correspondiente, identificado mediante el atributo
+                <p>En el marco de la edición crítico-genética digital de Frutos de mi tierra de
+                    Tomás Carrasquilla, se ha buscado armonizar el estilo propio del autor con las
+                    normativas contemporáneas de la lengua española. Este esfuerzo editorial asegura
+                    la correcta acentuación gráfica de palabras agudas, llanas y monosílabas (OLE,
+                    2010, pp. 206, 231 y 232). Asimismo, se ha optado por la eliminación del acento
+                    diacrítico en ciertas palabras como “sólo” y los pronombres demostrativos,
+                    alineándose con las directrices que permiten la omisión de la tilde incluso en
+                    contextos de ambigüedad potencial (p. 269).</p>
+                <p>El uso de mayúsculas sigue un criterio riguroso, preservando la mayúscula inicial
+                    en nombres propios, mientras que los conceptos generales del ámbito religioso se
+                    transcriben en minúscula, siguiendo la lógica lingüística y no teológica (pp.
+                    472, 496). Esto refleja un equilibrio entre el respeto por la tradición y la
+                    coherencia con las normativas actuales.</p>
+                <p>En cuanto a la puntuación, se han adoptado reglas claras para el uso de la raya,
+                    los signos de interrogación y exclamación, y otros signos de puntuación para
+                    asegurar que el texto no solo sea fiel al texto base en espíritu, sino también
+                    accesible y comprensible para el lector moderno.</p>
+                <p>En el aspecto sintáctico, también se ha prestado especial atención a los laísmos,
+                    fenómeno particularmente notable en su uso histórico y regional antioqueño.
+                    Según el documento de la OLE, se establece que “la utilización de los pronombres
+                    átonos la y las en lugar de le y les como complemento indirecto” refleja la
+                    necesidad del hablante de marcar el género del referente (CVC, 2017). Esta
+                    edición ha decidido mantener la disposición de los laísmos conforme al texto
+                    base seleccionado, permitiendo así que el estilo característico de Carrasquilla
+                    se conserve, con el propósito de mantener la autenticidad del diálogo y de las
+                    construcciones sintácticas del autor.</p>
+                <p>Además, se ha revisado la correcta utilización de la coma, los dos puntos y otros
+                    signos de puntuación en términos de su colocación relativa a sujetos, verbos y
+                    complementos, siguiendo las recomendaciones de la OLE (2010). Por ejemplo, es
+                    incorrecto separar con una coma el verbo de sus complementos directos e
+                    indirectos, salvo en circunstancias específicas donde un inciso o elemento
+                    aislado por comas lo justifique (p. 315). También, se ha prestado atención a la
+                    puntuación en estructuras complejas como enumeraciones, citas directas y
+                    expresiones que introducen explicaciones o especificaciones, ajustando la
+                    mayúscula inicial después de los dos puntos solo cuando estos introducen una
+                    cita textual directa o en ciertos usos textuales específicos (p. 355). En lo
+                    referente a las estructuras interrogativas y exclamativas, se han ajustado
+                    conforme a las normas actuales que dictan la obligatoriedad de los signos de
+                    apertura y cierre, garantizando así la claridad y la fuerza expresiva del texto
+                    (p. 388).</p>
+                <p>En el ámbito morfológico, la fijación de Frutos de mi tierra de Tomás
+                    Carrasquilla también se ha tenido como objetivo garantizar la corrección y la
+                    actualización de varios aspectos clave. Una de las intervenciones significativas
+                    incluye la concordancia gramatical de género y número, lo que es fundamental
+                    para la cohesión y la claridad del texto. Se han enmendado casos en los que el
+                    género de un sustantivo, artículo o adjetivo no correspondían entre sí,
+                    asegurando una congruencia precisa que refleja tanto el uso moderno del español
+                    como el estilo distintivo del autor. Además, la revisión ha abordado los sufijos
+                    apreciativos o diminutivos, actualizando todas las derivaciones porque “al igual
+                    que otros sufijos, los diminutivos se añaden a la base léxica tras suprimir la
+                    vocal final cuando es átona” (NGLE 2010, p. 167). Esta práctica garantiza que el
+                    texto se alinee con las normas lingüísticas actuales sin perder el matiz
+                    expresivo propio de Carrasquilla.</p>
+                <p>La edición crítico-genética digital también ha ajustado la presentación de
+                    numerales complejos y pluriverbales. Siguiendo la normativa de los numerales de
+                    16 a 19 y de 21 a 29 ahora se escriben en una sola palabra, lo que refleja una
+                    tendencia moderna hacia una grafía univerbal (p. 670). Además, se ha establecido
+                    una distinción clara entre el sustantivo “porqué” (cuando se refiere a una
+                    causa) y la secuencia interrogativa “por qué”, cada uno con significados y usos
+                    diferentes, lo cual es crucial para la precisión textual y la comprensión
+                    lectora (pp. 558-559).</p>
+                <p>También, se han revisado los acortamientos léxicos, actualizando la escritura de
+                    voces reducidas que han surgido en el lenguaje coloquial y que, en ocasiones,
+                    han sido adoptadas por la lengua escrita. Estos acortamientos se presentan en
+                    redonda para distinguirlos claramente de los extranjerismos crudos, que se
+                    marcan en cursiva o con comillas según la norma ortográfica vigente (p. 565).
+                    Esta minuciosa atención a los detalles morfológicos no solo refuerza la cohesión
+                    interna del texto y su alineación con las normativas lingüísticas modernas, sino
+                    que también resalta la intención de respetar y preservar las características
+                    estilísticas de Carrasquilla, facilitando así una experiencia lectora
+                    enriquecida y accesible para el público contemporáneo.</p>
+                <p>Además, este proceso de revisión ha incluido la corrección de la concordancia
+                    gramatical y la adecuación de términos extranjeros y latinismos, reflejando las
+                    directrices de la OLE (2010) y otras fuentes relevantes como la NGLE (2010) y el
+                    DPD (2005). Este meticuloso respeto por la normativa vigente asegura que la
+                    edición crítico-genética digital no solo preserve la voz y estilo de
+                    Carrasquilla, sino que también se adapte a los cambios lingüísticos y
+                    ortográficos contemporáneos.</p>
+                <p>En síntesis, edición crítico-genética digital de Frutos de mi tierra de
+                    Carrasquilla representa un compromiso con la precisión lingüística y la
+                    integridad textual, buscando un equilibrio entre la fidelidad al texto base y su
+                    adaptación a las normativas lingüísticas actuales. Este trabajo no solo
+                    revitaliza la obra de Carrasquilla para un nuevo público, sino que también
+                    contribuye al estudio académico de su obra dentro de un marco lingüístico
+                    modernizado.</p>
+                <p>Además, se emplea el elemento <gi>term</gi> en el cuerpo del texto para señalar
+                    entradas de glosario, cada una apuntando con el atributo <att>ref</att> al
+                    elemento <gi>item</gi> correspondiente, identificado mediante el atributo
                         <att>xml:id</att>, en la lista de glosario contenida en <gi>back</gi>.</p>
-                <p>El aparato crítico se anota con el elemento <gi>app</gi>, que agrupa <gi>lem</gi>
-                    y <gi>rdg</gi> para el lema y sus variantes, respectivamente.</p>
+                <p>Asimismo, el aparato crítico se anota con el elemento <gi>app</gi>, que agrupa
+                        <gi>lem</gi> y <gi>rdg</gi> para el lema y sus variantes,
+                    respectivamente.</p>
                 <p>Esta edición crítico-genética digital emplea el elemento <gi>app</gi> para
                     representar variantes textuales según las recomendaciones del apartado 16.3 <hi
                         rend="italic">Blocks, Segments, and Anchors</hi> de las directrices TEI P5.
@@ -167,7 +253,7 @@
         <surface xml:id="f1">
             <graphic
                 url="https://raw.githubusercontent.com/estebanaeiou/FrutosDigital/refs/heads/main/facsimiles/C2_1.jpg"
-                mimeType="image/jpeg" width="600px"/>
+                mimeType="image/jpeg" width="400px"/>
             <label>Manuscrito autógrafo, página 1</label>
         </surface>
     </facsimile>
@@ -176,26 +262,25 @@
             <div type="tableOfContents">
                 <list type="contents">
                     <item>
-                        <ref target="#chapter_1">POR LA MAÑANA</ref>
+                        <ref target="#chap_1">POR LA MAÑANA</ref>
                     </item>
                     <item>
-                        <ref target="#chapter_2">HISTORIA ANTIGUA</ref>
+                        <ref target="#chap_2">HISTORIA ANTIGUA</ref>
                     </item>
                 </list>
             </div>
         </front>
         <body>
-            <div type="chapter" n="1" xml:id="chapter_1">
+            <div type="chap" n="1" xml:id="chap_1">
                 <head>Capítulo I: POR LA MAÑANA</head>
             </div>
-
-            <div type="chapter" n="2" xml:id="chapter_2">
+            <div type="chap" n="2" xml:id="chap_2">
                 <head>Capítulo II: HISTORIA ANTIGUA</head>
-
-                <div type="section" n="1" xml:id="chapter_2_Section_1">
+                <div type="sec" n="1" xml:id="chap_2_sec_1">
                     <head>1</head>
-                    <p>La <term corresp="#gls-sena">señá</term>Mónica Seferino quedó viuda del maestro
-                        Alzate, con una runfla<ref xml:id="a_note1" type="note" target="#note1"
+                    <pb/>
+                    <p>La <term corresp="#gls-sena">señá</term> Mónica Seferino quedó viuda del
+                        maestro Alzate, con una runfla<ref xml:id="n_note1" n="1" target="#note1"
                             >1</ref> de siete muchachos y una casita de mala muerte por único
                         patrimonio.</p>
                     <p>Como no era hembra de lloriqueos ni pataletas, pronto se dejó de lutos, y
@@ -207,46 +292,55 @@
                         sala en tienda, de la noche a la mañana. Fuese<anchor xml:id="a_app4"
                             corresp="#app4"/> al mercado e<anchor xml:id="a_app5" corresp="#app5"
                         />hizo una compra por lo grande, consiguiendo además que le fiaran un tercio
-                        de harina y una damajuana de aguardiente: pues al mes ya tenía la pulpería
-                        completamente montada. Puso a Onofre, el mayor de los tres muchachos, a
-                        asistir la venta, en tanto que ella y Juanita, la mayor de las niñas, se
-                        andaban por la cocina, hinchendo tripa, moliendo cacao, y en aquel brete de
-                        amasijo y horno. Al cabo de cuatro meses había comprado todos los enseres
-                        del oficio y hecho construir dos monumentales chiqueros, en los que
-                        aprisionó cuatro puerquitos. Comprometióse con todo el barrio a pilar un
-                        mundo de maíz, a trueque del afrecho y la aguamasa; se hizo a un par de
-                        pilones, y cátame a los zarrapastrosos chiquitines pegados de las manos de
-                        pilón, suda que suda la gota gorda y haciendo pucheros; pero con el genio y
-                        el rejo de la señá<anchor xml:id="a_app6" corresp="#app6"/> Mónica no había
-                        remilgos.</p>
+                        de harina y una damajuana<ref xml:id="n_note2" n="2" target="#note2">2</ref>
+                        de aguardiente: pues al mes ya tenía la pulpería completamente montada. Puso
+                        a Onofre, el mayor de los tres muchachos, a asistir la venta, en tanto que
+                        ella y Juanita, la mayor de las niñas, se andaban por la cocina, hinchendo
+                        tripa, moliendo cacao, y en aquel brete<ref xml:id="n_note3" n="3"
+                            target="#note3">3</ref> de amasijo y horno. Al cabo de cuatro meses
+                        había comprado todos los enseres del oficio y hecho construir dos
+                        monumentales chiqueros, en los que aprisionó cuatro puerquitos.
+                        Comprometióse con todo el barrio a pilar un mundo de maíz, a trueque del
+                            afrecho<ref xml:id="n_note4" n="4" target="#note4">4</ref> y la
+                        aguamasa; se hizo a un par de pilones, y cátame a los zarrapastrosos<ref
+                            xml:id="n_note5" n="5" target="#note4">5</ref> chiquitines pegados de
+                        las manos de pilón, suda que suda la gota gorda y haciendo pucheros; pero
+                        con el genio y el rejo de la señá<anchor xml:id="a_app6" corresp="#app6"/>
+                        Mónica no había remilgos.</p>
                     <p>El cuento del ventorrillo y los puercos prosperaba que era una bendición, y
                         la empresaria, encariñada con el lucro, quiso dar ensanche al negocio. Sacó
                         la hucha, que ya<anchor xml:id="a_app7" corresp="#app7"/> tenía “a plan de
                         baúl”, y contrató quién le hiciera, en todo el largo del corral, una
-                        media-agua a tejavana, con su canoa y una veintena de argollas, empotradas
-                        en la pared. Hizo clavar en el corredor del patio una hilera de palitos
-                        numerados, a modo de percha, y luégo dio aviso verbal a todo el que llegaba
-                        a su tienda de que cuidaba bestias y guardaba monturas, a real y medio el
-                        día. Divulgada la noticia, principia el efecto.</p>
+                        media-agua a tejavana<ref xml:id="n_note6" n="6" target="#note6">6</ref>,
+                        con su canoa y una veintena de argollas, empotradas en la pared. Hizo clavar
+                        en el corredor del patio una hilera de palitos numerados, a modo de percha,
+                        y luégo dio aviso verbal a todo el que llegaba a su tienda de que cuidaba
+                        bestias y guardaba monturas, a real y medio el día. Divulgada la noticia,
+                        principia el efecto.</p>
                     <p>Agustín, el mediano, que corría con el arreglo de escobas para el horno, con
                         pilada y lavado de maíz, fue promovido a las altas funciones que la nueva
                         industria reclamaba, con obligación de hacer la chicha y los mandados; y
                         Pedrito, el menor, quedó en reemplazo de Agustín.</p>
-                    <p>¡Y qué hábil y metódico resultó éste!, jamás por alquitara; enviárale Dios
+                    <p>¡Y qué hábil y metódico resultó éste!, jamás el freno de Juan se le trocó por
+                        el de Diego; la yerba y caña, repartidas por alquitara; enviárale Dios
                         bestias, que dónde acomodarlas no faltaba. ¿Pues, y la chicha? ¿Y eso de
                         ponerse en un credo en la plaza y volver con aquel costal de compras?… con
                         ser que el pobre no estaba muy católico de pies, que con las andanzas y
-                        trasteos por la pesebrera, lo cogieron las niguas por su cuenta y no lo
-                        dejaron en paz hasta pararle los dedos y tumbarle las dos uñas grandes; y ni
-                        la hiél de vaca, ni el sebito caliente, ni la otoba, fueron parte a que
-                        sanase; pero así, patojito y todo, se despachaba a las volandas.</p>
+                        trasteos por la pesebrera, lo cogieron las niguas<ref xml:id="n_note7" n="7"
+                            target="#note7">7</ref> por su cuenta y no lo dejaron en paz hasta
+                        pararle los dedos y tumbarle las dos uñas grandes; y ni la hiél de vaca, ni
+                        el sebito caliente, ni la otoba<ref xml:id="n_note8" n="8" target="#note8"
+                            >8</ref>, fueron parte a que sanase; pero así, patojito<ref
+                            xml:id="n_note9" n="9" target="#note9">9</ref> y todo, se despachaba a
+                        las volandas.</p>
                     <p>A más de los cinco o seis pesos que, entre los martes y los viernes —días de
                         mercado— dejaba el cuido de caballerías y la guarda de monturas, ocasionó
                         esta industria la venta de almuerzos a las gentes que venían a vender. Por
-                        real y medio daba la seña Mónica ajiaco, tamal y tazón de un brevaje
-                        compuesto de cacao, mucha harina de maíz y su poco de hígado de res. Era
-                        cosa de quedar rendida de servir, soplar y batir; mas no de llevar la paga
-                        al bolsillo.</p>
+                        real y medio daba la seña Mónica ajiaco<ref xml:id="n_note10" n="10"
+                            target="#note10">10</ref>, tamal<ref xml:id="n_note11" n="11"
+                            target="#note11">11</ref> y tazón de un brevaje compuesto de cacao,
+                        mucha harina de maíz y su poco de hígado de res. Era cosa de quedar rendida
+                        de servir, soplar y batir; mas no de llevar la paga al bolsillo.</p>
                     <p>Como a la gente principal del barrio se le antojase probar los guisos de la
                         seña Mónica, quiso esta darles gusto, y los domingos les vendía de lo bueno.
                         ¡Y qué almuerzos! ¡Todavía se recuerda con gastronómico deleite el espesor
@@ -262,11 +356,11 @@
                         a causa de los boquerones de la rodilla y de los anteojos de las posas; al
                         contemplarse tan peripuesto, digo, se dio cuenta de la dignidad, de la
                         grandeza del varón. Con la mugre y los remiendos cayó la venda. ¿Cómo había
-                        vivido él diez y siete años con aquellos andrajos? ¿Pensaría su</p>
-                    <p>madre que eso iba a ser para los domingos solamente? ¡Eso sí que no!,
-                        vestirse siempre muy bien, como él se merecía. ¡Pues no faltaría más que
-                        volver a usar esa ruana bogotana que se arrollaba por las puntas como hoja
-                        de plátano! Eso para el bobo de Onofre.</p>
+                        vivido él diez y siete años con aquellos andrajos? ¿Pensaría su madre que
+                        eso iba a ser para los domingos solamente? ¡Eso sí que no!, vestirse siempre
+                        muy bien, como él se merecía. ¡Pues no faltaría más que volver a usar esa
+                        ruana bogotana que se arrollaba por las puntas como hoja de plátano! Eso
+                        para el bobo de Onofre.</p>
                     <p>Había de ser Agusto el Narciso de los Alzates, y este fue el primer
                         preludio.</p>
                     <p>Desde ese día paró moña, y ¡adiós chicha, mandados y pesebrera! Cada rato
@@ -284,7 +378,8 @@
                         pero daba los primeros pasos hacia el ideal que perseguía.</p>
                     <p>Con tales aprietos empeoró tanto, que la seña Mónica estuvo “a cantos de
                         coger el monte”.</p>
-                        <p><said who="mon">—¡Liaseguro que el patojo este me está quitando la vida!</said></p>
+                    <p><said who="mon">—¡Liaseguro que el patojo este me está quitando la
+                            vida!</said></p>
                     <p>—exclamó una vez con amargor maternal.</p>
                     <p>—Pero ¿qué es lo que querés, enemigo malo?</p>
                     <p>—Lo que quiero es que busté me ponga una tienda a yo solo, —replicó Agusto en
@@ -310,9 +405,11 @@
                         quedar mal a mi compadre… nos quedamos en la calle; porque él no te fía si
                         yo no le apinoro la casa. ¡Conque ya sabés!…</p>
                     <p>—Es que busté creye que yo soy como Onofre… ¡bien puede apinorala!</p>
+                    <pb/>
                 </div>
-                <div type="section" n="2" xml:id="chapter_2_Section_2">
+                <div type="sec" n="2" xml:id="chap_2_sec_2">
                     <head>2</head>
+                    <pb/>
                     <p>A cuatro pasos de la plaza principal, donde hoy se encuentra lujoso almacén
                         de novedades, se sentía, cuando pasaban estos sucesos, un olor a rechín que
                         salía de la tienda allí situada. El transeúnte refinado pasaba por junto a
@@ -330,12 +427,12 @@
                         abajo, los entrepaños bordeados con encaje de papel, que cortó hábil tijera
                         en fantásticos calados, y un estupendo acopio de comestibles; el pan y el
                         bizcocho morenos, donde las moscas hacen de las suyas; una balumba de
-                        arepas, con sus parches requemados; columnas de pandequeso y</p>
-                    <p>roscas; pilastras de panelas de coco, y de cidra, y de guayaba, y de leche,
-                        formadas en batallón. De las tablas divisorias cuelgan gajos de yesqueros,
-                        guarnieles de vaqueta, pares de alpargates de vistosa capellada, mazos de
-                        velas de sebo, jarrillos y teteros de hojalata. Sacos de lienzo henchidos de
-                        almidón, sagú y anís alternan enfilados con jíqueras preñadas de corozos, de
+                        arepas, con sus parches requemados; columnas de pandequeso y roscas;
+                        pilastras de panelas de coco, y de cidra, y de guayaba, y de leche, formadas
+                        en batallón. De las tablas divisorias cuelgan gajos de yesqueros, guarnieles
+                        de vaqueta, pares de alpargates de vistosa capellada, mazos de velas de
+                        sebo, jarrillos y teteros de hojalata. Sacos de lienzo henchidos de almidón,
+                        sagú y anís alternan enfilados con jíqueras preñadas de corozos, de
                         colaciones, de cebada, de linaza. Cucuruchos de especias, hacecillos de
                         tabacos se apilan por los rincones. La cabuya en rama, en lazos, en todas
                         sus manifestaciones, blanquea aquí y allá. Por el suelo campan los costales
@@ -349,18 +446,18 @@
                         malsana; por el tamarindo de acritud medicinal; por el corozo grande,
                         encanto de los muchachos; por la pulpa, ingrata al paladar. Diputados por
                         Hatoviejo son los aguacates, como calabazas; por San Cristóbal los sombreros
-                        de caña, cuáles blancos, cuáles</p>
-                    <p>abigarrados de negro, cuáles de rojo. El mostrador solo tiene un boquete en
-                        claro para el despacho: en el un extremo, otra caja en forma de pupitre, con
-                        tapa de linón, donde se guardan las filigranas de azúcar salidas de la
-                        confitería de las señoras Escobares; en el otro, entre una verjita de
-                        madera, tres grandes frascos de aguardiente y dos de mistela, coloreados,
-                        estos con higo, aquellos con cogollo de hinojo; y una bandeja de paisaje
-                        imposible, donde brillan, de puro limpios, los vasos y las copas de diversas
-                        formas y colores, con su señal de cera negra para la medida. El resto del
-                        mostrador es una falange de botellas, en las que se requinta la chicha, esa
-                        chicha cuyos espumosos dulzores refrescan el caldeado gaznate, y que es el
-                        orgullo de Agusto, pues la llaman “la chicha de los Alzates”.</p>
+                        de caña, cuáles blancos, cuáles abigarrados de negro, cuáles de rojo. El
+                        mostrador solo tiene un boquete en claro para el despacho: en el un extremo,
+                        otra caja en forma de pupitre, con tapa de linón, donde se guardan las
+                        filigranas de azúcar salidas de la confitería de las señoras Escobares; en
+                        el otro, entre una verjita de madera, tres grandes frascos de aguardiente y
+                        dos de mistela, coloreados, estos con higo, aquellos con cogollo de hinojo;
+                        y una bandeja de paisaje imposible, donde brillan, de puro limpios, los
+                        vasos y las copas de diversas formas y colores, con su señal de cera negra
+                        para la medida. El resto del mostrador es una falange de botellas, en las
+                        que se requinta la chicha, esa chicha cuyos espumosos dulzores refrescan el
+                        caldeado gaznate, y que es el orgullo de Agusto, pues la llaman “la chicha
+                        de los Alzates”.</p>
                     <p>Agusto es dueño por mitad de esa tienda que abastece media villa. El pobre
                         está, de las seis de la mañana a las ocho de la noche, dale que más dale,
                         sin tener tiempo ni para reventarse uno de esos barros que le están arando
@@ -425,11 +522,11 @@
                     <p>E1 caso es que los dos hermanos se complementaban para formar, en unidad
                         admirable, el genio mercantil. Y es lo curioso que la muchacha, con serlo
                         tanto, representaba la síntesis, y el varón el análisis. Los negocios
-                        grandes, las compras al por mayor, brotaban</p>
-                    <p>del cerebro femenil, hábilmente calculados; los perfiles y menudencias
-                        corrían por cuenta de Agustín. Ella, friendo y fregando en la trastienda, o
-                        armando la trampa de los ratones, era el alma que dirige; él, tratando y
-                        contratando, el agente activo que cumple las instrucciones recibidas.</p>
+                        grandes, las compras al por mayor, brotaban del cerebro femenil, hábilmente
+                        calculados; los perfiles y menudencias corrían por cuenta de Agustín. Ella,
+                        friendo y fregando en la trastienda, o armando la trampa de los ratones, era
+                        el alma que dirige; él, tratando y contratando, el agente activo que cumple
+                        las instrucciones recibidas.</p>
                     <p>A pesar de las del compadre Juancho y de las inspecciones oculares de la seña
                         Mónica, Agusto siempre pagó el noviciado en el venteril oficio; pero
                         habiendo Filomena, previo permiso materno y el consentimiento del pulpero,
@@ -472,10 +569,11 @@
                         alhaja. Y más de uno se salió con la suya.</p>
                     <p>De ahí en adelante se dio al negocio el giro de retroventa, y se acabaron las
                         demandas e impertinencias.</p>
+                    <pb/>
                 </div>
-
-                <div type="section" n="3" xml:id="chapter_2_Section_3">
+                <div type="sec" n="3" xml:id="chap_2_sec_3">
                     <head>3</head>
+                    <pb/>
                     <p>La señá Mónica también trabajó como una negra. Fueron muchas las barrigas
                         militares que llenó, muchísimas las hambres que les mató, y estupendas las
                         perras que de su casa salieron; pero las mochilas que guardaba en el baúl
@@ -490,47 +588,47 @@
                         calle. El pobre pasó la pena negra; pero alguien se acordó de él, y en un
                         reclutamiento le echaron mano, y de tambor fue a dar al Cauca, con la
                         Tercera División. Sin pormenores ningunos, se supo luego que en la pelea de
-                        Santa Bárbara</p>
-                    <p>le “jumaron la pechera”, y negocio concluido.</p>
+                        Santa Bárbara le “jumaron la pechera”, y negocio concluido.</p>
                     <p>Pedrito, que tanto prometía, rastrojeando una vez orillas del río, en busca
                         de ramos para las escobas, resbaló y se dio un zabullón, del cual atrapó una
                         pulmonía que se lo llevó en una semana.</p>
-                    <p>Para llover sobre mojado, vinieron cosas peores. Juanita era el recreo, el
-                        objeto de las maternas complacencias, y con razón, porque Juana, con su
-                        carácter blando y jovial, templaba la cruda vulgaridad de aquella familia,
-                        de la que apenas tenía el sórdido positivismo. Para Juana lo mismo era el
-                        fregar que el zurcir, lo mismo la piedra de moler que el tambor de bordar.
-                        Diligente, activa, metódica, como una hormiga, donde ponía la mano salía
-                        todo tan bien, y tan pronto, que la seña Mónica solía repetir: “¡Ave María!,
-                        si esta muchacha juera negra, ¡valiente jornal sacaba!”. Y era lo mejor que,
-                        en medio del vertiginoso trabajo de esa casa, Juanita tenía tiempo para
-                        todo. Así pudo aprender á coser, á bordar, y otros primores femeniles, si
-                        bien en letra, leída o escrita, no andaba muy al tanto. No hay para qué
-                        decir que el cosido y arreglo de ropas corría por su cuenta, pero sí que
-                        introdujo en su casa el almidón y el planchado —cosas que a la seña Mónica
-                        siempre le parecieron tan superfluas como dispendiosas—. Y era tal la
-                        hacienda, tal la industria de la chica, que ella misma le dio al dormitorio
-                        un baño de cal, y, a fuerza de estregones por los ladrillos y de jabón por
-                        los armatostes de camas, baúles y tarimas, logró trasformar aquella
-                        indecencia en algo en que se podía echar ojo y narices. El olor acre de
-                        chivo que allí se respiraba desde tiempo inmemorial se tornó en ese del aseo
-                        que parece llevar al alma el bienestar de los hogares honrados.
-                        Desaparecieron aquellos grasientos sacos de guiñapos y paja en polvo, que, a
-                        guisa de cabeceras, campaban en los jergones: volviéronse estos camas
-                        limpias y urbanas.</p>
+                    <p>Para llover sobre mojado, vinieron cosas peores.</p>
+                    <p>Juanita era el recreo, el objeto de las maternas complacencias, y con razón,
+                        porque Juana, con su carácter blando y jovial, templaba la cruda vulgaridad
+                        de aquella familia, de la que apenas tenía el sórdido positivismo. Para
+                        Juana lo mismo era el fregar que el zurcir, lo mismo la piedra de moler que
+                        el tambor de bordar. Diligente, activa, metódica, como una hormiga, donde
+                        ponía la mano salía todo tan bien, y tan pronto, que la seña Mónica solía
+                        repetir: “¡Ave María!, si esta muchacha juera negra, ¡valiente jornal
+                        sacaba!”. Y era lo mejor que, en medio del vertiginoso trabajo de esa casa,
+                        Juanita tenía tiempo para todo. Así pudo aprender á coser, á bordar, y otros
+                        primores femeniles, si bien en letra, leída o escrita, no andaba muy al
+                        tanto. No hay para qué decir que el cosido y arreglo de ropas corría por su
+                        cuenta, pero sí que introdujo en su casa el almidón y el planchado —cosas
+                        que a la seña Mónica siempre le parecieron tan superfluas como
+                        dispendiosas—. Y era tal la hacienda, tal la industria de la chica, que ella
+                        misma le dio al dormitorio un baño de cal, y, a fuerza de estregones por los
+                        ladrillos y de jabón por los armatostes de camas, baúles y tarimas, logró
+                        trasformar aquella indecencia en algo en que se podía echar ojo y narices.
+                        El olor acre de chivo que allí se respiraba desde tiempo inmemorial se tornó
+                        en ese del aseo que parece llevar al alma el bienestar de los hogares
+                        honrados. Desaparecieron aquellos grasientos sacos de guiñapos y paja en
+                        polvo, que, a guisa de cabeceras, campaban en los jergones: volviéronse
+                        estos camas limpias y urbanas.</p>
                     <p>No era esto solo: Juana era una real moza. “Mi palomita”, la llamaba, de
                         niña, su difunto padre; de mujer le sentaba a maravilla tan tierno
                         dictado.</p>
-                    <p>Pero lo bueno, cuando no se muere, se va… Entre los muchos militares
-                        comensales de la seña Mónica figuraba en primera el teniente Pinto,
-                        arrogante mozo, de grandes ojos y marcial bigote, muy farolero, y a quien le
-                        venían muy bien la chaqueta roja y el kepis. El tal, apenas vio la muchacha,
-                        principió a hacerle ojitos y a pelarle el diente. No gastó ella muchos
-                        desdenes, que siempre fueron las hembras inclinadas a hombres de galones y
-                        chafarote; con lo cual se trabó entre los dos un enredo amoroso que ni para
-                        los berrinches de la señá Mónica. De pronto hubo marcha de tropas, y Pinto
-                        de ausentarse; mas no sin que se hicieran juramentos los dos enamorados,
-                        prometiendo él volver cuanto antes, si una bala traidora no lo mataba.</p>
+                    <p>Pero lo bueno, cuando no se muere, se va…</p>
+                    <p>Entre los muchos militares comensales de la seña Mónica figuraba en primera
+                        el teniente Pinto, arrogante mozo, de grandes ojos y marcial bigote, muy
+                        farolero, y a quien le venían muy bien la chaqueta roja y el kepis. El tal,
+                        apenas vio la muchacha, principió a hacerle ojitos y a pelarle el diente. No
+                        gastó ella muchos desdenes, que siempre fueron las hembras inclinadas a
+                        hombres de galones y chafarote; con lo cual se trabó entre los dos un enredo
+                        amoroso que ni para los berrinches de la señá Mónica. De pronto hubo marcha
+                        de tropas, y Pinto de ausentarse; mas no sin que se hicieran juramentos los
+                        dos enamorados, prometiendo él volver cuanto antes, si una bala traidora no
+                        lo mataba.</p>
                     <p>Mónica, creyendo que con la marcha acabaría todo, —pues no era ella para
                         fiarse en militarotes— entonó un Te Deum; pero al ver que Juanita no comía,
                         que las mejillas se destiñeron, que lloraba a escondidas, que iba
@@ -585,10 +683,11 @@
                     <p>Pagó, al efecto, una criada que reemplazase a Juana en la cocina, y el
                         negocio siguió como nunca.</p>
                     <p>¡Bien por la hembra de gran corazón!</p>
+                    <pb/>
                 </div>
-
-                <div type="section" n="4" xml:id="chapter_2_Section_4">
+                <div type="sec" n="4" xml:id="chap_2_sec_4">
                     <head>4</head>
+                    <pb/>
                     <p>En cuanto a Agustín y Filomena, la situación no podía ser más halagüeña.</p>
                     <p>Como cesara la guerra, cesó el bloqueo comercial, y la tienda de efectos del
                         país se complicó, libre el comercio, con vinos, rancho, quincallería, telas
@@ -605,11 +704,11 @@
                     <p>Diez años trascurrieron, y la familia Alzate veía abrirse, día por día,
                         anchurosos horizontes de dichas pecuniarias. Para los prenderos todo fue
                         azul y arrebol; para Mónica hubo ligeras nubecillas. Eran estas el pensar
-                        que a algún ladrón de los muchos que entonces</p>
-                    <p>pululaban, se le ocurriera forzar la mal segura casa y alzar con el baúl
-                        misterioso; eran el considerar lo mandón que Agusto se iba poniendo con ella
-                        y con las dos muchachas. “¡Ya se ve —decía en son de disculparlo—: como es
-                        tan buen mozo y como tiene tanta!”.</p>
+                        que a algún ladrón de los muchos que entonces pululaban, se le ocurriera
+                        forzar la mal segura casa y alzar con el baúl misterioso; eran el considerar
+                        lo mandón que Agusto se iba poniendo con ella y con las dos muchachas. “¡Ya
+                        se ve —decía en son de disculparlo—: como es tan buen mozo y como tiene
+                        tanta!”.</p>
                     <p>Con gran sigilo hizo en cierta vez la seña Mónica minucioso arqueo de fondos,
                         y quedó tan satisfecha, que se hizo este cargo: “¡Qué molienda! Harto he
                         sudado. Ya voy a descansar. Mi compadre y Filomena me ayudarán a idear qué
@@ -679,10 +778,11 @@
                         envoltorio.</p>
                     <p>Ocho días después se vendieron en la tienda de los hermanos Alzate el pañolón
                         y los zapatos de la muerta.</p>
+                    <pb/>
                 </div>
-
-                <div type="section" n="5" xml:id="chapter_2_Section_5">
+                <div type="sec" n="5" xml:id="chap_2_sec_5">
                     <head>5</head>
+                    <pb/>
                     <p>—Amigo: ¡ya han pasao por este trago tan amargo… pero como la vida es vida,
                         mientras se llora hay que brujuliar! ¿Por qué no pega un registrico en los
                         corotos de mi comadre? Yo estoy en que ella tenía sus rialitos…</p>
@@ -773,8 +873,10 @@
                         sufriendo, cuándo los enojos de Agusto, cuándo las displicencias de
                         Filomena, sin oír más palabras cariñosas que las de Juancho, que nunca dejó
                         de visitarlas ni de llevarles, de cuándo en cuándo, algún regalillo.</p>
+                    <pb/>
                 </div>
             </div>
+
         </body>
         <back>
             <div type="glossary">
@@ -786,13 +888,260 @@
                     </item>
                 </list>
             </div>
-            <div type="notes">
+            <div type="notes" place="foot">
                 <head>Notas explicativas</head>
-                <list>
-                    <item xml:id="note1" corresp="#a_note1">
-                        <note>Serie de varias cosas de una misma especie (DLE, 2025)</note>
-                    </item>
-                </list>
+                <note xml:id="note1" n="1" target="#n_note1">Serie de varias cosas de una misma
+                    especie (DLE, 2025).</note>
+                <note xml:id="note2" n="2" target="#n_note2">Se refiere a un botellón de gran tamaño
+                    y ancho, utilizado comúnmente para almacenar líquidos, especialmente vinos o
+                    aceites (ALEGSA, 2019).</note>
+                <note xml:id="note3" n="3" target="#n_note3">m. Aprieto sin efugio o evasiva (DLE,
+                    2018).</note>
+                <note xml:id="note4" n="4" target="#n_note4">m. Salvado. // m. Cáscara del grano de
+                    los cereales desmenuzada por la molienda (DLE, 2018).</note>
+                <note xml:id="note5" n="5" target="#n_note5">coloq. Desaseado, andrajoso, desaliñado
+                    y roto(DLE, 2018).</note>
+                <note xml:id="note6" n="6" target="#n_note6">Tejado sin techo que lo cubra
+                    interiormente (DDEA, 1999).</note>
+                <note xml:id="note7" n="7" target="#n_note7">f. Insecto afaníptero originario de
+                    América y muy extendido también en África, parecido a la pulga, pero mucho más
+                    pequeño y de trompa más larga, cuyas hembras fecundadas penetran bajo la piel de
+                    los animales y del ser humano, principalmente en los pies, donde depositan sus
+                    huevos, lo que ocasiona picazón y úlceras graves (DLE, 2018).</note>
+                <note xml:id="note8" n="8" target="#n_note8">f. Árbol de la América tropical,
+                    semejante al mirística, y cuyo fruto es muy parecido a la nuez moscada (DLE,
+                    2018).</note>
+                <note xml:id="note9" n="9" target="#n_note9">f. adj. Que tiene las piernas o pies
+                    torcidos o desproporcionados, e imita al pato en andar meneando el cuerpo de un
+                    lado a otro (DLE, 2018).</note>
+                <note xml:id="note10" n="10" target="#n_note10">Plato típico del Altiplano
+                    cundiboyacense. Es una sopa que lleva diversas clases de papa, mazorca,
+                    alcaparras y pollo (Ospina, 2006, p. 29). Se puede consultar el detalle de los
+                    ingredientes y la preparación en La buena mesa (N. de E.).</note>
+                <note xml:id="note11" n="11" target="#n_note11">m. Am. Especie de empanada de masa
+                    de harina de maíz, envuelta en hojas de plátano o de la mazorca del maíz, y
+                    cocida al vapor o en el horno. Las hay de diversas clases, según el manjar que
+                    se pone en su interior y los ingredientes que se le agregan (DLE, 2018).</note>
+                <note xml:id="note12" n="12" target="#n_note12">expresión coloquial que remite a los
+                    intestinos humanos (DLE, 2018).</note>
+                <note xml:id="note13" n="13" target="#n_note13">coloquialismo que indica la acción
+                    propia de hombre de poco juicio o libertino (DLE, 2018). </note>
+                <note xml:id="note14" n="14" target="#n_note14">f. desus. pala (‖ parte superior del
+                    calzado) (DLE, 2018).</note>
+                <note xml:id="note15" n="15" target="#n_note15">m. Hombre que cuida demasiado de su
+                    arreglo personal, o se precia de atractivo, como enamorado de sí mismo (DLE,
+                    2018). Narciso era un joven con una apariencia bella, hermosa y llamativa. Unos
+                    dicen que era hijo del dios fluvial Cefiso y la «azul Liríope». Se dice que
+                    todos los hombres y las mujeres quedaban enamorados de Narciso, pero este los
+                    rechazaba. Para castigar a Narciso por su engreimiento, Némesis hizo que se
+                    enamorara de su propia imagen reflejada en un estanque. En una contemplación
+                    absorta, incapaz de separarse de su imagen, acabó arrojándose a las aguas (N.
+                    del E.).</note>
+                <note xml:id="note16" n="16" target="#n_note16">f. Calidad, especie, clase (DLE,
+                    2018).</note>
+                <note xml:id="note17" n="17" target="#n_note17">m. Calzado que llegaba hasta más
+                    arriba del tobillo, abierto por delante y que se ajustaba por medio de correas o
+                    cordones (DLE, 2018).</note>
+                <note xml:id="note18" n="18" target="#n_note18">Desmontar o bajar a alguien de una
+                    caballería, de un carruaje o de un automóvil (DLE, 2018).</note>
+                <note xml:id="note19" n="19" target="#n_note19">f. Corte que hacen los sastres en
+                    sesgo para que siente bien una prenda (DLE, 2018).</note>
+                <note xml:id="note20" n="20" target="#n_note20"> coger para el monte: huir (N. del
+                    E.).</note>
+                <note xml:id="note21" n="21" target="#n_note21">adj. Que, por sobrada suspicacia,
+                    desconfianza y aprensión, se deja preocupar de alguna idea, dándole excesiva
+                    importancia y deduciendo consecuencias imaginarias (DLE, 2018).</note>
+                <note xml:id="note22" n="22" target="#n_note22">adj. Dicho de una persona con
+                    respecto a otra: que habita en un lugar del globo terrestre diametralmente
+                    opuesto al lugar en el que habita la otra (DLE, 2018).</note>
+                <note xml:id="note23" n="23" target="#n_note23">Conversación de poca importancia
+                    (DLE, 2018).</note>
+                <note xml:id="note24" n="24" target="#n_note24">Pignorar (Robledo, 1996); pignorar:
+                    tr. dar o dejar algo en prenda (DLE, 2018).</note>
+                <note xml:id="note25" n="25" target="#n_note25">loc. adv. intrépidamente y sin
+                    reparo (DLE, 2018).</note>
+                <note xml:id="note26" n="26" target="#n_note26">Cordón de lana de varios colores
+                    para ceñirse el traje; o para que los campesinos colgaran el guarniel (DAN,
+                    2009).</note>
+                <note xml:id="note27" n="27" target="#n_note27">m. bolsa de cuero pendiente del
+                    cinto y con varias divisiones (DLE, 2018).</note>
+                <note xml:id="note28" n="28" target="#n_note28">f. faja de cáñamo, lana, cerda,
+                    cuero o esparto, con que se asegura la silla o albarda sobre la cabalgadura,
+                    ciñéndola ya por detrás de los codillos o ya por debajo de la barriga y
+                    apretándola con una o más hebillas (DLE, 2018).</note>
+                <note xml:id="note29" n="29" target="#n_note29">f. bulto que hacen muchas cosas
+                    juntas (DLE, 2018).</note>
+                <note xml:id="note30" n="30" target="#n_note30">f. fruto del cidro, semejante al
+                    limón, y comúnmente mayor, de sabor agrio, cuya corteza gorda y carnosa está
+                    sembrada de vejiguillas muy espesas, llenas de aceite volátil, que se usa en
+                    medicina (DLE, 2018).</note>
+                <note xml:id="note31" n="31" target="#n_note31">Fruto del guayabo, que es de forma
+                    aovada, del tamaño de una pera mediana, de varios colores, y más o menos dulce,
+                    con la carne llena de unos granillos o semillas pequeñas (DLE, 2018).</note>
+                <note xml:id="note32" n="32" target="#n_note32">Complemento del carriel antioqueño,
+                    el yesquero lo integraba una mecha de algodón, un pedazo de pedernal y un trozo
+                    de acero, con estos se sacaba una chispa que inflamaba la mecha (DAN,
+                    2009).</note>
+                <note xml:id="note33" n="33" target="#n_note33">m. fécula amilácea que se obtiene de
+                    la médula del sagú (‖ planta cicadácea). Es granulosa, ligeramente rosada, y al
+                    cocer aumenta considerablemente de volumen. Se usa como alimento de muy fácil
+                    digestión (DLE, 2018).</note>
+                <note xml:id="note34" n="34" target="#n_note34">bolsa de cabuya (DFA, 1995).</note>
+                <note xml:id="note35" n="35" target="#n_note35">ant., col. y ven. fruto del corozo.
+                    ant., col., el salv. y ven. nombre de varias palmeras, de tronco de 6 a 9 m de
+                    altura, revestido de fuertes espinas, hojas pinnadas con hojuelas lineares,
+                    angostas y puntiagudas y fruto en drupa globular de 35 a 45 cm de diámetro (DLE,
+                    2018).</note>
+                <note xml:id="note36" n="36" target="#n_note36">f. pl. co. conjunto de galletas
+                    dulces de diferentes tipos (DA, 2010). Especie de confites (LC, 1983).</note>
+                <note xml:id="note37" n="37" target="#n_note37">m. papel, cartón, barquillo, etc.,
+                    arrollado en forma cónica, empleado para contener dulces, confites, helados,
+                    cosas menudas (DLE, 2018).</note>
+                <note xml:id="note38" n="38" target="#n_note38">f. ant., col., ec., hond., méx.,
+                    nic., pan., perú y ven. cuerda, y especialmente la de pita (DLE, 2018).</note>
+                <note xml:id="note39" n="39" target="#n_note39">medida de capacidad, generalmente
+                    para áridos, muy variable según las épocas y las regiones, entre los 1,75 l de
+                    Navarra y los 5,68 l de Canarias (DLE, 2018).</note>
+                <note xml:id="note40" n="40" target="#n_note40">f. co:c,o. medida de capacidad
+                    especialmente para granos (DLE, 2018).</note>
+                <note xml:id="note41" n="41" target="#n_note41">m. mx. medida de capacidad para
+                    granos o semillas que equivale a 2 litros (DLE, 2018).</note>
+                <note xml:id="note42" n="42" target="#n_note42">f. fuera de sus acepciones
+                    ordinarias vale regla de madera usada para pasar las medidas españolas llamadas
+                    almud, pucha, etc. (AHAC, 1986).</note>
+                <note xml:id="note43" n="43" target="#n_note43">m. tela de hilo muy ligera, clara y
+                    fuertemente engomada (DLE, 2018).</note>
+                <note xml:id="note44" n="44" target="#n_note44">f. bebida que se hace con
+                    aguardiente, agua, azúcar y otros ingredientes, como canela, hierbas aromáticas,
+                    etc. (DLE, 2018).</note>
+                <note xml:id="note45" n="45" target="#n_note45">Planta de la familia de las
+                    borragináceas, con tallo leñoso y de ramas abundantes de 50 a 80 cm de altura,
+                    velludas y pobladas de hojas persistentes, alternas, aovadas, rugosas y
+                    sostenidas en pecíolos muy cortos, flores pequeñas azuladas, en espigas y
+                    vueltas todas al mismo lado, y fruto compuesto de cuatro aquenios contenidos en
+                    el fondo del cáliz. Es originaria del Perú y se cultiva mucho en los jardines
+                    por el olor de vainilla de las flores (DLE, 2018).</note>
+                <note xml:id="note46" n="46" target="#n_note46">m. pl. coloq. cosas de muy poca
+                    importancia o escrúpulos vanos y ridículos (DLE, 2018).</note>
+                <note xml:id="note47" n="47" target="#n_note47">m.d. de perol (NTL, 1869). perol: m.
+                    vasija de metal, de forma semejante a media esfera, que sirve para cocer
+                    diferentes cosas (DLE, 2018).</note>
+                <note xml:id="note48" n="48" target="#n_note48">m. acción y efecto de empalagar.
+                    Alude a algo que se encuentra sucio o pegajoso (N. del E.).</note>
+                <note xml:id="note49" n="49" target="#n_note49">Sebo de la res (DAN, 2009). Alude a
+                    la grasa en que se fríen las empanadas (N. del E.).</note>
+                <note xml:id="note50" n="50" target="#n_note50">Santa Francisca (1384-1440) fue una
+                    religiosa que vivió cuarenta años en matrimonio, hasta la muerte de su esposo
+                    cuando se retiró a vivir entre las oblatas. Conocida por ser una mujer piadosa,
+                    humilde y defensora de los pobres. En algunos de los testimonios de su proceso
+                    de canonización su confesor, el padre Juan Mattiotti, afirma que la santa tenía
+                    visiones respecto a los demonios. En uno de los relatos se narra cómo ella fue
+                    llevada en espíritu al infierno (N. del E.).</note>
+                <note xml:id="note51" n="51" target="#n_note51">m. mús. movimiento moderadamente
+                    vivo (DLE, 2018). </note>
+                <note xml:id="note52" n="52" target="#n_note52">f. cuidado, esmero (DLE, 2018). </note>
+                <note xml:id="note53" n="53" target="#n_note53">m. seriedad, formalidad de una
+                    persona (DLE, 2018).</note>
+                <note xml:id="note54" n="54" target="#n_note54"> inguandia: enguandia. cosa fútil,
+                    niñería o quimera, casi equivale a embeleco; cuando alguien quiere realizar algo
+                    imposible (DAN, 2009). </note>
+                <note xml:id="note55" n="55" target="#n_note55">f. trampa (ardid) (DLE,
+                    2018).</note>
+                <note xml:id="note56" n="56" target="#n_note56">tr. coloq. encaminar, dirigir,
+                    acomodar, facilitar (DLE, 2018).</note>
+                <note xml:id="note57" n="57" target="#n_note57">m. elogio enfático de algo o de
+                    alguien (DLE, 2018).</note>
+                <note xml:id="note58" n="58" target="#n_note58">adj. mx. referido a persona,
+                    obsesivamente enamorada (DA, 2010).</note>
+                <note xml:id="note59" n="59" target="#n_note59">adj. infausto, infeliz, desgraciado,
+                    de mal agüero (DLE, 2018).</note>
+                <note xml:id="note60" n="60" target="#n_note60">f. ho, es, co. chinche, insecto
+                    hemíptero de color rojo oscuro, que vive como parásito en la ropa, las camas y
+                    los muebles y chupa la sangre humana taladrando la piel con picaduras irritantes
+                    (DA, 2010).</note>
+                <note xml:id="note61" n="61" target="#n_note61">adj. en la Edad Media italiana,
+                    partidario de los papas y enfrentado a los gibelinos, defensores de los
+                    emperadores de Alemania (DLE, 2018).</note>
+                <note xml:id="note62" n="62" target="#n_note62">adj. en la Edad Media italiana,
+                    partidario de los emperadores de Alemania y enfrentado a los güelfos, defensores
+                    de los papas (DLE, 2018).</note>
+                <note xml:id="note63" n="63" target="#n_note63">adj. mx, gu, ho, es, ni. referido a
+                    persona, que está sin dinero o tiene muy poco (DLE, 2018).</note>
+                <note xml:id="note64" n="64" target="#n_note64">m. moneda de Colombia y México, que
+                    equivalía a 31 céntimos de peseta (DLE, 2018).</note>
+                <note xml:id="note65" n="65" target="#n_note65">m. antigua moneda de plata de una
+                    onza (DLE, 2018).</note>
+                <note xml:id="note66" n="66" target="#n_note66">loc. lat.; literalmente “sin la cual
+                    no” (DLE, 2018).</note>
+                <note xml:id="note67" n="67" target="#n_note67">f. coloq. embriaguez, borrachera
+                    (DLE, 2018).</note>
+                <note xml:id="note68" n="68" target="#n_note68">La Tercera División del Ejército
+                    Nacional de Colombia es una unidad operativa mayor compuesta por tres brigadas,
+                    una fuerza de tarea y el Comando Específico del Cauca (N. del E.).</note>
+                <note xml:id="note69" n="69" target="#n_note69"> La Batalla de Subachoque o de Campo
+                    Amalia, llevada a cabo en el Valle de Santa Bárbara ubicado en el municipio de
+                    Subachoque – Cundinamarca, el 25 de abril de 1961, desarrollada entre las tropas
+                    de la Confederación Granadina al mando del general Joaquín París y las fuerzas
+                    insurgentes federales leales a Tomás Cipriano de Mosquera (Arenas, 2018, p.
+                    2).</note>
+                <note xml:id="note70" n="70" target="#n_note70">jumarle la pechera: juvarle. matar a
+                    bala (DAN, 2009).</note>
+                <note xml:id="note71" n="71" target="#n_note71">loc. verb. venir trabajos sobre
+                    trabajos (DLE, 2018).</note>
+                <note xml:id="note72" n="72" target="#n_note72">m. andrajo (‖ pedazo o jirón de
+                    tela) (DLE, 2018).</note>
+                <note xml:id="note73" n="73" target="#n_note73">m. colchón de paja, esparto o hierba
+                    y sin bastas (DLE, 2018).</note>
+                <note xml:id="note74" n="74" target="#n_note74">sable, espada, machete (N. de
+                    E.).</note>
+                <note xml:id="note75" n="75" target="#n_note75">cántico religioso de acción de
+                    gracias que comienza con las palabras latinas Te Deum y ceremonia o liturgia de
+                    acción de gracias (DPD, 2005).</note>
+                <note xml:id="note76" n="76" target="#n_note76">f. ve. aguardiente suave y de poco
+                    sabor obtenido de la última destilación de la caña (DA, 2010). </note>
+                <note xml:id="note77" n="77" target="#n_note77">m. indicio, noticia (DLE, 2018). </note>
+                <note xml:id="note78" n="78" target="#n_note78">m. co:c. lugar donde se destilan
+                    bebidas alcohólicas clandestinamente (DA, 2010).</note>
+                <note xml:id="note79" n="79" target="#n_note79">m-f. mx, gu, ho, ni, rd, co:c, bo,
+                    ur; ch, p.u. persona que presta dinero con usura o interés excesivo (DA,
+                    2010).</note>
+                <note xml:id="note80" n="80" target="#n_note80">tr. destilar (DLE, 2018).</note>
+                <note xml:id="note81" n="81" target="#n_note81"> quincallería: establecimiento donde
+                    se fabrican y venden artículos de quincalla, que son objetos de metal,
+                    generalmente pequeños y de uso cotidiano, como herramientas y utensilios
+                    domésticos (ALEGSA, 2019). </note>
+                <note xml:id="note82" n="82" target="#n_note82">coloq. cosa que causa molestia (DLE,
+                    2018).</note>
+                <note xml:id="note83" n="83" target="#n_note83">La Virgen de los Dolores es una
+                    advocación de la Virgen María. Su fiesta es celebrada el 15 de septiembre y se
+                    conmemora los dolores que experimentó por su unión con Jesús, especialmente
+                    durante la Pasión y muerte de su Hijo (N. del E.).</note>
+                <note xml:id="note84" n="84" target="#n_note84">m. conjunto de muebles, enseres y
+                    ropas de uso común en la casa (DLE, 2018).</note>
+                <note xml:id="note85" n="85" target="#n_note85">Se emplea cuando surge un obstáculo
+                    o un imprevisto que trastoca o destruye nuestros planes y expectativas. Refleja
+                    un sentido providencialista de la vida humana (RMCVC, 2020).</note>
+                <note xml:id="note86" n="86" target="#n_note86">Proviene del latín y se traduce como
+                    "bajo condición expresa" (ALEGSA, 2019).</note>
+                <note xml:id="note87" n="87" target="#n_note87">Expresión coloquial que significa
+                    desmayo o lipotimia (DLE, 2018).</note>
+                <note xml:id="note88" n="88" target="#n_note88">m. y f. coloq. criado doméstico
+                    (DLE, 2018).</note>
+                <note xml:id="note89" n="89" target="#n_note89">tr. coloq. p. us. descubrir por
+                    indicios y conjeturas algún suceso o negocio que se está tratando (DLE,
+                    2018).</note>
+                <note xml:id="note90" n="90" target="#n_note90">m. moneda de plata que se usaba en
+                    algunas partes de América (DLE, 2018).</note>
+                <note xml:id="note91" n="91" target="#n_note91">loc. adv. pe, bo, py, ar, ur. con
+                    gran dificultad, a duras penas (DA, 2010).</note>
+                <note xml:id="note92" n="92" target="#n_note92">Si la situación es irremediable,
+                    nada se puede cambiar y sólo queda tener fortaleza y valor para afrontarla. Se
+                    aplica cuando hemos cometido un error o nos sobreviene algo no deseado pero, en
+                    esos casos, de nada sirve lamentarse, sino reaccionar (RMCVC, 2020).</note>
+                <note xml:id="note93" n="93" target="#n_note93">adj. persona diligente en buscarse
+                    lícitamente medios de vivir (AHAC, 1986).</note>
+                <note xml:id="note94" n="94" target="#n_note94">tr. bandearse, ingeniárselas,
+                    industriarse (AHAC, 1986). </note>
             </div>
             <div type="apparatus">
                 <head>Aparato crítico</head>
