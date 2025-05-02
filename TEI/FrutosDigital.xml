@@ -18,7 +18,7 @@
                 <pubPlace>Medellín, Colombia</pubPlace>
                 <date when="2025">2025</date>
                 <availability>
-                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY0
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY
                         4.0</licence>
                 </availability>
             </publicationStmt>
@@ -28,7 +28,7 @@
             <sourceDesc>
                 <listWit>
                     <witness xml:id="A">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Bogotá-Colombia</pubPlace>
@@ -37,7 +37,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="B">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Madrid-España</pubPlace>
@@ -46,7 +46,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="C">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Medellín-Colombia</pubPlace>
@@ -55,7 +55,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="D">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Bogotá-Colombia</pubPlace>
@@ -64,7 +64,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="E">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Barcelona-España</pubPlace>
@@ -73,7 +73,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="F">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Bogotá-Colombia</pubPlace>
@@ -82,7 +82,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="G">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Medellín-Colombia</pubPlace>
@@ -91,7 +91,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="H">
-                        <bibl>
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Bogotá-Colombia</pubPlace>
@@ -100,7 +100,7 @@
                         </bibl>
                     </witness>
                     <witness xml:id="I">
-                        <bibl type="witness">
+                        <bibl type="edition">
                             <title>Frutos de mi tierra</title>
                             <author>Tomás Carrasquilla</author>
                             <pubPlace>Bogotá-Colombia</pubPlace>
@@ -1142,6 +1142,255 @@
                     lícitamente medios de vivir (AHAC, 1986).</note>
                 <note xml:id="note94" n="94" target="#n_note94">tr. bandearse, ingeniárselas,
                     industriarse (AHAC, 1986). </note>
+            </div>
+            <div type="bibliography">
+                <head>Bibliografía de las notas explicativas</head>
+                <listBibl>
+                    <bibl>
+                        <title>Francisca Romana, Santa</title>
+                        <author>Amo, A.</author>
+                        <date when="2025">2025</date>
+                        <ptr target="https://es.catholic.net/op/articulos/31813/francisca-romana-santa.html"/>
+                    </bibl>
+                    <bibl>
+                        <title>La arqueología de la guerra y campos de batalla</title>
+                        <author>Arenas Betancur, L.</author>
+                        <date when="2018">2018</date>
+                        <ptr target="https://revistascedoc.com/index.php/ba/article/download/406/342/642"/>
+                    </bibl>
+                    <bibl>
+                        <title>Gran enciclopedia de Colombia: Temática 9, Biografías, Abad – Lemaitre</title>
+                        <author>Castro Carvajal, B.</author>
+                        <author>García‑Peña Jaramillo, D.</author>
+                        <date when="1994">1994</date>
+                    </bibl>
+                    <bibl>
+                        <title>Refranero Multilingüe</title>
+                        <author>Centro Cervantes Virtual</author>
+                        <date when="2020">2020</date>
+                        <ptr target="https://cvc.cervantes.es/lengua/refranero/"/>
+                    </bibl>
+                    <bibl>
+                        <title>Don Quijote de la Mancha (edición conmemorativa IV centenario Cervantes)</title>
+                        <author>Cervantes, M.</author>
+                        <date when="2015">2015</date>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de damajuana</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/damajuana.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de pestorejo</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/pestorejo.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de quincallería</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/quincalleria.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de sub conditione</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/sub_conditione.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de tilindajos</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/tilindajo.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de tongada</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/tongada.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Definición de vera efigies</title>
+                        <author>Definiciones-de.com.</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.definiciones-de.com/Definicion/de/vera_efigies.php"/>
+                    </bibl>
+                    <bibl>
+                        <title>Llueva, truene o relampaguee</title>
+                        <author>DELE Ahora.</author>
+                        <date when="2021">2021</date>
+                        <ptr target="https://deleahora.com/diccionario/llueva%2C-truene-o-relampaguee"/>
+                    </bibl>
+                    <bibl>
+                        <title>Lexicón de Colombianismos (Vol. I-II)</title>
+                        <author>Di Filippo, M.</author>
+                        <date when="1983">1983</date>
+                    </bibl>
+                    <bibl>
+                        <title>Semíramis</title>
+                        <author>EcuRed contributors</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://www.ecured.cu/Sem%C3%ADramis_(reina)"/>
+                    </bibl>
+                    <bibl>
+                        <title>Aproximación antropológica a Castilla y León</title>
+                        <author>Díaz, L. (dir.).</author>
+                        <date when="1988">1988</date>
+                    </bibl>
+                    <bibl>
+                        <title>Nuestra Señora de los Dolores</title>
+                        <author>Fernández, T.</author>
+                        <date when="2025">2025</date>
+                        <ptr target="https://es.catholic.net/op/articulos/31915/nuestra-seora-de-los-dolores.html"/>
+                    </bibl>
+                    <bibl>
+                        <title>MONTALVO, MAESTRO DE PENSAMIENTO, SENTIMIENTO Y ACCIÓN</title>
+                        <author>Ibarra Parra, A.</author>
+                        <date when="2023">2023</date>
+                        <ptr target="https://academiahistoria.org.ec/index.php/boletinesANHE/article/view/373"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario Geográfico</title>
+                        <author>Instituto Geográfico Agustín Codazzi</author>
+                        <date when="2022">2022</date>
+                        <ptr target="https://diccionario.igac.gov.co/"/>
+                    </bibl>
+                    <bibl>
+                        <title>La Emulsión de Scott en la cultura hispanoamericana</title>
+                        <author>Jácome, A.</author>
+                        <date when="2005">2005</date>
+                        <ptr target="https://revistamedicina.net/index.php/Medicina/article/download/69-7/515"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario de Antioqueñismos</title>
+                        <author>Jaramillo, J.</author>
+                        <date when="2009">2009</date>
+                    </bibl>
+                    <bibl>
+                        <title>Barcarola de Los Sobrinos del Capitán Grant</title>
+                        <author>Lalus Fecit.</author>
+                        <date when="2014">2014</date>
+                        <ptr target="https://lalusfecit-partituras.blogspot.com/2014/02/barcarola-de-los-sobrinos-del-capitan.html"/>
+                    </bibl>
+                    <bibl>
+                        <title>La relación epistolar de Dolores Sucre y Zoila Ugarte de Landívar</title>
+                        <author>Landívar Silvers, M.</author>
+                        <date when="2021">2021</date>
+                        <ptr target="https://doi.org/10.51306/ioasarance.047.07"/>
+                    </bibl>
+                    <bibl>
+                        <title>Catálogo de la biodiversidad de Colombia</title>
+                        <author>Ministerio del Medio Ambiente</author>
+                        <date when="2017">2017</date>
+                        <ptr target="http://www.sibcolombia.net/web/sib/home"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario comentado del español actual en Colombia</title>
+                        <author>Montoya, R.</author>
+                        <date when="2006">2006</date>
+                    </bibl>
+                    <bibl>
+                        <title>De Federalismo a Regeneración. El paso de Estados Soberanos a Departamentos Político-Administrativos. Boyacá, 1886-1903</title>
+                        <author>Monroy Hernandez, C. L.</author>
+                        <date when="2012">2012</date>
+                    </bibl>
+                    <bibl>
+                        <title>Historia de Medellín con cuentagotas (1ª ed.)</title>
+                        <author>Múnera López, L. F.</author>
+                        <date when="2023">2023</date>
+                    </bibl>
+                    <bibl>
+                        <title>La buena mesa: sencillo y práctico</title>
+                        <author>Ospina, S.</author>
+                        <date when="1982">1982</date>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario de autoridades (1726-1739) (Vol. II)</title>
+                        <author>Real Academia Española</author>
+                        <date when="1729">1729</date>
+                        <ptr target="http://web.frl.es/DA.html"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario histórico de la lengua española (1933-1936) (Vol. II)</title>
+                        <author>Real Academia Española</author>
+                        <date when="1936">1936</date>
+                        <ptr target="http://web.frl.es/DH1936.html"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario de la lengua española (versión electrónica 23.2.)</title>
+                        <author>Real Academia Española</author>
+                        <date when="2018">2018</date>
+                        <ptr target="https://dle.rae.es/"/>
+                    </bibl>
+                    <bibl>
+                        <title>Nuevo tesoro lexicográfico de la lengua española</title>
+                        <author>Real Academia Española</author>
+                        <date when="2019">2019</date>
+                        <ptr target="http://ntlle.rae.es/ntlle/SrvltGUILoginNtlle"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario panhispánico de dudas</title>
+                        <author>Real Academia Española y Asociación de Academias de la Lengua Española</author>
+                        <date when="2005">2005</date>
+                        <ptr target="https://www.rae.es/recursos/diccionarios/dpd"/>
+                    </bibl>
+                    <bibl>
+                        <title>Hijas de María, Asociación de</title>
+                        <author>Rodríguez, M.</author>
+                        <date when="1991">1991</date>
+                        <ptr target="https://www.mercaba.org/Rialp/H/hijas_de_maria_asociacion_de.htm"/>
+                    </bibl>
+                    <bibl>
+                        <title>La Venus de Milo, la mujer perfecta del Louvre</title>
+                        <author>Sala, À.</author>
+                        <date when="2025">2025</date>
+                        <ptr target="https://historia.nationalgeographic.com.es/a/venus-milo-mujer-perfecta-louvre_23183"/>
+                    </bibl>
+                    <bibl>
+                        <title>Poesías (Vol. 1: La primavera y el estío)</title>
+                        <author>Selgas, J.</author>
+                        <date when="1882">1882</date>
+                    </bibl>
+                    <bibl>
+                        <title>Hotelería: ¿a qué llamamos blancos?</title>
+                        <author>San Miguel, L.</author>
+                        <date when="2023">2023</date>
+                        <ptr target="https://lilianasanmiguel.com.ar/hoteleria-a-que-llamamos-blancos/"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario folclórico antioqueño</title>
+                        <author>Sierra, J.</author>
+                        <date when="1995">1995</date>
+                    </bibl>
+                    <bibl>
+                        <title>El refrán antioqueño en los clásicos</title>
+                        <author>Sierra García, J.</author>
+                        <date when="1990">1990</date>
+                    </bibl>
+                    <bibl>
+                        <title>Mitos y leyendas-Chocó</title>
+                        <author>Sistema Nacional de Información Cultural</author>
+                        <date when="2019">2019</date>
+                        <ptr target="https://bit.ly/2YbhwIp"/>
+                    </bibl>
+                    <bibl>
+                        <title>Diccionario de provincialismos y barbarismos del Valle del Cauca y Quechuismos usados en Colombia</title>
+                        <author>Tascón, L.</author>
+                        <date when="2018">2018</date>
+                    </bibl>
+                    <bibl>
+                        <title>Una lectura del mito de Narciso: tragedia y fotografía</title>
+                        <author>Torres, J. D. R.</author>
+                        <date when="2013">2013</date>
+                    </bibl>
+                    <bibl>
+                        <title>Apuntaciones sobre el habla antioqueña en Carrasquilla (Vol. I-IV)</title>
+                        <author>Villegas Duque, N.</author>
+                        <date when="1986">1986</date>
+                    </bibl>
+                </listBibl>
             </div>
             <div type="apparatus">
                 <head>Aparato crítico</head>
