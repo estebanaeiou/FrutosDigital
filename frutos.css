@@ -1,0 +1,268 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #660000;
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    z-index: 998;
+    /* height: 100px;*/
+    right: 0;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+header h1 {
+    /*margin-left: 270px;*/
+    margin: 0;
+    font-size: 2em;
+    font-style: italic;
+    padding-left: 2em;
+}
+
+header img {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+nav ul li {
+    margin-bottom: 0.5em;
+}
+nav ul li a {
+    color: #660000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.toggle-btn {
+    margin: 1em 1em 1em 2em;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+}
+
+/* Shift main content to the right to make room for sidebar */
+main {
+    margin-left: 270px; /* 250px + padding */
+    padding: 2em;
+    max-width: 1100px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    margin-left: 270px; /* to clear the sidebar */
+    padding: 6em 2em 2em; /* top padding gives space below fixed header */
+    flex: 1;
+}
+
+section {
+    scroll-margin-top: 100px; /* matches your header height */
+    margin-top: 2em;
+}
+
+h2 {
+    color: #660000;
+    border-bottom: 2px solid #660000;
+    padding-bottom: 0.3em;
+    text-align: center;
+}
+
+h3 {
+    color: #660000;
+    padding-bottom: 0.3em;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    margin: 1em 0;
+    text-align: justify;
+    text-indent: 2em;
+    scroll-margin-top: 100px;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px dashed #999;
+    /*position: relative;
+  display: inline-block;
+  cursor: pointer;*/
+  scroll-margin-top: 100px;
+
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    max-width: 300px;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    padding: 0.5em;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 10%;
+    transform: translateX(-50%);
+    margin: 0;
+    white-space: normal;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.note {
+    color: #E94E77;
+    font-weight: bold;
+}
+
+.tooltip.note {
+    font-weight: bold;
+    font-size: 0.7em;
+    vertical-align: super;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Aparato crítico */
+
+#apparatus p {
+    color: #3b2f2f; /* Replace with the color of your header text */
+    font-style: normal;
+}
+
+#apparatus p {
+    color: #3b2f2f;
+    font-size: 0.95em;
+    margin-left: 1em;
+}
+
+a.tooltip.crit-app,
+#apparatus a {
+    color: #D2691E; /* or match your header text color */
+    text-decoration: none;
+    font-weight: bold;
+    scroll-margin-top: 100px;
+}
+
+a.tooltip.crit-app:hover,
+#apparatus a:hover {
+    text-decoration: underline;
+    color: #5a4444; /* slightly lighter on hover */
+}
+
+
+/* --- SIDEBAR STYLING --- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 1.5em 1em;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+    z-index: 999;
+}
+
+/* Style nav list inside sidebar */
+#sidebar nav ul {
+    padding-left: 0;
+    list-style: none;
+}
+#sidebar nav ul li {
+    margin-bottom: 1em;
+}
+#sidebar nav ul li a {
+    color: #660000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Style the toggle buttons in the sidebar */
+#sidebar .toggle-btn {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+    padding: 0.5em;
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: #660000;
+    color: white;
+    text-align: center;
+    padding: 1em 2em;
+    margin-left: 270px; /* matches sidebar width */
+    font-size: 0.85em;
+}
+footer a {
+    color: #ffd700; /* gold/yellow contrast */
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width : 768px) {
+    #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+    main {
+        margin-left: 0;
+    }
+
+    #sidebar .toggle-btn {
+        width: auto;
+    }
+}
+
+
+@media (max-width : 768px) {
+    footer {
+        margin-left: 0;
+    }
+}
+
+@media (max-width : 768px) {
+    main {
+        width: 100%;
+        margin-left: 0;
+        padding: 1em;
+    }
+}

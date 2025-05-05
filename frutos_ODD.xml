@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Frutos Digital</title>
+                <author>Tomás Carasquilla</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>for use by whoever wants it</p>
+            </publicationStmt>
+            <notesStmt>
+                <note type="ns">http://www.example.org/ns/nonTEI</note>
+            </notesStmt>
+            <sourceDesc>
+                <p>created on Monday 05th May 2025 04:02:36 PM</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <front>
+            <divGen type="toc"/>
+        </front>
+        <body>
+            <p>La descripci&#xF3;n de tu proyecto</p>
+            <schemaSpec ident="frutos" docLang="en" prefix="tei_" xml:lang="en">
+                <moduleRef key="core" except=""/>
+                <moduleRef key="tei" except=""/>
+                <moduleRef key="header" except=""/>
+                <moduleRef key="textstructure" except=""/>
+                <moduleRef key="textcrit"
+                    except="lacunaEnd lacunaStart variantEncoding witDetail witEnd witStart"/>
+                <moduleRef key="tagdocs"
+                    except="altIdent alternate anyElement attDef attList attRef classRef classSpec classes code constraint constraintDecl constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec empty equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition param paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList textNode valDesc valItem valList"/>
+                <moduleRef key="linking"
+                    except="ab alt altGrp annotation join joinGrp link linkGrp listAnnotation standOff timeline when"
+                />
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>
