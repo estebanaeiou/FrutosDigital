@@ -6,6 +6,7 @@ title: Inicio
 <section id="hero">
   <h1>Frutos de mi tierra</h1>
   <p>Una edición digital basada en el diseño Lodestar</p>
+  <p><a href="https://estebanaeiou.github.io/FrutosDigital/frutos.html">Enlace al resultado html</a></p>
 </section>
 
 <section id="about">
