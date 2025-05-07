@@ -23,7 +23,7 @@
             <body>
                 <header>
                     <h1>Frutos de mi tierra</h1>
-                    <img src="img/Logo.png" alt="Logo" id="logo"/>
+                    <img src="C:\Users\esteb\Desktop\TEI TESIS\UM\Logo.png" alt="Logo" id="logo"/>
                 </header>
 
                 <!-- Menú de la izquierda -->
@@ -32,96 +32,96 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#chap_1">Capítulo 1 – Por la mañana</a>
+                                <a href="#chap_1">Capítulo I – Por la mañana</a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 2 – Historia antigua</a>
+                                <a href="#chap_2">Capítulo II – Historia antigua</a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 3 – ...</a>
+                                <a href="#chap_3">Capítulo III – Historia de la edad media</a>
                             </li>
                             <li>
-                                <a href="#chap_4">Capítulo 4 </a>
+                                <a href="#chap_4">Capítulo IV - Las queseras del medio </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 5 </a>
+                                <a href="#chap_5">Capítulo V - "Un cuarto alegre" </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 6 – ...</a>
+                                <a href="#chap_6">Capítulo VI - Otro idem</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 7 – </a>
+                                <a href="#chap_7">Capítulo VII – La Venganza</a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 8 – </a>
+                                <a href="#chap_8">Capítulo VIII – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 9 – ...</a>
+                                <a href="#chap_9">Capítulo IX – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 10 – </a>
+                                <a href="#chap_10">Capítulo X – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 11 – </a>
+                                <a href="#chap_11">Capítulo XI – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 12 – ...</a>
+                                <a href="#chap_12">Capítulo XII – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 13 – </a>
+                                <a href="#chap_13">Capítulo XIII – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 14 – </a>
+                                <a href="#chap_14">Capítulo XIV – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 15 – ...</a>
+                                <a href="#chap_15">Capítulo XV – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 16 – </a>
+                                <a href="#chap_16">Capítulo XVI – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 17 – </a>
+                                <a href="#chap_17">Capítulo XVII – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 18 – ...</a>
+                                <a href="#chap_18">Capítulo XVII – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 19 – </a>
+                                <a href="#chap_19">Capítulo XIX – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 20 – </a>
+                                <a href="#chap_20">Capítulo XX – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 21 – ...</a>
+                                <a href="#chap_21">Capítulo XXI – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 22 – </a>
+                                <a href="#chap_22">Capítulo XXII – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 23 – </a>
+                                <a href="#chap_23">Capítulo XXIII – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 24 – ...</a>
+                                <a href="#chap_24">Capítulo XXIV – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 25 – </a>
+                                <a href="#chap_25">Capítulo XXV – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 26 – </a>
+                                <a href="#chap_26">Capítulo XXVI – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 27 – ...</a>
+                                <a href="#chap_27">Capítulo XXVII – ...</a>
                             </li>
                             <li>
-                                <a href="#chap_1">Capítulo 28 – </a>
+                                <a href="#chap_28">Capítulo XXVIII – </a>
                             </li>
                             <li>
-                                <a href="#chap_2">Capítulo 29 – </a>
+                                <a href="#chap_29">Capítulo XXIX – </a>
                             </li>
                             <li>
-                                <a href="#chap_3">Capítulo 30 – ...</a>
+                                <a href="#chap_30">Capítulo XXX – ...</a>
                             </li>
-                            
+
                             <li>
                                 <a href="#notes">Notas explicativas</a>
                             </li>
@@ -150,8 +150,8 @@
                 </main>
 
                 <footer>
-                    <p>2025 Esteban AEIOU · <a href="https://github.com/estebanaeiou/FrutosDigital"
-                            target="_blank">Proyecto en GitHub</a></p>
+                    <p>Doctorado en Literatura (2025). Universidad de Antioquia (Colombia).<a href="https://scholar.google.com/citations?user=Mog-3swAAAAJ&amp;hl=es"
+                        target="_blank"> Juan Esteban Hincapié Atehortúa</a></p>
                 </footer>
                 <script>
                     const btnNotes = document.getElementById('toggleNotes');
@@ -232,7 +232,7 @@
             <a href="#a_{@xml:id}">
                 <b>
                     <xsl:value-of select="tei:lem"/>
-                    <xsl:text> </xsl:text>
+                    <xsl:text></xsl:text>
                     <xsl:value-of select="tei:lem/@wit"/>
                 </b>: </a>
             <xsl:for-each select="tei:rdg">
@@ -252,11 +252,14 @@
             <xsl:apply-templates/>
             <!-- visible word like 'dio' -->
             <span class="tooltiptext">
-                <strong><xsl:value-of select="$app/tei:lem/@wit"/>:</strong>
-                <xsl:text> </xsl:text>
-                <xsl:value-of select="$app/tei:lem"/>
+                <strong>
+                    <xsl:value-of select="$app/tei:lem/@wit"/>
+                </strong>
+                <xsl:text/>
+                <!--xsl:value-of select="$app/tei:lem"/!-->
+                <!-- La suprimí para que el lema no aparezca en el tooltip -->
                 <xsl:for-each select="$app/tei:rdg">
-                    <xsl:text> </xsl:text>
+                    <xsl:text> / </xsl:text>
                     <strong><xsl:value-of select="@wit"/>:</strong>
                     <xsl:text> </xsl:text>
                     <xsl:value-of select="."/>
@@ -282,15 +285,15 @@
 
     <!-- Glossary terms with dynamic tooltip -->
     <xsl:template match="tei:term">
-        <a href="{@corresp}"> 
-           <span class="tooltip gloss">
-            <xsl:apply-templates/>
-            <span class="tooltiptext">
-                <xsl:variable name="id" select="substring-after(@corresp, '#')"/>
-                <xsl:value-of select="key('glossary', $id)/tei:gloss"/>
+        <a href="{@corresp}">
+            <span class="tooltip gloss">
+                <xsl:apply-templates/>
+                <span class="tooltiptext">
+                    <xsl:variable name="id" select="substring-after(@corresp, '#')"/>
+                    <xsl:value-of select="key('glossary', $id)/tei:gloss"/>
+                </span>
             </span>
-        </span>
-       </a>
+        </a>
     </xsl:template>
 
     <!-- Bibliography section -->
@@ -306,6 +309,15 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+    
+    <!-- Instrucciones para el enlace de la bibliografía -->
+    <xsl:template match="tei:div[@type='bibliography']//tei:ref">
+        <a href="{@target}" target="_blank">
+            <xsl:text>Enlace</xsl:text>
+            <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+  
 
 
     <!-- Paragraphs -->
