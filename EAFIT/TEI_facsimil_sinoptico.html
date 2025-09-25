@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL BUEN CINE</title>
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+body {
+  background: #f7f3e9;
+  margin: 0;
+  padding: 1em;
+  font-family: 'Merriweather', serif;
+  color: #333;
+  line-height: 1.6;
+}
+.book-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 1.5em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.book-header {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #444;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.3em;
+}
+.synoptic {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+}
+.facsimile {
+  flex: 1;
+  margin-right: 1em;
+}
+.facsimile img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.text {
+  flex: 2;
+}
+.text p {
+  text-indent: 1.5em;
+  margin: 0.8em 0;
+  text-align: justify;
+  font-size: 1em;
+}
+.tooltip {
+  position: relative;
+  color: #c0392b;
+  cursor: pointer;
+  border-bottom: 1px dotted #c0392b;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  max-width: 500px;
+  width: max-content;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 0.6em;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.tooltip:hover .tooltiptext,
+.tooltip:active .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/* Responsive para móviles: apila las columnas verticalmente */
+@media (max-width: 768px) {
+  .synoptic { flex-direction: column; }
+  .facsimile { margin-right: 0; margin-bottom: 1em; }
+  .text p { font-size: 0.95em; text-indent: 1em; }
+}
+
+  </style>
+</head>
+<body>
+<div class="book-container">
+  <div class="book-header">EAFIT</div>
+  <h1><i>EL BUEN CINE</i></h1>
+  <div class="synoptic">
+    <div class="facsimile">
+      <img src="https://i.ibb.co/HfKZbr6W/Mi-rcoles-22-Abril-1914-pp-2.jpg" alt="Facsímil"/>
+    </div>
+    <div class="text">
+      <p>De las escaseces que en estos días hemos soportado, ninguna tan negra como la del
+               cine. ¡Ya no podemos vivir sin la película! Con el maíz, el alumbrado y el
+               combustible, ella entra en nuestras diarias necesidades. Pero, al fin, el agua santa
+               del cielo y la empresa electricista, fueron servidas de devolvernos, por las pascuas,
+               el bien precioso, envidia de los dioses. Ya oímos, por las tardes, esa charanga<span class="tooltip">[1]<span class="tooltiptext">Banda de música formada por instrumentos
+               de viento y percusión</span></span> callejera anunciadora de tanta
+                  venturanza<span class="tooltip">[2]<span class="tooltiptext">Buena ventura.</span></span>; y el corazón se
+               ensancha y regocija con la <span class="tooltip">expectativa<span class="tooltiptext">espectativa</span></span> de tan dulces emociones; y la multitud acude curiosa, antes del toque de
+               ánimas. 
+                  
+               ¿Cuál será la más grata? La emoción de la economía, seguramente. En efecto,
+               tres actos y ñapa 
+                  
+               <span class="tooltip">[3]<span class="tooltiptext">Añadidura, especialmente la que se da
+               como propina o regalo.</span></span> de estética
+               por real y medio, es ganga<span class="tooltip">[4]<span class="tooltiptext">Bien que se adquiere a un precio muy por
+               debajo del que normalmente le corresponde.</span></span>
+               inaudita en esta tierra de las cosas caras; es un caso para emocionar a cualquier
+               corcho <span class="tooltip">[5]<span class="tooltiptext">1. Persona que no se compromete con nada,
+               que solo actúa según sus intereses. 2. Referido a persona, torpe, de poco
+               entendimiento. 3. Persona acostumbrada a adular a alguien para obtener algún
+               beneficio. 4. Persona acostumbrada a delatar por conveniencia o malicia. adj. Dicho
+               de un animal: Que tiene el pelo largo y delgado, como el conejo, el cabrito, etc.
+               adj. coloq. Dicho de un negocio o de otra cosa: Difícil de resolver o entender. Sin.:
+               escabroso, complicado, difícil, enrevesado, camotudo. Ant.: fácil, sencillo. adj.
+               coloq. Dicho de una persona: Sutil o mañosa.</span></span>. ¡Y con la esperanza de
+               lograr todo eso por el real sólo…!</p>
+      <p>¡Hermoso destino el del arte manufacturado! Eso de estar al alcance de cualquier
+               fortuna y de cualquier apreciativa; eso de ser el arte para todos, es el verdadero
+               socialismo. Es para desesperar a los filósofos el que la estética industrial haya
+               resuelto, tan pronto y tan fácilmente, el peliagudo<span class="tooltip">[6]<span class="tooltiptext">1. Dicho de un animal: Que tiene el pelo
+               largo y delgado, como el conejo, el cabrito, etc. 2. Dicho de un negocio o de otra
+               cosa: Difícil de resolver o entender. 3. Dicho de una persona: Sutil o mañosa.</span></span> problema que rompe las cabezas de tanto sabio. ¡Bien
+               por la belleza! ¡Bien por el comercio!</p>
+      <p> ¿Cuál será el porvenir del arte caro, de ese que no puede fabricarse como ropas o
+                  enseres?<span class="tooltip">[7]<span class="tooltiptext">Utensilios, muebles, instrumentos
+               necesarios o convenientes en una casa o para el ejercicio de una profesión. Sustituir
+               o poner a alguien o algo en lugar de otra persona o cosa.</span></span> Morir, según Sancho
+               Panza, actual amo del mundo.</p>
+      <p>Cuentan y no acaban de cómo el cine va subrogando<span class="tooltip">[8]<span class="tooltiptext">Sustituir o poner a alguien o algo en
+               lugar de otra persona o cosa.</span></span> el teatro en la Europa moderna y modernista. Y nos
+               reíamos aquí de una paisana, que quitó de su casa el estudio del piano, porque,
+               habiendo pianola<span class="tooltip">[9]<span class="tooltiptext">1. Piano que puede tocarse mecánicamente
+               por pedales o por medio de corriente eléctrica. 2. Aparato que se une al piano y
+               sirve para ejecutar mecánicamente las piezas preparadas al objeto. Cromo que imita la
+               pintura al óleo.</span></span>, era más que
+               inútil. Será esto lo más explicable y natural. Vulgo es todo el mundo, y mucho más en
+               eso de apreciar el mérito o demérito de obras y ejecuciones estéticas. Con frecuencia
+               se estima más la obra fabricada que la original. Hay gentes que gastan grandes sumas
+               en oleografías<span class="tooltip">[10]<span class="tooltiptext">Cromo que imita la pintura al
+               óleo.</span></span> y grabados de
+               cliché, y no compran nunca, así se lo ofrezcan a precio de quema, un lienzo de firma
+               respetable. Hay quien dé el oro y el moro por un ejemplar de estatus hecha en horma,
+               y desprecio una buena escultura hecha a mano.</p>
+      <p> Tres cuartos de lo mismo acontece con respecto a lo contrahecho y a lo natural. En
+               casas, donde tienen en su jardín todas las galas de Flora, adornan los salones y los
+               comedores con florerones de trapo o de papel. Ya conocemos aquella tendencia femenina
+               de blanquear la azucena y de a carminar la rosa; ya sabemos de caras como alabastro,
+               estucadas con blanquetes.</p>
+      <p>Pero no es, solamente, en el arte bellísimo e indispensable, del tocado femenino, en
+               que todo es disculpable, donde se observen estos fenómenos; es en obras de arte mayor
+               valiente y duradera. En Facatativá, como quien dice, hay un templo con torre de
+               piedra, cubierta con pintura imitando piedra. Y, acá en nuestra urbe, he visto
+               zócalos con revestimiento de piedra quebrada, de sutura y mosaico primorosos,
+                  enjalbegados<span class="tooltip">[11]<span class="tooltiptext">Blanquear las paredes con cal, yeso o
+               tierra blanca.</span></span> encima con
+               sus buenas manos de ocre y vermellón. </p>
+      <p>En achaques de estética hay opiniones bastante peregrinas, Don Juan Valera, el colega
+               Tomás Márquez y con ellos otros, sostienen que lo artificial es más bello que lo
+               natural: que un paisaje es más hermoso pintado que visto; que el retrato de una
+               beldad cualquiera es superior a la mujer en carne y hueso; que la ficción de la vida
+               es más poderosa que la vida misma.</p>
+      <p>De todo esto —que son hechos cumplidos, generales y constantes— habrá que deducirse,
+               en buena lógica, que ese amor a lo artificioso y contrahecho, no lo inspira el mal
+               gusto ni la cursilería —como muchos han creído— sino una inclinación o tendencia
+               natural en la prole de Adán y Eva.</p>
+      <p>He aquí por qué nos atrae y cautiva el tal cine. Será este espectáculo de las cosas
+               más mandadas a hacer y a las que más se les vea el <em>hechixgo</em>.
+               La verdad de la mentira, tan apreciada en las artes imitativas de la realidad, entra
+               muy poco en estas ficciones de lienzo fijo y fotografías voladoras. Cierto que los
+               paisajes y fondos de los cuadros son la misma realidad; mas lo que es gente… será de
+               otro planeta. Al artificio exagerado; a la <em>posse</em><span class="tooltip">[12]<span class="tooltiptext">Un grupo de amigos.</span></span> de los cómicos que
+               interpretan las representaciones, se agrega esa movilidad vertiginosa y oscilante;
+               ese mariposeo fugitivo, dantesco, producido por la luz y el mecanismo. Acaso sea esto
+               mismo lo que más nos embelesa. Estamos hartos de vivir en la realidad, de ser
+               realidad nosotros mismos, y apetecemos, por eso, la mentira, la ficción inverosímil
+               que se parezca más al ensueño que a esto, real y efectivo, en que nos agitamos o
+               yacemos.</p>
+      <p>Lo cierto es que el cine se ha hecho para lo que menos ha gustado a nuestro público:
+               para lo fantástico e imposible; para cosas del otro mundo. Duendes, genios, hadas,
+               diablos y diablesas, con toda esa policromía y esas magias; con aquellas
+               transformaciones y aquellos movimientos, son una maravilla, una verdadera visión:
+               «Las mil y una noches» y todas las fábulas de encantamentos tienen en el cine su
+               mejor intérprete. Lo tienen, asimismo, las leyendas o historias trágicas,
+               caballerescas o milagrosas de todas las naciones; lo tienen las cosmogonías y
+               misterios de todas las religiones; lo tienen los grandes autores que han echado la
+               sonda en el abismo arcano de lo sobrenatural. Ignoro si Alemania habrá explotado a
+               Hoffmann; pero <span class="tooltip">ya<span class="tooltiptext">yá</span></span> Italia debe de haber propagado 
+                  
+               <em>La divina comedia</em>. Si
+               el dragón, de América tuviese entrañas, <span class="tooltip">ya<span class="tooltiptext">yá</span></span> hubiera enseñado al orbe mundo las visiones febriles de Poe, el genio, el
+               hombre menos yanqui. A ser España nación de industrias y comercios mundiales, cuál
+               nos encantáramos, ahora, con esas leyendas, tan deliciosas y latinas, de Becquer y de
+               Zorilla.
+                  
+               </p>
+      <p>Pero los empresarios conocen el gusto general de todo público, y cual lo hacen las
+               casas editoras se van al novelón romántico o policiaco, de sucesos complicados y
+               extraños, a lo Montepin, Ponson du Terraile, Gavoriean y sus secuaces, que son
+               pacotilla de gran consumo. Estos dramotes, tales como <em>Blanco contra
+                  negro, La historia de una joven</em>, y otros de la laya, se anuncian siempre en
+               letras enormes como «películas colosales». En verdad que el calificativo no se les
+               puede regatear; coloso y monstruo son similares.</p>
+      <p>¿Es el cine un espectáculo tan instructivo, como se dice? Ni modo de dudarlo. Con
+               todas las ficciones ramplonas e insignificantes, como exhibe a menudo, enseña más de
+               lo que cualquiera puede figurarse. El ojo es ventana por donde se asoma el
+               entendimiento, y toda cosa real o figurada suministra alguna idea a la mente, alguna
+               vibración al sentimiento. La fantasía, facultad creadora, que abarca cabeza y
+               corazón, se disciplina y selecciona, con las contemplaciones objetivas y artísticas.
+               La vida, que es la grande escuela, no puede aprenderse en la vida misma, que ni es
+               larga al ubicua. Pero se aprende en todo aquello que la refleje o la copie. Ya sea en
+               este sentido, ya en el opuesto; ya en lo individual, ya en lo colectivo; ahora en
+               síntesis, ahora en análisis.</p>
+      <p>Es un error más que craso<span class="tooltip">[13]<span class="tooltiptext">Indisculpable.</span></span> el
+               pensar, como lo suponen muchísimos, que en las ficciones sólo mentiras y falsedades
+               pueden adquirirse. Una mentira, un mito puede tener tanta filosofía y trascendencia,
+               como el hecho histórico más significante. En eso está, cabalmente, el mérito del
+               arte; en eso se funda la estética: en la mentira significativa. Las ficciones,
+               especialmente las literarias, enseñan más que la historia misma. La historia
+               concreta, particulariza, hace estudios diferenciales y específicos. El arte, al
+               contrario, toma de donde quiera, sintetiza, establece con concepto o un tipo y
+               formula en términos generales. El que quiera presentar, verbigracia<span class="tooltip">[14]<span class="tooltiptext">Un ejemplo, hecho o texto que se cita
+               para autorizar un aserto.</span></span>, el concepto de la guerra,
+               toma de las guerras reales que se le antojen, y le resulta, por síntesis y selección,
+               la imagen fiel y universal de la guerra. Al que se le ocurra pintar un mártir, tomará
+               rasgos de Jordano Bruno, de San Lorenzo, de Tomás Moro, de Servet, de Cristo, del que
+               quiera, y resultará el martirio. Si la historia es la Aritmética, la ficción es el <span class="tooltip">Álgebra<span class="tooltiptext">Algebra</span></span>, y se me perdonará el autoplagio.
+                  
+               </p>
+      <p>Prueba de ello serán los símbolos. Las más grandes verdades se han representado
+               siempre, así en lo gráfico como en lo ideológico, por fábulas más o menos expresivas,
+               más o menos comprensibles. Ese mundo mitológico de Roma la poderosa, y de Atenas, la
+               sabia, sigue y seguirá significando cuanto piense y sienta este pobrecito rey de la
+               tierra.</p>
+      <p>¿Cómo negar, entonces, que en buen cine, la invención objetiva por excelencia, puede
+               enseñar verdades con sus mentiras? Y, si el error más vulgar y manifiesto trae a la
+               mente, por ley de oposición de repugnancia y de contraste, la verdad o principio que
+               se le contrapone, ¿no habrá de traerla una película con todas sus falacias? Sí, ¡por cierto! Embusteros y tontos enseñaron siempre a verídicos y discretos.
+               ¡Benditos sean estos pedagogos gratis! Claro está que el cine pudiera dar enseñanza
+               genuina y positiva, en no pocas ciencias; claro, que pudiera abrir cursos, en muchas
+               asignaturas; pero ni las empresas están por instruir a la gente, ni la gente por
+               aprender. Desde que nos hablaran de estudios, no asomaríamos al cine, ni con perros
+               ni sin perras. Estudiar cosas serias es lo más aburridor y tal vez lo más inútil. 
+                  
+               ¡Lo serio es tan escaso, en la vida!
+                  
+               </p>
+    </div>
+  </div>
+  <div class="synoptic">
+    <div class="facsimile">
+      <img src="https://i.ibb.co/xSqxBbCq/Mi-rcoles-22-Abril-1914-pp-5.jpg" alt="Facsímil"/>
+    </div>
+    <div class="text">
+      <p>Querrá decir, que el cine será, en tiempos no muy <span class="tooltip">distantes<span class="tooltiptext">distantés</span></span>, un grande elemento, en toda enseñanza. Bueno fuera que de la sumirá que
+               vamos a coger, en estos días, nos dieran para pedir una película de toda esa pelea,
+               grande de aquí. Sabríamos, entonces, quienes fueron y qué hicieron todos esos tan
+               mentados a quienes sólo conocemos de nombre. Porque ¡ah pereza que da saber lo de la
+               casa!
+                  
+               </p>
+      <p>Dicen que el cine es inmoral. ¡Más no puede serlo! <span class="tooltip">Ya<span class="tooltiptext">Yá</span></span> se sabe, a ciencia cierta, que en la vida real, y efectiva nada más
+               inmoral; pero en el retrato de la vida, aunque le hagan favor como a las feas, todo
+               resulta inmoralísimo. Cosas y casos que la gente ve, que la gente conoce y palpa, e
+               indaga, que comenta ante niños y ancianos, entre señoras y señores, sin que tengan
+               nada de particular ni incoveniente, resultan un horror, un escándalo en el libro, en
+               la escena y en las películas.
+                  
+               </p>
+      <p>Sépanlo bien, para que no lleven a abrirle los ojos en ese cine, a <span class="tooltip">tanta<span class="tooltiptext">tánta</span></span> niña inocente y 
+                  
+               <span class="tooltip">tanta<span class="tooltiptext">tánta</span></span> señora ignorante del pecado, como abundan en esta ciudad de los
+                  candores
+                  
+               <span class="tooltip">[15]<span class="tooltiptext">Sinceridad, sencillez, ingenuidad y
+               pureza del ánimo.</span></span> y de las
+               inexperiencias.</p>
+      <p>Y a los que temen la muerte de ese arte inenajebale, intransmisible, en que entran
+               temperamento y alma, por esta otra de la mecánica, la óptica y la acústica, que se
+               compra en cualquier tienda, será bien recordarles que si Sancho, el prosaico, el
+               positivista, manda en los más, también impera en los menos, D. Alonso Quijano, el
+               bueno, el soñador; que, si el progreso, la ciencia positivista y el análisis, han
+               dado muerte a muchos ideales, nada habrán de poder con la Quimera; que el ensueño no
+               puede eliminarse, porque el ensueño es la vida.</p>
+      <p>Sí: «La vida es sueño.». Ya lo dijo Calderón, el magno. Si a él no se lo creemos,
+               tendremos de creérselo al cine.</p>
+      <p>Ciertamente; <span class="tooltip">aquel<span class="tooltiptext">Aquel</span></span> encanto, aquella atracción, que en todos ejercen esas visiones instantáneas
+               y mentirosas, es porque en ellas vemos, tal vez sin darnos cuenta de su enseñanza, la
+               imagen fidelísima de nuestras propias existencias: 
+                  
+               <span class="tooltip">toda<span class="tooltiptext">Toda</span></span> vida, la vida toda, es un reflejo, una película.
+                  
+               </p>
+    </div>
+  </div>
+<div class="notes-section">
+<h2>Notas</h2>
+<p>[1] Banda de música formada por instrumentos
+               de viento y percusión</p>
+<p>[2] Buena ventura.</p>
+<p>[3] Añadidura, especialmente la que se da
+               como propina o regalo.</p>
+<p>[4] Bien que se adquiere a un precio muy por
+               debajo del que normalmente le corresponde.</p>
+<p>[5] 1. Persona que no se compromete con nada,
+               que solo actúa según sus intereses. 2. Referido a persona, torpe, de poco
+               entendimiento. 3. Persona acostumbrada a adular a alguien para obtener algún
+               beneficio. 4. Persona acostumbrada a delatar por conveniencia o malicia. adj. Dicho
+               de un animal: Que tiene el pelo largo y delgado, como el conejo, el cabrito, etc.
+               adj. coloq. Dicho de un negocio o de otra cosa: Difícil de resolver o entender. Sin.:
+               escabroso, complicado, difícil, enrevesado, camotudo. Ant.: fácil, sencillo. adj.
+               coloq. Dicho de una persona: Sutil o mañosa.</p>
+<p>[6] 1. Dicho de un animal: Que tiene el pelo
+               largo y delgado, como el conejo, el cabrito, etc. 2. Dicho de un negocio o de otra
+               cosa: Difícil de resolver o entender. 3. Dicho de una persona: Sutil o mañosa.</p>
+<p>[7] Utensilios, muebles, instrumentos
+               necesarios o convenientes en una casa o para el ejercicio de una profesión. Sustituir
+               o poner a alguien o algo en lugar de otra persona o cosa.</p>
+<p>[8] Sustituir o poner a alguien o algo en
+               lugar de otra persona o cosa.</p>
+<p>[9] 1. Piano que puede tocarse mecánicamente
+               por pedales o por medio de corriente eléctrica. 2. Aparato que se une al piano y
+               sirve para ejecutar mecánicamente las piezas preparadas al objeto. Cromo que imita la
+               pintura al óleo.</p>
+<p>[10] Cromo que imita la pintura al
+               óleo.</p>
+<p>[11] Blanquear las paredes con cal, yeso o
+               tierra blanca.</p>
+<p>[12] Un grupo de amigos.</p>
+<p>[13] Indisculpable.</p>
+<p>[14] Un ejemplo, hecho o texto que se cita
+               para autorizar un aserto.</p>
+<p>[15] Sinceridad, sencillez, ingenuidad y
+               pureza del ánimo.</p>
+</div>
+<div class="bibliografia">
+<h2>Bibliografía</h2>
+<p>22 de abril de 1914</p>
+<p><strong>RAE</strong> 2025 <em>Charanga</em>. <a href="https://dle.rae.es/charanga">https://dle.rae.es/charanga</a></p>
+<p><strong>RAE</strong> 2025 <em>Venturanza</em>. <a href="https://dle.rae.es/venturanza?m=form">https://dle.rae.es/venturanza?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Ñapa</em>. <a href="https://dle.rae.es/%C3%B1apa?m=form">https://dle.rae.es/%C3%B1apa?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Ganga</em>. <a href="https://dle.rae.es/ganga?m=form">https://dle.rae.es/ganga?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Corcho</em>. <a href="https://www.asale.org/damer/corcho">https://www.asale.org/damer/corcho</a></p>
+<p><strong>RAE</strong> 2025 <em>Peliagudo</em>. <a href="https://dle.rae.es/peliagudo?m=form">https://dle.rae.es/peliagudo?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Enseres</em>. <a href="https://dle.rae.es/enseres?m=form">https://dle.rae.es/enseres?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Subrogar</em>. <a href="https://dle.rae.es/subrogar?m=form">https://dle.rae.es/subrogar?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Pianola</em>. <a href="https://dle.rae.es/pianola?m=form">https://dle.rae.es/pianola?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Oleografía</em>. <a href="https://dle.rae.es/oleograf%C3%ADa?m=form">https://dle.rae.es/oleograf%C3%ADa?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Enjalbegar</em>. <a href="https://dle.rae.es/enjalbegar?m=form">https://dle.rae.es/enjalbegar?m=form</a></p>
+<p><strong>Cambridge Spanish-English Dictionary</strong> 2025 <em>Posse</em>. <a href="https://dictionary.cambridge.org/es/diccionario/ingles-espanol/posse">https://dictionary.cambridge.org/es/diccionario/ingles-espanol/posse</a></p>
+<p><strong>RAE</strong> 2025 <em>Craso</em>. <a href="https://dle.rae.es/craso?m=form">https://dle.rae.es/craso?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Verbigracia</em>. <a href="https://dle.rae.es/verbigracia?m=form">https://dle.rae.es/verbigracia?m=form</a></p>
+<p><strong>RAE</strong> 2025 <em>Candor</em>. <a href="https://dle.rae.es/candor?m=form">https://dle.rae.es/candor?m=form</a></p>
+</div>
+</div>
+</body>
+</html>
