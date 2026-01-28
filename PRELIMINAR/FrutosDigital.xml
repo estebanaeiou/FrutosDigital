@@ -126,12 +126,7 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
-            <variantEncoding method="other" location="external">
-                <p>Método híbrido: aparato externo en &lt;back&gt; con marcación explícita de loci
-                    mediante &lt;seg type="app" xml:id="..."/&gt; en &lt;body&gt; y enlaces
-                    bidireccionales por @corresp entre cada &lt;seg&gt; y su entrada &lt;app&gt; en
-                    &lt;listApp&gt;.</p>
-            </variantEncoding>
+            <variantEncoding method="location-referenced" location="external"> </variantEncoding>
             <projectDesc>
                 <p> Esta tesis doctoral se centra en la elaboración de una edición crítico-genética
                     digital (EAD) de <hi rend="italic">Frutos de mi tierra</hi> de Tomás
@@ -174,6 +169,10 @@
                     fijación del texto con criterios que respetan la acentuación y puntuación
                     modernas, manteniendo el <hi rend="italic">usus scribendi</hi> del autor;
                     preparación y publicación.</p>
+                <p>La codificación de las variantes sigue un método híbrido: aparato externo en
+                    &lt;back&gt; con marcación explícita de loci mediante &lt;seg type="app"
+                    xml:id="..."/&gt; en &lt;body&gt; y enlaces bidireccionales por @corresp entre
+                    cada &lt;seg&gt; y su entrada &lt;app&gt; en &lt;listApp&gt;.</p>
             </projectDesc>
             <schemaRef url="frutos.rng" type="application/xml"/>
             <appInfo>
