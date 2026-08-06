@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Español Académico · Comunidad sordo señante · Balance 2021-2 → 2026-1</title>
+<style>
+:root{
+  --verde-profundo:#1B4332;
+  --verde-medio:#2D6A4F;
+  --verde-claro:#95D5B2;
+  --dorado:#D4A574;
+  --fondo:#FAFAF7;
+  --texto:#1F2937;
+  --tenue:#6B7280;
+  --alerta:#B45309;
+  --blanco:#FFFFFF;
+  --borde:#E7E5DE;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px;line-height:1.5;
+}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:normal}
+
+/* ---------- Navegación lateral ---------- */
+.nav{
+  position:fixed;top:0;left:0;bottom:0;width:236px;
+  background:var(--blanco);border-right:1px solid var(--borde);
+  padding:28px 0;overflow-y:auto;z-index:10;
+}
+.nav .marca{padding:0 24px 20px;border-bottom:1px solid var(--borde);margin-bottom:14px}
+.nav .marca .u{font-size:10.5px;letter-spacing:.14em;color:var(--tenue);text-transform:uppercase}
+.nav .marca .t{font-family:Georgia,serif;font-size:17px;color:var(--verde-profundo);margin-top:6px;line-height:1.3}
+.nav a{
+  display:block;padding:9px 24px;color:var(--texto);text-decoration:none;
+  font-size:13.5px;border-left:3px solid transparent;
+}
+.nav a:hover{background:#F2F1EC}
+.nav a:focus-visible{outline:2px solid var(--verde-medio);outline-offset:-2px}
+.nav a .num{color:var(--tenue);font-variant-numeric:tabular-nums;margin-right:8px;font-size:12px}
+main{margin-left:236px}
+
+/* ---------- Secciones ---------- */
+section{padding:56px 52px;max-width:1160px}
+section + section{border-top:1px solid var(--borde)}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue);margin-bottom:8px}
+h2{font-size:30px;color:var(--verde-profundo);margin-bottom:10px;line-height:1.25}
+.intro{color:var(--tenue);font-size:15px;max-width:760px;margin-bottom:28px}
+.nota{font-size:13.5px;color:var(--tenue);margin-top:18px;max-width:820px}
+.nota strong{color:var(--texto);font-weight:600}
+.nota.dorada{color:var(--texto);background:#FBF3E8;border:1px solid #EAD9C2;border-radius:6px;padding:12px 16px;display:inline-block}
+
+/* ---------- Tarjetas ---------- */
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:7px;padding:26px 28px;box-shadow:0 1px 2px rgba(31,41,55,.04)}
+
+/* ---------- § 1 Portada ---------- */
+#portada{padding:0;max-width:none;border-top:none}
+.banda{background:var(--verde-profundo);color:#F4F7F5;padding:64px 52px 56px}
+.banda .ante{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--verde-claro)}
+.banda h1{font-size:44px;line-height:1.15;margin:14px 0 10px;color:#fff;max-width:900px}
+.banda .bajada{font-size:18px;color:#D6E5DC;font-family:Georgia,serif}
+.banda .pie{font-size:13px;color:#9EB8AA;margin-top:26px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;padding:34px 52px 56px;max-width:1160px}
+.kpi{background:var(--blanco);border:1px solid var(--borde);border-radius:7px;padding:24px 22px 20px;box-shadow:0 1px 2px rgba(31,41,55,.04)}
+.kpi .n{font-size:58px;line-height:1;color:var(--verde-profundo);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi.destacado .n{color:var(--dorado)}
+.kpi .r{font-size:13px;color:var(--tenue);margin-top:10px;line-height:1.35}
+
+/* ---------- Gráficos ---------- */
+.grafico{background:var(--blanco);border:1px solid var(--borde);border-radius:7px;padding:24px;box-shadow:0 1px 2px rgba(31,41,55,.04)}
+.grafico svg{width:100%;height:auto;display:block}
+.leyenda{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:var(--tenue)}
+.leyenda span{display:inline-flex;align-items:center;gap:7px}
+.leyenda i{width:13px;height:13px;border-radius:3px;display:inline-block}
+.leyenda i.linea{height:3px;border-radius:2px;width:20px}
+
+/* ---------- § 4 dos piezas ---------- */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+
+/* ---------- § 6 ---------- */
+.paneles{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel-titulo{font-family:Georgia,serif;font-size:19px;color:var(--verde-profundo);margin-bottom:14px}
+.nube{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
+.nube .tag{
+  background:#F1F0EB;color:var(--tenue);border:1px solid var(--borde);
+  border-radius:5px;padding:6px 12px;font-size:13px;line-height:1.3;
+}
+.nube .tag:nth-child(3n){transform:rotate(-1.2deg)}
+.nube .tag:nth-child(4n){transform:rotate(1deg);margin-top:6px}
+.nube .tag:nth-child(5n){margin-left:14px}
+.bloques{display:grid;gap:14px}
+.bloque{display:flex;align-items:baseline;gap:16px;background:var(--blanco);border:1px solid var(--borde);border-radius:7px;padding:16px 20px}
+.bloque .n{font-size:40px;color:var(--verde-profundo);font-variant-numeric:tabular-nums;min-width:64px;text-align:right}
+.bloque.exito .n{color:var(--verde-medio)}
+.bloque.vacio .n{color:var(--alerta)}
+.bloque .d{font-size:14px;color:var(--texto);line-height:1.4}
+
+/* ---------- § 7 Curso ---------- */
+#curso{background:var(--verde-profundo);color:#EAF2ED;max-width:none;padding:56px 52px}
+#curso .contenido{max-width:1160px}
+#curso h2{color:#fff}
+#curso .eyebrow{color:var(--verde-claro)}
+#curso .intro{color:#BCD3C6}
+.ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#3A6B55;border:1px solid #3A6B55;border-radius:7px;overflow:hidden;margin:26px 0}
+.ficha div{background:#215240;padding:16px 20px}
+.ficha .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-claro)}
+.ficha .v{font-size:15px;margin-top:6px;color:#fff;line-height:1.4}
+.enfoque{font-family:Georgia,serif;font-size:19px;color:#fff;border-left:3px solid var(--dorado);padding:6px 0 6px 18px;margin:28px 0;max-width:860px;line-height:1.5}
+.unidades{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:12px;align-items:stretch;margin-top:10px}
+.unidad{background:#fff;color:var(--texto);border-radius:7px;padding:20px 20px 18px}
+.unidad .num{font-size:13px;color:var(--tenue)}
+.unidad .verbo{font-family:Georgia,serif;font-size:21px;color:var(--verde-profundo);margin:2px 0 4px}
+.unidad .tit{font-size:13px;color:var(--tenue);margin-bottom:12px;line-height:1.35}
+.unidad ul{list-style:none;font-size:13px;line-height:1.45}
+.unidad li{padding:5px 0 5px 14px;position:relative;border-top:1px solid #F0EFEA}
+.unidad li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--verde-claro)}
+.flecha{align-self:center;color:var(--dorado);font-size:26px;font-family:Georgia,serif}
+.desempeno{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:26px;align-items:start}
+.desempeno .card-oscura{background:#215240;border:1px solid #3A6B55;border-radius:7px;padding:22px 24px}
+.desempeno .cifra-linea{font-size:15px;color:#fff}
+.desempeno .cifra-linea b{font-size:30px;font-weight:normal;font-family:Georgia,serif;color:var(--dorado);margin-right:4px}
+.desempeno .pie-nota{font-size:12.5px;color:#9EB8AA;margin-top:14px;line-height:1.45}
+.dist{margin-top:16px;display:grid;gap:8px}
+.dist .fila{display:grid;grid-template-columns:76px 1fr 24px;gap:10px;align-items:center;font-size:13px;color:#D6E5DC;font-variant-numeric:tabular-nums}
+.dist .barra{height:14px;background:#2F5F4B;border-radius:3px;overflow:hidden}
+.dist .barra i{display:block;height:100%;background:var(--verde-claro)}
+
+/* ---------- § 8 ---------- */
+.pendientes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pendientes h3{font-size:19px;color:var(--verde-profundo);margin-bottom:16px}
+.pendientes ul{list-style:none}
+.pendientes li{padding:11px 0 11px 22px;position:relative;font-size:14px;line-height:1.5;border-top:1px solid var(--borde)}
+.pendientes li:first-of-type{border-top:none}
+.col-izq li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:9px;border-radius:50%;background:var(--alerta)}
+.col-der li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:9px;border-radius:50%;background:var(--verde-medio)}
+
+/* ---------- Pie de página ---------- */
+footer{margin-left:236px;padding:30px 52px 44px;font-size:12.5px;color:var(--tenue);border-top:1px solid var(--borde);max-width:1160px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .nav{position:static;width:auto;bottom:auto;border-right:none;border-bottom:1px solid var(--borde);padding:16px 0 0}
+  .nav .marca{padding:0 20px 14px}
+  .nav .enlaces{display:flex;flex-wrap:wrap;gap:2px;padding:8px 12px}
+  .nav a{border-left:none;border-radius:5px;padding:7px 12px}
+  main,footer{margin-left:0}
+  section,#curso,.banda{padding-left:22px;padding-right:22px}
+  .kpis{padding-left:22px;padding-right:22px}
+  .banda h1{font-size:32px}
+  .dos,.paneles,.pendientes,.desempeno{grid-template-columns:1fr}
+  .ficha{grid-template-columns:1fr}
+  .unidades{grid-template-columns:1fr}
+  .flecha{transform:rotate(90deg);justify-self:center}
+}
+
+
+/* ---------- Teléfonos ---------- */
+@media (max-width:640px){
+  body{font-size:15px}
+  section,#curso,.banda,.kpis{padding-left:16px;padding-right:16px}
+  section{padding-top:36px;padding-bottom:36px}
+  .banda{padding-top:40px;padding-bottom:36px}
+  .banda h1{font-size:26px}
+  .banda .bajada{font-size:15px}
+  h2{font-size:23px}
+  .kpis{grid-template-columns:1fr 1fr;gap:10px;padding-top:20px;padding-bottom:36px}
+  .kpi{padding:16px 14px 14px}
+  .kpi .n{font-size:38px}
+  .kpi .r{font-size:11.5px}
+  .grafico,.card{padding:14px}
+  .leyenda{gap:12px;font-size:12px}
+  .bloque .n{font-size:30px;min-width:48px}
+  .bloque .d{font-size:13px}
+  .ficha div{padding:12px 14px}
+  .enfoque{font-size:16px}
+  .unidad{padding:16px}
+  .desempeno .cifra-linea{font-size:14px}
+  .desempeno .cifra-linea b{font-size:24px}
+  .nav .enlaces{padding:6px 8px}
+  .nav a{font-size:12.5px;padding:6px 9px}
+  .nav a .num{display:none}
+  footer{padding:22px 16px 34px}
+}
+
+/* ---------- Impresión ---------- */
+@media print{
+  .nav{display:none}
+  main,footer{margin-left:0}
+  body{background:#fff}
+  section{break-after:page;max-width:none;padding:24px 8px}
+  .banda{background:#fff!important;color:var(--texto);padding:24px 8px}
+  .banda h1{color:var(--verde-profundo)}
+  .banda .ante{color:var(--verde-medio)}
+  .banda .bajada,.banda .pie{color:var(--tenue)}
+  #curso{background:#fff;color:var(--texto)}
+  #curso h2{color:var(--verde-profundo)}
+  #curso .intro{color:var(--tenue)}
+  .ficha div{background:#fff;border:1px solid var(--borde)}
+  .ficha .k{color:var(--verde-medio)}
+  .ficha .v{color:var(--texto)}
+  .enfoque{color:var(--texto)}
+  .desempeno .card-oscura{background:#fff;border:1px solid var(--borde)}
+  .desempeno .cifra-linea{color:var(--texto)}
+  .dist .fila{color:var(--texto)}
+  .desempeno .pie-nota{color:var(--tenue)}
+  .card,.kpi,.grafico,.bloque,.unidad{box-shadow:none}
+  footer{break-before:avoid}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Navegación por secciones">
+  <div class="marca">
+    <div class="u">Universidad de Antioquia</div>
+    <div class="t">Español Académico ·<br>Comunidad sordo señante</div>
+  </div>
+  <div class="enlaces">
+    <a href="#portada"><span class="num">1</span>Portada y cifras clave</a>
+    <a href="#embudo"><span class="num">2</span>Admisión por cohorte</a>
+    <a href="#permanencia"><span class="num">3</span>Permanencia y estado</a>
+    <a href="#programas"><span class="num">4</span>Unidades y programas</a>
+    <a href="#consolidacion"><span class="num">5</span>Consolidación del curso</a>
+    <a href="#curso"><span class="num">6</span>El curso 2026-1</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- § 1 -->
+<section id="portada" aria-label="Portada y cifras de resumen">
+  <div class="banda">
+    <div class="ante">Universidad de Antioquia · Facultad de Comunicaciones y Filología</div>
+    <h1>Español Académico · Comunidad sordo señante</h1>
+    <div class="bajada">Balance 2021-2 → 2026-1 y presentación del curso 2026-1</div>
+    <div class="pie">Programa Institucional de Español Académico · agosto de 2026</div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">104</div><div class="r">Aspirantes acumulados (2022-1 → 2026-1)</div></div>
+    <div class="kpi"><div class="n">49</div><div class="r">Admitidos acumulados</div></div>
+    <div class="kpi"><div class="n">47,1&thinsp;%</div><div class="r">Tasa de ingreso acumulada</div></div>
+    <div class="kpi"><div class="n">39</div><div class="r">Estudiantes activos hoy</div></div>
+    <div class="kpi destacado"><div class="n">14</div><div class="r">Han cursado Español Académico del Programa</div></div>
+  </div>
+</section>
+
+<!-- § 2 -->
+<section id="embudo" aria-label="Embudo de admisión por cohorte">
+  <div class="eyebrow">§ 2 · Admisión</div>
+  <h2>Casi la mitad de quienes aspiran, ingresan</h2>
+  <p class="intro">Aspirantes y admitidos por semestre, con la tasa de ingreso de cada cohorte.</p>
+  <div class="grafico">
+    <div class="leyenda">
+      <span><i style="background:var(--verde-medio)"></i>Aspirantes</span>
+      <span><i style="background:var(--verde-claro)"></i>Admitidos</span>
+      <span><i class="linea" style="background:var(--dorado)"></i>% de ingreso (eje derecho)</span>
+    </div>
+    <div id="chart-embudo"></div>
+  </div>
+  <p class="nota"><strong>2026-1 es la cohorte más numerosa de la serie:</strong> 13 admitidos, el 26,5&thinsp;% de todos los admitidos históricos.</p>
+</section>
+
+<!-- § 3 -->
+<section id="permanencia" aria-label="Permanencia y estado actual">
+  <div class="eyebrow">§ 3 · Permanencia</div>
+  <h2>8 de cada 10 estudiantes identificados siguen activos</h2>
+  <p class="intro">Estado actual de los 49 estudiantes admitidos; de dos aún no se tiene el dato de estado.</p>
+  <div class="dos">
+    <div class="grafico">
+      <div class="panel-titulo">Estado actual (49 estudiantes)</div>
+      <div id="chart-estado"></div>
+    </div>
+    <div class="grafico">
+      <div class="panel-titulo">Los 8 inactivos, en detalle</div>
+      <div id="chart-inactivos"></div>
+    </div>
+  </div>
+  <p class="nota">La deserción declarada es baja (<strong>2 casos</strong>); el grueso de la inactividad ocurre antes o al borde de la matrícula, no dentro del curso.</p>
+</section>
+
+<!-- § 4 -->
+<section id="programas" aria-label="Distribución por unidad académica y programa">
+  <div class="eyebrow">§ 4 · Distribución académica</div>
+  <h2>14 programas de 6 unidades académicas</h2>
+  <p class="intro">Estudiantes activos por programa, agrupados por unidad académica.</p>
+  <div class="grafico">
+    <div id="chart-programas"></div>
+  </div>
+  <p class="nota">El <strong>26&thinsp;%</strong> del estudiantado activo está en un solo programa (Lic. Educación Básica Primaria).</p>
+</section>
+
+<!-- § 5 -->
+<section id="consolidacion" aria-label="La consolidación del curso de español">
+  <div class="eyebrow">§ 5 · El requisito de español</div>
+  <h2>Once nombres distintos para un mismo requisito</h2>
+  <p class="intro">Durante años la comunidad resolvió el requisito de español de forma dispersa. El Programa Institucional lo unificó en un solo curso.</p>
+  <div class="paneles">
+    <div class="card">
+      <div class="panel-titulo">A · Dispersión histórica: los nombres bajo los que se cursó español</div>
+      <div class="nube" id="nube-cursos"></div>
+    </div>
+    <div>
+      <div class="panel-titulo">B · Cómo quedó resuelto el requisito</div>
+      <div class="bloques">
+        <div class="bloque"><div class="n">19</div><div class="d">cursaron un curso equivalente del plan o por formación complementaria</div></div>
+        <div class="bloque exito"><div class="n">14</div><div class="d">cursaron Español Académico del Programa Institucional</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="grafico" style="margin-top:20px">
+    <div class="panel-titulo">C · De 1 a 6 matriculados en tres años</div>
+    <div id="chart-l2"></div>
+    <p class="nota" style="margin-top:10px">2026-1 concentra el <strong>55&thinsp;%</strong> de la matrícula histórica del curso como segunda lengua.</p>
+  </div>
+  <p class="nota dorada" style="margin-top:20px">El curso institucional garantiza que el requisito se resuelva dentro del plan de estudios: en años anteriores, <strong>10 estudiantes</strong> debieron hacerlo por formación complementaria.</p>
+</section>
+
+<!-- § 6 -->
+<section id="curso" aria-label="El curso Español Académico 2026-1">
+ <div class="contenido">
+  <div class="eyebrow">§ 6 · El curso</div>
+  <h2>Español Académico 2026-1</h2>
+  <p class="intro">Un curso propio, obligatorio y diseñado desde la lengua de la comunidad.</p>
+  <div class="ficha">
+    <div><div class="k">Nombre</div><div class="v">Español Académico como segunda lengua para estudiantado sordo señante</div></div>
+    <div><div class="k">Código</div><div class="v">1212219</div></div>
+    <div><div class="k">Créditos</div><div class="v">3 · Curso obligatorio</div></div>
+    <div><div class="k">Modalidad</div><div class="v">Presencial / totalmente asistido por TIC</div></div>
+    <div><div class="k">Componente</div><div class="v">Socio humanístico</div></div>
+    <div><div class="k">Horas</div><div class="v">144 totales (64 teórico-prácticas + 80 de trabajo independiente)</div></div>
+  </div>
+  <p class="enfoque">Bilingüismo bimodal: la LSC es la primera lengua y el medio principal de comunicación; el español escrito se enseña como segunda lengua.</p>
+  <div class="unidades">
+    <div class="unidad">
+      <div class="num">1</div>
+      <div class="verbo">Reconocer</div>
+      <div class="tit">Introducción al español académico como segunda lengua</div>
+      <ul>
+        <li>Qué es el español académico como L2</li>
+        <li>El español escrito como llave de acceso a la vida universitaria</li>
+        <li>Diferencias entre español cotidiano y español académico</li>
+        <li>El bilingüismo bimodal: LSC + español escrito</li>
+        <li>El rol del estudiante sordo señante en la comunidad académica</li>
+      </ul>
+    </div>
+    <div class="flecha" aria-hidden="true">→</div>
+    <div class="unidad">
+      <div class="num">2</div>
+      <div class="verbo">Dominar</div>
+      <div class="tit">Vocabulario académico y gramática contrastiva</div>
+      <ul>
+        <li>Vocabulario académico general de la vida universitaria</li>
+        <li>Vocabulario académico específico según el área de formación</li>
+        <li>Gramática contrastiva desde la estructura de la oración</li>
+        <li>Tiempos verbales frecuentes en los textos académicos</li>
+      </ul>
+    </div>
+    <div class="flecha" aria-hidden="true">→</div>
+    <div class="unidad">
+      <div class="num">3</div>
+      <div class="verbo">Comprender</div>
+      <div class="tit">Comprensión lectora de textos académicos</div>
+      <ul>
+        <li>Estructura del texto: ideas principales y secundarias</li>
+        <li>Estrategias de lectura: organizadores gráficos y lectura guiada</li>
+        <li>Comprensión literal e inferencial mediante preguntas dirigidas</li>
+        <li>Introducción al pensamiento crítico aplicado a la lectura</li>
+      </ul>
+    </div>
+    <div class="flecha" aria-hidden="true">→</div>
+    <div class="unidad">
+      <div class="num">4</div>
+      <div class="verbo">Producir</div>
+      <div class="tit">Producción de textos y uso ético de la información</div>
+      <ul>
+        <li>Géneros: informe de lectura, informe académico, reseña, ensayo corto</li>
+        <li>Citación en formato APA 7</li>
+        <li>Ética: plagio, falsificación y uso no autorizado de contenido</li>
+        <li>Uso responsable de herramientas de inteligencia artificial</li>
+      </ul>
+    </div>
+  </div>
+  <div class="desempeno">
+    <div class="card-oscura">
+      <div class="panel-titulo" style="color:#fff">Desempeño registrado</div>
+      <div class="cifra-linea"><b>17</b> notas registradas · promedio <b>4,37</b> · rango <b>3,5 – 5,0</b></div>
+      <div class="dist" role="img" aria-label="Distribución de notas: tres notas entre 3,5 y 3,9; seis entre 4,0 y 4,4; ocho entre 4,5 y 5,0">
+        <div class="fila"><span>3,5 – 3,9</span><span class="barra"><i style="width:37.5%"></i></span><span>3</span></div>
+        <div class="fila"><span>4,0 – 4,4</span><span class="barra"><i style="width:75%"></i></span><span>6</span></div>
+        <div class="fila"><span>4,5 – 5,0</span><span class="barra"><i style="width:100%"></i></span><span>8</span></div>
+      </div>
+      <div class="pie-nota">Las notas corresponden al histórico completo de cursos de español; la mayoría del grupo 2026-1 aún no tiene calificación registrada.</div>
+    </div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>Fuente: consolidado de la comunidad sordo señante (2021-2 → 2026-1) y microcurrículo del curso 1212219. Programa Institucional de Español Académico, Facultad de Comunicaciones y Filología, Universidad de Antioquia.</footer>
+<script>
+/* =====================================================================
+   DATOS — editar aquí sin tocar la lógica de dibujo
+   ===================================================================== */
+const DATA = {
+  embudo: [
+    { s: "2022-1", asp: 16, adm: 4,  pct: 25.0 },
+    { s: "2022-2", asp: 11, adm: 2,  pct: 18.1 },
+    { s: "2023-1", asp: 6,  adm: 3,  pct: 50.0 },
+    { s: "2023-2", asp: 14, adm: 7,  pct: 50.0 },
+    { s: "2024-1", asp: 15, adm: 6,  pct: 40.0 },
+    { s: "2024-2", asp: 11, adm: 10, pct: 90.9 },
+    { s: "2025-1", asp: 12, adm: 4,  pct: 33.3 },
+    { s: "2026-1", asp: 19, adm: 13, pct: 68.4 }
+  ],
+  estado: [
+    { label: "Activo",   n: 39, pct: "79,6 %", color: "#2D6A4F" },
+    { label: "Inactivo", n: 8,  pct: "16,3 %", color: "#D4A574" },
+    { label: "Sin dato", n: 2,  pct: "4,1 %",  color: "#6B7280" }
+  ],
+  estadoTotal: 49,
+  inactivos: [
+    { label: "Admitido, no matriculó", n: 3 },
+    { label: "Desertor", n: 2 },
+    { label: "Activo-Insuficiente", n: 2 },
+    { label: "Suspendido", n: 1 }
+  ],
+  programas: [
+    { unidad: "Facultad de Educación", items: [
+      { p: "Lic. Educación Básica Primaria", n: 10 },
+      { p: "Lic. Educación Especial", n: 4 },
+      { p: "Lic. Educación Infantil", n: 3 },
+      { p: "Lic. Matemáticas", n: 2 },
+      { p: "Lic. Ciencias Sociales", n: 1 },
+      { p: "Pedagogía", n: 1 }
+    ]},
+    { unidad: "Facultad de Ciencias Sociales y Humanas", items: [
+      { p: "Trabajo Social", n: 5 },
+      { p: "Sociología", n: 1 }
+    ]},
+    { unidad: "Facultad de Artes", items: [
+      { p: "Gestión Cultural", n: 3 },
+      { p: "Arte Dramático", n: 1 }
+    ]},
+    { unidad: "Facultad de Derecho y Ciencias Políticas", items: [
+      { p: "Ciencia Política", n: 3 }
+    ]},
+    { unidad: "Instituto Univ. de Educación Física y Deportes", items: [
+      { p: "Lic. Educación Física", n: 3 },
+      { p: "Entrenamiento Deportivo", n: 1 }
+    ]},
+    { unidad: "Facultad Nacional de Salud Pública", items: [
+      { p: "Administración en Salud", n: 1 }
+    ]}
+  ],
+  nombresCursos: [
+    "Taller de producción e interpretación textual",
+    "Procesos orales, lectura y escritura",
+    "Taller de escritura",
+    "Contexto comunicativo",
+    "Comunicación",
+    "Habilidades comunicativas",
+    "Seminario sobre lenguaje y argumentación",
+    "Lengua castellana y su didáctica",
+    "Español",
+    "Español Académico",
+    "Español Académico como segunda lengua"
+  ],
+  l2: [
+    { s: "2023-1", n: 1 },
+    { s: "2024-2", n: 3 },
+    { s: "2025-1", n: 1 },
+    { s: "2026-1", n: 6 }
+  ]
+};
+
+/* =====================================================================
+   LÓGICA DE DIBUJO — SVG puro, con variante de teléfono (<= 640 px)
+   ===================================================================== */
+const C = {
+  profundo: "#1B4332", medio: "#2D6A4F", claro: "#95D5B2",
+  dorado: "#D4A574", tenue: "#6B7280", texto: "#1F2937", borde: "#E7E5DE"
+};
+const F_NUM = 'font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif"';
+const fmt = x => String(x).replace(".", ",");
+const esMovil = () => window.matchMedia("(max-width: 640px)").matches;
+const pinta = (id, W, H, contenido, aria) => {
+  document.getElementById(id).innerHTML =
+    `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${aria}">${contenido}</svg>`;
+};
+
+/* ---------- § 2 · Embudo ---------- */
+function chartEmbudo(m) {
+  const d = DATA.embudo;
+  const aria = "Aspirantes y admitidos por semestre entre 2022-1 y 2026-1, con porcentaje de ingreso. Total: 104 aspirantes, 49 admitidos, tasa de ingreso de 47,1 por ciento.";
+  if (m) {
+    /* teléfono: barras horizontales por semestre */
+    const W = 420, top = 16, rowH = 62, escala = 240, mL = 66;
+    const H = top + d.length * rowH + 4;
+    let s = "";
+    d.forEach((r, i) => {
+      const y0 = top + i * rowH;
+      s += `<text x="8" y="${y0 + 22}" font-size="14" fill="${C.tenue}" ${F_NUM}>${r.s}</text>`;
+      const wa = (r.asp / 20) * escala, wd = (r.adm / 20) * escala;
+      s += `<rect x="${mL}" y="${y0}" width="${wa}" height="16" rx="3" fill="${C.medio}"/>`;
+      s += `<text x="${mL + wa + 8}" y="${y0 + 13}" font-size="14" fill="${C.texto}" ${F_NUM}>${r.asp}</text>`;
+      s += `<rect x="${mL}" y="${y0 + 21}" width="${wd}" height="16" rx="3" fill="${C.claro}"/>`;
+      s += `<text x="${mL + wd + 8}" y="${y0 + 34}" font-size="14" fill="${C.texto}" ${F_NUM}>${r.adm}</text>`;
+      s += `<text x="${W - 8}" y="${y0 + 24}" text-anchor="end" font-size="15" font-weight="bold" fill="#8A6134" ${F_NUM}>${fmt(r.pct)}%</text>`;
+      if (i < d.length - 1) s += `<line x1="8" y1="${y0 + rowH - 9}" x2="${W - 8}" y2="${y0 + rowH - 9}" stroke="${C.borde}"/>`;
+    });
+    pinta("chart-embudo", W, H, s, aria);
+    return;
+  }
+  const W = 960, H = 430, mL = 46, mR = 56, mT = 26, mB = 44;
+  const iw = W - mL - mR, ih = H - mT - mB;
+  const maxY = 20, y = v => mT + ih - (v / maxY) * ih, yP = v => mT + ih - (v / 100) * ih;
+  const grupo = iw / d.length, bw = 27, gap = 7;
+  let s = "";
+  for (let v = 0; v <= maxY; v += 5) {
+    s += `<line x1="${mL}" y1="${y(v)}" x2="${W - mR}" y2="${y(v)}" stroke="${C.borde}"/>`;
+    s += `<text x="${mL - 8}" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="${C.tenue}" ${F_NUM}>${v}</text>`;
+  }
+  for (let v = 0; v <= 100; v += 25)
+    s += `<text x="${W - mR + 10}" y="${yP(v) + 4}" font-size="12" fill="${C.dorado}" ${F_NUM}>${v}%</text>`;
+  d.forEach((r, i) => {
+    const cx = mL + grupo * i + grupo / 2, x1 = cx - bw - gap / 2, x2 = cx + gap / 2;
+    s += `<rect x="${x1}" y="${y(r.asp)}" width="${bw}" height="${ih - (y(r.asp) - mT)}" rx="3" fill="${C.medio}"/>`;
+    s += `<rect x="${x2}" y="${y(r.adm)}" width="${bw}" height="${ih - (y(r.adm) - mT)}" rx="3" fill="${C.claro}"/>`;
+    s += `<text x="${x1 + bw / 2}" y="${y(r.asp) - 6}" text-anchor="middle" font-size="13" fill="${C.texto}" ${F_NUM}>${r.asp}</text>`;
+    s += `<text x="${x2 + bw / 2}" y="${y(r.adm) - 6}" text-anchor="middle" font-size="13" fill="${C.texto}" ${F_NUM}>${r.adm}</text>`;
+    s += `<text x="${cx}" y="${H - 16}" text-anchor="middle" font-size="13" fill="${C.tenue}" ${F_NUM}>${r.s}</text>`;
+  });
+  const pts = d.map((r, i) => [mL + grupo * i + grupo / 2, yP(r.pct)]);
+  s += `<polyline points="${pts.map(p => p.join(",")).join(" ")}" fill="none" stroke="${C.dorado}" stroke-width="2.5"/>`;
+  pts.forEach((p, i) => {
+    s += `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${C.dorado}"/>`;
+    const dy = (i === 2) ? 20 : -10;
+    s += `<text x="${p[0] + 14}" y="${p[1] + dy}" text-anchor="middle" font-size="12" fill="#8A6134" ${F_NUM}>${fmt(d[i].pct)}%</text>`;
+  });
+  pinta("chart-embudo", W, H, s, aria);
+}
+
+/* ---------- § 3 · Anillo de estado ---------- */
+function chartEstado(m) {
+  const d = DATA.estado, total = DATA.estadoTotal;
+  const aria = "Anillo de estado sobre 49 estudiantes admitidos: 39 activos (79,6 por ciento), 8 inactivos (16,3 por ciento) y 2 sin dato de estado (4,1 por ciento).";
+  const W = m ? 340 : 460, H = m ? 440 : 320;
+  const cx = m ? 170 : 160, cy = m ? 150 : 160, r = m ? 86 : 92, grosor = m ? 38 : 40;
+  const CIRC = 2 * Math.PI * r;
+  let s = "", acumulado = 0;
+  d.forEach(seg => {
+    const len = (seg.n / total) * CIRC;
+    s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${seg.color}" stroke-width="${grosor}"
+      stroke-dasharray="${len} ${CIRC - len}" stroke-dashoffset="${-acumulado}" transform="rotate(-90 ${cx} ${cy})"/>`;
+    acumulado += len;
+  });
+  let angulo = -Math.PI / 2;
+  d.forEach(seg => {
+    const frac = seg.n / total, medio = angulo + frac * Math.PI, chico = frac < 0.08;
+    const rl = chico ? r + grosor / 2 + 22 : r;
+    const lx = cx + Math.cos(medio) * rl, ly = cy + Math.sin(medio) * rl;
+    const fill = chico ? C.tenue : "#fff";
+    s += `<text x="${lx}" y="${ly - 2}" text-anchor="middle" font-size="17" font-weight="bold" fill="${fill}" ${F_NUM}>${seg.n}</text>`;
+    s += `<text x="${lx}" y="${ly + 13}" text-anchor="middle" font-size="11" fill="${fill}" ${F_NUM}>${seg.pct}</text>`;
+    angulo += frac * 2 * Math.PI;
+  });
+  s += `<text x="${cx}" y="${cy - 2}" text-anchor="middle" font-size="34" fill="${C.profundo}" font-family="Georgia,serif">${total}</text>`;
+  s += `<text x="${cx}" y="${cy + 20}" text-anchor="middle" font-size="12" fill="${C.tenue}" ${F_NUM}>estudiantes</text>`;
+  d.forEach((seg, i) => {
+    const lx = m ? 46 : 310;
+    const ly = m ? 306 + i * 40 : 106 + i * 36;
+    s += `<rect x="${lx}" y="${ly - 12}" width="15" height="15" rx="3" fill="${seg.color}"/>`;
+    s += `<text x="${lx + 24}" y="${ly}" font-size="${m ? 15 : 14}" fill="${C.texto}" ${F_NUM}>${seg.label} · ${seg.n} (${seg.pct})</text>`;
+  });
+  pinta("chart-estado", W, H, s, aria);
+}
+
+/* ---------- § 3 · Inactivos ---------- */
+function chartInactivos(m) {
+  const d = DATA.inactivos, max = 3;
+  const aria = "Desglose de los 8 inactivos: 3 admitidos que no matricularon, 2 desertores, 2 en estado activo-insuficiente y 1 suspendido.";
+  if (m) {
+    const W = 420, rowH = 60, top = 14, escala = 300;
+    const H = top + d.length * rowH;
+    let s = "";
+    d.forEach((r, i) => {
+      const y0 = top + i * rowH;
+      s += `<text x="8" y="${y0 + 14}" font-size="14" fill="${C.texto}" ${F_NUM}>${r.label}</text>`;
+      const w = (r.n / max) * escala;
+      s += `<rect x="8" y="${y0 + 22}" width="${w}" height="18" rx="3" fill="${C.dorado}"/>`;
+      s += `<text x="${8 + w + 10}" y="${y0 + 36}" font-size="16" font-weight="bold" fill="${C.texto}" ${F_NUM}>${r.n}</text>`;
+    });
+    pinta("chart-inactivos", W, H, s, aria);
+    return;
+  }
+  const W = 460, H = 320, mL = 210, mR = 46, filaH = 58, top = 46;
+  let s = "";
+  d.forEach((r, i) => {
+    const yy = top + i * filaH, ancho = (r.n / max) * (W - mL - mR);
+    s += `<text x="${mL - 12}" y="${yy + 15}" text-anchor="end" font-size="13.5" fill="${C.texto}" ${F_NUM}>${r.label}</text>`;
+    s += `<rect x="${mL}" y="${yy}" width="${ancho}" height="22" rx="3" fill="${C.dorado}"/>`;
+    s += `<text x="${mL + ancho + 10}" y="${yy + 16}" font-size="15" font-weight="bold" fill="${C.texto}" ${F_NUM}>${r.n}</text>`;
+  });
+  pinta("chart-inactivos", W, H, s, aria);
+}
+
+/* ---------- § 4 · Programas ---------- */
+function chartProgramas(m) {
+  const grupos = DATA.programas, max = 10;
+  const aria = "Estudiantes activos por programa en seis unidades académicas. El programa con más estudiantes es la Licenciatura en Educación Básica Primaria, con 10.";
+  if (m) {
+    const W = 420, grupoH = 40, rowH = 50, top = 10, escala = 330;
+    let filas = 0; grupos.forEach(g => { filas += g.items.length; });
+    const H = top + grupos.length * grupoH + filas * rowH + 8;
+    let s = "", yy = top;
+    grupos.forEach(g => {
+      s += `<text x="8" y="${yy + 22}" font-size="12.5" font-weight="bold" fill="${C.profundo}" letter-spacing="0.05em" ${F_NUM}>${g.unidad.toUpperCase()}</text>`;
+      yy += grupoH;
+      g.items.forEach(it => {
+        s += `<text x="8" y="${yy + 12}" font-size="14" fill="${C.texto}" ${F_NUM}>${it.p}</text>`;
+        const w = (it.n / max) * escala;
+        s += `<rect x="8" y="${yy + 19}" width="${w}" height="16" rx="3" fill="${it.n === 10 ? C.profundo : C.medio}"/>`;
+        s += `<text x="${8 + w + 9}" y="${yy + 32}" font-size="15" font-weight="bold" fill="${C.texto}" ${F_NUM}>${it.n}</text>`;
+        yy += rowH;
+      });
+    });
+    pinta("chart-programas", W, H, s, aria);
+    return;
+  }
+  const W = 960, mL = 330, mR = 60, filaH = 32, grupoH = 40, top = 14;
+  let filas = 0; grupos.forEach(g => { filas += g.items.length; });
+  const H = top + grupos.length * grupoH + filas * filaH + 16;
+  let s = "", yy = top;
+  grupos.forEach(g => {
+    s += `<text x="8" y="${yy + 20}" font-size="13" font-weight="bold" fill="${C.profundo}" letter-spacing="0.06em" ${F_NUM}>${g.unidad.toUpperCase()}</text>`;
+    yy += grupoH;
+    g.items.forEach(it => {
+      const ancho = (it.n / max) * (W - mL - mR);
+      s += `<text x="${mL - 14}" y="${yy + 16}" text-anchor="end" font-size="13.5" fill="${C.texto}" ${F_NUM}>${it.p}</text>`;
+      s += `<rect x="${mL}" y="${yy + 3}" width="${ancho}" height="19" rx="3" fill="${it.n === 10 ? C.profundo : C.medio}"/>`;
+      s += `<text x="${mL + ancho + 10}" y="${yy + 18}" font-size="14" font-weight="bold" fill="${C.texto}" ${F_NUM}>${it.n}</text>`;
+      yy += filaH;
+    });
+  });
+  pinta("chart-programas", W, H, s, aria);
+}
+
+/* ---------- § 5 · Nube ---------- */
+function nubeCursos() {
+  document.getElementById("nube-cursos").innerHTML =
+    DATA.nombresCursos.map(n => `<span class="tag">${n}</span>`).join("");
+}
+
+/* ---------- § 5 · Matrícula L2 ---------- */
+function chartL2(m) {
+  const d = DATA.l2, max = 7;
+  const aria = "Matriculados en Español Académico como segunda lengua por cohorte: 1 en 2023-1, 3 en 2024-2, 1 en 2025-1 y 6 en 2026-1.";
+  const W = m ? 420 : 960, H = m ? 280 : 300;
+  const mL = m ? 34 : 46, mR = m ? 12 : 30, mT = 26, mB = 44;
+  const iw = W - mL - mR, ih = H - mT - mB;
+  const y = v => mT + ih - (v / max) * ih;
+  const grupo = iw / d.length, bw = m ? 54 : 74;
+  let s = "";
+  for (let v = 0; v <= max; v++) {
+    s += `<line x1="${mL}" y1="${y(v)}" x2="${W - mR}" y2="${y(v)}" stroke="${C.borde}"/>`;
+    s += `<text x="${mL - 8}" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="${C.tenue}" ${F_NUM}>${v}</text>`;
+  }
+  d.forEach((r, i) => {
+    const cx = mL + grupo * i + grupo / 2, destaca = (r.s === "2026-1");
+    s += `<rect x="${cx - bw / 2}" y="${y(r.n)}" width="${bw}" height="${ih - (y(r.n) - mT)}" rx="4" fill="${destaca ? C.profundo : C.medio}"/>`;
+    s += `<text x="${cx}" y="${y(r.n) - 10}" text-anchor="middle" font-size="${m ? 17 : 19}" font-weight="bold" fill="${destaca ? C.profundo : C.texto}" ${F_NUM}>${r.n}</text>`;
+    s += `<text x="${cx}" y="${H - 16}" text-anchor="middle" font-size="13" fill="${C.tenue}" ${F_NUM}>${r.s}</text>`;
+  });
+  pinta("chart-l2", W, H, s, aria);
+}
+
+/* ---------- arranque y re-render al cambiar de tamaño ---------- */
+function render() {
+  const m = esMovil();
+  chartEmbudo(m);
+  chartEstado(m);
+  chartInactivos(m);
+  chartProgramas(m);
+  chartL2(m);
+}
+render();
+nubeCursos();
+let _t;
+window.addEventListener("resize", () => { clearTimeout(_t); _t = setTimeout(render, 150); });
+</script>
+</body>
+</html>
