@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="description" content="Comprensión lectora en la admisión y nivelación temprana: análisis de los admitidos formalizados 2021-2026 y propuesta de curso de inducción. Programa Institucional de Español Académico, Universidad de Antioquia."/>
+<title>Comprensión lectora al ingreso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,500;0,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"/>
+<style>
+:root{
+  --paper:#f4f6f3; --surface:#fdfdfb; --surface-2:#eaefe9; --surface-3:#e1e8e0;
+  --ink:#12201a; --ink-2:#47574f; --muted:#7a8a82;
+  --rule:#d9e1da; --grid:#e3eae3; --axis:#c2cdc5;
+  --cl:#00834e; --rl:#4a53c8;
+  --crit:#c2392f; --serious:#d9863c; --mid:#b0ada0; --alto:#00834e;
+  --hm0:#f1f5f1; --hm1:#dcebe2; --hm2:#b5dbc6; --hm3:#7ac3a1; --hm4:#2f9b71; --hm5:#03744a;
+  --hm-ink-flip:#ffffff;
+  --shadow:0 1px 2px rgba(18,32,26,.05), 0 8px 24px -16px rgba(18,32,26,.18);
+  --ring:rgba(18,32,26,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1211; --surface:#161b18; --surface-2:#1d2420; --surface-3:#242c27;
+    --ink:#f0f5f1; --ink-2:#bdc9c2; --muted:#8a9a92;
+    --rule:#28312c; --grid:#222a26; --axis:#3a453f;
+    --cl:#1fa968; --rl:#7b83e8;
+    --crit:#e06a60; --serious:#dda263; --mid:#6d6f66; --alto:#1fa968;
+    --hm0:#171d1a; --hm1:#1b2c23; --hm2:#1e422f; --hm3:#1f5c3f; --hm4:#217f54; --hm5:#1fa968;
+    --hm-ink-flip:#07120c;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -18px rgba(0,0,0,.8);
+    --ring:rgba(255,255,255,.10);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1211; --surface:#161b18; --surface-2:#1d2420; --surface-3:#242c27;
+  --ink:#f0f5f1; --ink-2:#bdc9c2; --muted:#8a9a92;
+  --rule:#28312c; --grid:#222a26; --axis:#3a453f;
+  --cl:#1fa968; --rl:#7b83e8;
+  --crit:#e06a60; --serious:#dda263; --mid:#6d6f66; --alto:#1fa968;
+  --hm0:#171d1a; --hm1:#1b2c23; --hm2:#1e422f; --hm3:#1f5c3f; --hm4:#217f54; --hm5:#1fa968;
+  --hm-ink-flip:#07120c;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -18px rgba(0,0,0,.8);
+  --ring:rgba(255,255,255,.10);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px; margin:0 auto; padding-inline:20px; padding-block:0}
+h1,h2,h3{font-family:"Newsreader", Georgia, "Times New Roman", serif; font-weight:500; text-wrap:balance; margin:0}
+p{margin:0 0 .9em}
+a{color:inherit}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:1px solid var(--rule); background:var(--surface)}
+.mast .wrap{padding-block:26px 22px}
+.org{font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; line-height:1.5}
+.org b{color:var(--ink-2); font-weight:600}
+h1{font-size:clamp(28px,4.4vw,44px); line-height:1.1; letter-spacing:-.01em; max-width:19ch}
+.dek{margin-top:12px; max-width:62ch; color:var(--ink-2); font-size:16px}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+.chip{font-size:11.5px; letter-spacing:.03em; padding:5px 10px; border:1px solid var(--rule); border-radius:999px; color:var(--ink-2); background:var(--surface-2)}
+.chip.mark{border-color:color-mix(in srgb, var(--cl) 42%, transparent); color:var(--cl); background:color-mix(in srgb, var(--cl) 9%, transparent); font-weight:600}
+
+/* ---------- nav ---------- */
+nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex; gap:2px; overflow-x:auto; padding-block:0; scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{display:block; white-space:nowrap; padding:12px 12px; font-size:13px; color:var(--ink-2); text-decoration:none; border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink); border-bottom-color:var(--axis)}
+nav a.on{color:var(--cl); border-bottom-color:var(--cl); font-weight:600}
+
+section{padding-block:44px 8px; scroll-margin-top:60px}
+.eyebrow{font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--cl); font-weight:600; margin-bottom:8px}
+h2{font-size:clamp(22px,2.6vw,29px); line-height:1.2; max-width:24ch}
+.lede{margin-top:10px; max-width:68ch; color:var(--ink-2)}
+
+/* ---------- hero figure ---------- */
+.hero{display:grid; grid-template-columns:minmax(260px,1fr) minmax(0,1.25fr); gap:28px; align-items:center;
+  background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:28px; margin-top:26px; box-shadow:var(--shadow)}
+.heroFig{font-size:clamp(56px,9vw,84px); line-height:.9; font-weight:600; color:var(--cl); letter-spacing:-.03em}
+.heroLab{font-size:15px; color:var(--ink-2); margin-top:12px; max-width:30ch}
+.heroNote{font-size:13px; color:var(--muted); margin-top:10px}
+.tiles{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.tile{background:var(--surface); padding:16px 16px 14px}
+.tile .lab{font-size:12px; color:var(--muted); line-height:1.35; min-height:2.7em}
+.tile .val{font-size:27px; font-weight:600; margin-top:6px; letter-spacing:-.02em}
+.tile .sub{font-size:12px; color:var(--ink-2); margin-top:2px}
+.tile .val.dn{color:var(--crit)}
+
+/* ---------- cards & charts ---------- */
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; margin-top:24px}
+.card{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:20px; box-shadow:var(--shadow)}
+.card h3{font-size:19px; line-height:1.25}
+.card .sub{font-size:13px; color:var(--muted); margin-top:4px}
+.card .foot{font-size:12.5px; color:var(--muted); margin-top:14px; padding-top:12px; border-top:1px solid var(--rule)}
+figure{margin:16px 0 0}
+svg{display:block; width:100%; height:auto; overflow:visible}
+.gridline{stroke:var(--grid); stroke-width:1}
+.axisline{stroke:var(--axis); stroke-width:1}
+.tick{fill:var(--muted); font-size:11px; font-family:"IBM Plex Sans",sans-serif; font-variant-numeric:tabular-nums}
+.vlab{fill:var(--ink); font-size:12px; font-weight:600; font-family:"IBM Plex Sans",sans-serif; font-variant-numeric:tabular-nums}
+.vlab.sec{fill:var(--ink-2); font-weight:500}
+.slab{fill:var(--ink-2); font-size:12px; font-family:"IBM Plex Sans",sans-serif}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; font-size:12.5px; color:var(--ink-2)}
+.legend span{display:inline-flex; align-items:center; gap:7px}
+.key{width:14px; height:3px; border-radius:2px; display:inline-block}
+.key.sq{width:12px; height:12px; border-radius:2px}
+
+/* ---------- tooltip ---------- */
+#tip{position:fixed; z-index:60; pointer-events:none; opacity:0; transition:opacity .1s;
+  background:var(--ink); color:var(--paper); border-radius:4px; padding:8px 10px; font-size:12.5px; line-height:1.45;
+  box-shadow:0 6px 20px -8px rgba(0,0,0,.5); max-width:250px}
+#tip b{color:#fff}
+:root[data-theme="dark"] #tip, :root:not([data-theme="light"]) #tip{}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #tip{background:#e9efea; color:#0e1211} :root:not([data-theme="light"]) #tip b{color:#000}}
+:root[data-theme="dark"] #tip{background:#e9efea; color:#0e1211}
+:root[data-theme="dark"] #tip b{color:#000}
+
+/* ---------- tables ---------- */
+.tbox{overflow-x:auto; margin-top:18px; border:1px solid var(--rule); border-radius:4px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:520px}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--rule); vertical-align:top}
+thead th{font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600; background:var(--surface-2); white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+tbody tr.total td{font-weight:600; background:var(--surface-2)}
+caption{caption-side:bottom; text-align:left; font-size:12.5px; color:var(--muted); padding:10px 14px}
+
+/* ---------- route cards ---------- */
+.routes{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:24px}
+.route{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:20px; border-top:3px solid var(--cl)}
+.route.b{border-top-color:var(--rl)}
+.route.c{border-top-color:var(--serious)}
+.route .tag{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600}
+.route h3{font-size:18px; margin-top:6px}
+.route .why{font-size:13px; color:var(--ink-2); margin-top:10px; padding-top:10px; border-top:1px dashed var(--rule)}
+.route .why b{color:var(--ink)}
+
+/* ---------- days ---------- */
+.days{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:4px; overflow:hidden; margin-top:22px}
+.day{background:var(--surface); padding:16px}
+.day .n{font-family:"Newsreader",serif; font-size:13px; color:var(--cl); font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+.day h4{margin:6px 0 8px; font-size:15px; font-family:"Newsreader",serif; font-weight:600; line-height:1.25}
+.day p{font-size:12.5px; color:var(--ink-2); margin:0}
+.day .ev{font-size:12px; color:var(--muted); margin-top:10px; padding-top:8px; border-top:1px solid var(--rule)}
+
+/* ---------- scenario switch ---------- */
+.switch{display:inline-flex; border:1px solid var(--rule); border-radius:999px; overflow:hidden; background:var(--surface); margin-top:18px}
+.switch button{font:inherit; font-size:13px; padding:7px 16px; border:0; background:transparent; color:var(--ink-2); cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--cl); color:#fff; font-weight:600}
+.switch button:focus-visible{outline:2px solid var(--rl); outline-offset:-2px}
+.formula{font-size:13px; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--rule); border-radius:4px; padding:12px 14px; margin-top:16px; font-variant-numeric:tabular-nums}
+.formula code{font-family:"IBM Plex Sans",sans-serif; font-weight:600; color:var(--ink)}
+
+/* ---------- asks ---------- */
+.asks{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; margin-top:24px}
+.ask{background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--cl); border-radius:0 4px 4px 0; padding:18px}
+.ask .k{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--cl); font-weight:600}
+.ask h3{font-size:16.5px; margin-top:7px; font-family:"IBM Plex Sans",sans-serif; font-weight:600}
+.ask p{font-size:13px; color:var(--ink-2); margin:8px 0 0}
+
+.note{background:var(--surface-2); border:1px solid var(--rule); border-radius:4px; padding:18px 20px; margin-top:24px; font-size:13.5px; color:var(--ink-2)}
+.note h3{font-size:16px; font-family:"IBM Plex Sans",sans-serif; font-weight:600; color:var(--ink); margin-bottom:8px}
+.note ul{margin:0; padding-left:18px}
+.note li{margin-bottom:7px}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--rule); margin-top:48px; background:var(--surface)}
+footer .wrap{padding-block:26px 34px; font-size:12.5px; color:var(--muted)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr; padding:22px}
+  section{padding-block:34px 4px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<style>html{color-scheme:light dark}img{max-width:100%}[hidden]{display:none!important}@media print{nav{display:none}section{break-inside:avoid}.card,.hero,.note{box-shadow:none}}</style>
+</head>
+<body>
+<div class="mast">
+  <div class="wrap">
+    <div class="org">Universidad de Antioquia · Facultad de Comunicaciones y Filología<br/><b>Programa Institucional de Español Académico</b></div>
+    <h1>Comprensión lectora en la admisión y nivelación temprana</h1>
+    <p class="dek">Análisis diagnóstico de los admitidos formalizados entre 2021-1 y 2026-1, y propuesta de un curso de inducción de una semana, articulado con la Política de Español Académico.</p>
+    <div class="meta">
+      <span class="chip mark">n = 46.767 admitidos formalizados · modalidad regular</span>
+      <span class="chip">11 periodos: 2021-1 a 2026-1</span>
+      <span class="chip">Fuente: Seguimiento académico — Educación Inclusiva y Permanencia</span>
+      <span class="chip">Marco: AA 571 de 2021 · AA 597 de 2022 · Res. 00269 de 2026</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap">
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#franja">Franja crítica</a>
+        <a href="#brechas">Brechas</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#propuesta">Propuesta</a>
+        <a href="#horas">Dimensionamiento</a>
+      </div>
+</nav>
+
+<div class="wrap">
+
+<section id="diagnostico">
+  <div class="eyebrow">Hallazgo central</div>
+  <h2>Uno de cada cinco admitidos entra con un nivel de lectura bajo para el trabajo académico
+          universitario</h2>
+  <p class="lede">Al leer el componente de Comprensión Lectora sobre los <b>admitidos
+            formalizados</b> el puntaje es un mapa de las necesidades de literacidad de la población
+          que efectivamente ingresa.</p>
+
+  <div class="hero">
+    <div>
+      <div class="heroFig">19,6&nbsp;%</div>
+      <div class="heroLab">de los admitidos formalizados ingresa con Comprensión Lectora igual o inferior a 40 puntos.</div>
+      <div class="heroNote">9.166 estudiantes en once periodos. De ellos, 4.328 están en nivel crítico (CL ≤ 20).</div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Promedio de CL, modalidad regular</div><div class="val">59,89</div><div class="sub">frente a 57,94 en Razonamiento Lógico</div></div>
+      <div class="tile"><div class="lab">Caída de la CL entre 2021-1 y 2026-1</div><div class="val dn">−16,03</div><div class="sub">de 73,45 a 57,42 puntos (−21,8 %)</div></div>
+      <div class="tile"><div class="lab">Admitidos con puntaje total ≤ 40</div><div class="val">8.417</div><div class="sub">18,0 % del total; 74,5 % de ellos con CL ≤ 40</div></div>
+      <div class="tile"><div class="lab">Promedio por periodo</div><div class="val">4.251</div><div class="sub">admitidos formalizados, modalidad regular</div></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>El comportamiento</h3>
+      <div class="sub">Promedios por periodo, modalidad regular (admitidos formalizados)</div>
+      <figure id="fig-serie"></figure>
+      <div class="legend">
+        <span><i class="key" style="background:var(--cl)"></i>Comprensión Lectora</span>
+        <span><i class="key" style="background:var(--rl)"></i>Razonamiento Lógico</span>
+      </div>
+      <div class="foot">El promedio de CL se mantiene sobre 50 en todos los periodos, y su tendencia lineal cede cerca de 1,8 puntos por periodo (≈ 3,5 por año). La estabilidad del promedio consolidado oculta esa trayectoria.</div>
+    </div>
+
+    <div class="card">
+      <h3>Distribución por nivel de comprensión lectora</h3>
+      <div class="sub">n = 46.767 · modalidad regular, 2021-1 a 2026-1</div>
+      <figure id="fig-dist"></figure>
+      <div class="foot">La mayoría ingresa con desempeño medio o alto: el 58,6 % supera los 60 puntos. La franja de nivelación temprana es la de la izquierda —9.166 estudiantes—, y dentro de ella el núcleo crítico son los 4.328 con CL ≤ 20.</div>
+    </div>
+  </div>
+</section>
+
+<section id="franja">
+  <div class="eyebrow">Lo que el puntaje total no muestra</div>
+  <h2>La comprensión lectora es el componente más débil de la población vulnerable</h2>
+  <p class="lede">El cruce del puntaje total con el nivel de CL permite ver no solo cuántos admitidos ingresan con bajo puntaje, sino cómo se comporta su lectura en particular. En el grupo de menor puntaje total, la CL promedia 25,90 frente a 27,76 de Razonamiento Lógico.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Cruce del puntaje total con el nivel de CL</h3>
+      <div class="sub">Admitidos formalizados, examen regular (n = 46.767)</div>
+      <figure id="fig-heat"></figure>
+      <div class="legend" id="heat-legend"></div>
+      <div class="foot">En la intersección del puntaje total intermedio (51-60) con la CL crítica (≤ 20) se ubican <b>89 admitidos</b>: ingresan apoyados en Razonamiento Lógico pese a un déficit lector que el puntaje total no detecta. Es el argumento más claro a favor de un diagnóstico de lectura propio al inicio del semestre.</div>
+    </div>
+
+    <div class="card">
+      <h3>Dentro del grupo de menor puntaje total</h3>
+      <div class="sub">Puntaje total ≤ 40 · n = 8.417 (18,0 % del total)</div>
+      <figure id="fig-vuln"></figure>
+      <div class="foot">Tres de cada cuatro admitidos de menor puntaje ingresan además con una lectura deficiente (74,5 % con CL ≤ 40) y casi la mitad en nivel crítico. Esta franja —unos 833 estudiantes por periodo— es la población objetivo de la nivelación temprana.</div>
+    </div>
+  </div>
+</section>
+
+<section id="brechas">
+  <div class="eyebrow">Focalización</div>
+  <h2>La brecha territorial</h2>
+  <p class="lede">Medellín concentra el 62,0 % del grupo de menor puntaje (5.218 de 8.417) y registra a la vez uno de los promedios de CL más altos. Los promedios más bajos se concentran en las sedes de región, donde la brecha se suma a las condiciones de acceso.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Promedio de CL por sede</h3>
+      <div class="sub">Grupo de puntaje total ≤ 40 · sedes reportadas en el informe</div>
+      <figure id="fig-sedes"></figure>
+      <div class="foot">La línea marca el promedio de CL del grupo (25,90). Puerto Berrío, Caucasia y Turbo quedan más de cinco puntos por debajo de Medellín y El Carmen de Viboral.</div>
+    </div>
+
+    <div class="card">
+      <h3>Promedio de CL por unidad académica</h3>
+      <div class="sub">Grupo de puntaje total ≤ 40 · extremos reportados</div>
+      <figure id="fig-unidades"></figure>
+      <div class="foot">El bajo desempeño se concentra en áreas deportivas, agrarias y bibliotecológicas; los promedios más altos aparecen en Enfermería, Filosofía, Ciencias Sociales y Nutrición. La granularidad permite focalizar el acompañamiento donde la necesidad es mayor.</div>
+    </div>
+  </div>
+</section>
+
+<section id="modalidades">
+  <div class="eyebrow">Modalidades de examen</div>
+  <h2>Tres perfiles de entrada</h2>
+  <p class="lede"></p>
+
+  <div class="card" style="margin-top:24px">
+    <h3>Promedios consolidados por modalidad de examen</h3>
+    <div class="sub">Admitidos formalizados, 2021-2026</div>
+    <figure id="fig-mod"></figure>
+    <div class="legend">
+      <span><i class="key sq" style="background:var(--cl)"></i>Comprensión Lectora</span>
+      <span><i class="key sq" style="background:var(--rl)"></i>Razonamiento Lógico</span>
+    </div>
+    <div class="foot">En discapacidad auditiva el patrón se invierte y es consistente: la CL (41,12) duplica al Razonamiento Lógico (19,17) y el 42,9 % alcanza CL &gt; 60. El cuello de botella de esta población no es la comprensión lectora —su fortaleza—, lo cual es coherente con el marco que reconoce la Lengua de Señas Colombiana como primera lengua y el español escrito como segunda.</div>
+  </div>
+
+  <div class="tbox">
+    <table>
+      <caption>Síntesis de patrones por modalidad e implicaciones para el Programa. Elaboración propia sobre el informe de seguimiento académico.</caption>
+      <thead><tr><th>Modalidad</th><th class="num">n</th><th>Patrón de comprensión lectora</th><th>Implicación para Español Académico</th></tr></thead>
+      <tbody>
+        <tr><td><b>Examen regular</b></td><td class="num">46.767</td><td>CL (59,89) levemente superior a RL, con tendencia descendente; 19,6 % con CL ≤ 40 y, en el grupo de puntaje total ≤ 40, la CL es el componente más débil.</td><td>Nivelación en literacidad crítica y escritura; el curso debe asumir la heterogeneidad de entrada y focalizar por sede y programa.</td></tr>
+        <tr><td><b>Discapacidad visual</b></td><td class="num">1</td><td>Único caso formalizado (total 14,21; CL 1,81; RL 26,60), en Licenciatura en Educación Especial. La distancia entre componentes sugiere barreras de accesibilidad del instrumento.</td><td>Revisar accesibilidad y pertinencia del examen; acompañamiento individualizado y ajustes razonables.</td></tr>
+        <tr><td><b>Discapacidad auditiva</b></td><td class="num">21</td><td>CL (41,12) muy superior a RL (19,17); el cuello de botella está en el razonamiento verbal en español escrito.</td><td>Ruta diferencial LSC (L1) / español escrito (L2); no asumir déficit lector; foco en literacidad disciplinar.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="propuesta">
+  <div class="eyebrow">Propuesta</div>
+  <h2>Aprender haciendo: leer, escribir y argumentar en la universidad</h2>
+  <p class="lede">Un curso de nivelación de una semana, previo al inicio del semestre, que no reemplaza el curso de Español Académico: lo antecede y lo prepara, reduciendo la brecha de entrada. Cinco jornadas de tres horas —15 horas—, no calificables, con evaluación diagnóstica y formativa que alimenta un reporte individual de necesidades.</p>
+
+  <div class="days">
+    <div class="day"><div class="n">Día 1</div><h4>Diagnóstico y lectura literal e inferencial</h4><p>Activar estrategias de comprensión: identificar la idea global, jerarquizar y hacer inferencias.</p><div class="ev">Prueba diagnóstica y mapa de ideas de un texto disciplinar</div></div>
+    <div class="day"><div class="n">Día 2</div><h4>Lectura crítica de géneros académicos</h4><p>Evaluar postura, intención y argumentos; distinguir hecho, opinión y evidencia.</p><div class="ev">Ficha de lectura crítica con valoración argumentada</div></div>
+    <div class="day"><div class="n">Día 3</div><h4>Escritura I: del texto fuente al texto propio</h4><p>Parafrasear, resumir y citar sin plagio; planear un párrafo académico.</p><div class="ev">Resumen y párrafo argumentativo con fuente citada</div></div>
+    <div class="day"><div class="n">Día 4</div><h4>Escritura II: argumentación</h4><p>Construir y sostener una tesis con razones y evidencia; revisar entre pares.</p><div class="ev">Borrador de texto argumentativo de una página</div></div>
+    <div class="day"><div class="n">Día 5</div><h4>Oralidad académica y socialización</h4><p>Exponer y defender oralmente una postura; retroalimentar.</p><div class="ev">Mini-exposición, portafolio final y autoevaluación</div></div>
+  </div>
+
+  <h3 style="margin-top:34px; font-size:21px">Un tronco común con tres rutas diferenciadas</h3>
+  <p class="lede" style="margin-top:8px">La arquitectura preserva la integración —principio de inclusión— sin diluir la especificidad de cada necesidad. El componente plenario es compartido; la diferenciación opera en la franja de trabajo guiado, donde cada grupo recibe materiales, mediación y apoyos ajustados.</p>
+
+  <div class="routes">
+    <div class="route">
+      <div class="tag">Ruta A</div>
+      <h3>Población regular</h3>
+      <p style="font-size:13.5px; color:var(--ink-2); margin-top:8px">Literacidad crítica y escritura académica intensivas; estrategias de lectura de géneros disciplinares; focalización por sede y programa.</p>
+      <div class="why"><b>La justifica:</b> 19,6 % de los admitidos con CL ≤ 40 y 9,3 % en nivel crítico; en el grupo de puntaje total ≤ 40, la CL (25,90) es el componente más débil.</div>
+    </div>
+    <div class="route b">
+      <div class="tag">Ruta B</div>
+      <h3>Discapacidad visual</h3>
+      <p style="font-size:13.5px; color:var(--ink-2); margin-top:8px">Objetivos del tronco común con materiales accesibles, lectores de pantalla y tiempos ajustados; tutoría individual.</p>
+      <div class="why"><b>La justifica:</b> el único caso formalizado registra CL 1,81 frente a RL 26,60, patrón que apunta a barreras de acceso al texto antes que a déficit de competencia.</div>
+    </div>
+    <div class="route c">
+      <div class="tag">Ruta C</div>
+      <h3>Sordos señantes</h3>
+      <p style="font-size:13.5px; color:var(--ink-2); margin-top:8px">Literacidad disciplinar y producción escrita en L2; apoyo en la maquinaria sintáctica del español (conectores de causa, condición y concesión; negaciones y cuantificadores); mediación en LSC.</p>
+      <div class="why"><b>La justifica:</b> CL 41,12 frente a RL 19,17. El reto no está en la capacidad de razonar, que estos estudiantes ya ejercen en su primera lengua, sino en el español escrito como segunda lengua.</div>
+    </div>
+  </div>
+</section>
+
+<section id="horas">
+  <div class="eyebrow">Dimensionamiento</div>
+  <h2>Del diagnóstico a las horas docentes</h2>
+  <p class="lede">Al basarse en los admitidos formalizados, el curso se dimensiona sobre la población que efectivamente ingresa: cerca de 4.251 admitidos por periodo en modalidad regular. El cupo se toma del artículo 7 de la Resolución 00269 de 2026, que fija el máximo preferible en 25 estudiantes por grupo.</p>
+
+  <div class="switch" role="group" aria-label="Cupo por grupo">
+    <button id="c25" aria-pressed="true">Cupo 25 · Res. 00269, art. 7</button>
+    <button id="c30" aria-pressed="false">Cupo 30 · versión anterior</button>
+  </div>
+
+  <div class="formula">Horas de docencia = techo (estudiantes ÷ <code id="f-cupo">25</code>) × 15 h · Las horas de los apoyos diferenciados —interpretación en LSC para la ruta C y tutoría individual para la ruta B— se presupuestan por separado.</div>
+
+  <div class="tbox">
+    <table>
+      <caption>Escenarios de cobertura por periodo académico. La estimación de estudiantes por periodo se obtiene del promedio de los once periodos analizados; conviene confirmarla con Admisiones y Registro para el último periodo, por sede.</caption>
+      <thead><tr><th>Escenario de cobertura</th><th class="num">Estudiantes / periodo</th><th class="num">Grupos</th><th class="num">Horas docentes</th></tr></thead>
+      <tbody id="esc-body"></tbody>
+    </table>
+  </div>
+
+  <div class="grid2" style="margin-top:22px">
+    <div class="card">
+      <h3>Acciones escalonadas para el Programa</h3>
+      <div class="sub">Más allá del curso de inducción</div>
+      <div class="tbox" style="margin-top:14px; border:none">
+        <table style="min-width:420px">
+          <thead><tr><th>Plazo</th><th>Acciones</th></tr></thead>
+          <tbody>
+            <tr><td><b>Corto</b><br/><span style="color:var(--muted); font-size:12px">1 a 2 semestres</span></td><td>Diagnóstico temprano de lectura y escritura en las primeras semanas, con grupos de acompañamiento focalizado; incorporar al diagnóstico a los admitidos con puntaje total intermedio y CL baja; auditar con Educación Inclusiva y Permanencia la accesibilidad del examen y de los materiales.</td></tr>
+            <tr><td><b>Mediano</b><br/><span style="color:var(--muted); font-size:12px">2 a 4 semestres</span></td><td>Módulos de nivelación articulables al curso, con materiales de acceso abierto; tutorías diferenciadas, incluida la modalidad en lengua de señas; formalizar los proyectos concertados (ABP) y los cursos habilitables, clasificables y validables del Capítulo IV; establecer rutas de remisión con Bienestar, Educación Inclusiva, Ude@ y Regionalización.</td></tr>
+            <tr><td><b>Largo</b><br/><span style="color:var(--muted); font-size:12px">4 semestres en adelante</span></td><td>Consolidar la articulación transversal del español académico en los planes de estudio; institucionalizar un observatorio de literacidad académica con seguimiento longitudinal de cohortes, como insumo de la evaluación quinquenal de impacto; promover la revisión de la accesibilidad y la validez diferencial de la prueba de CL.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Anclaje normativo</h3>
+      <div class="sub">Tres instrumentos, una cadena de decisión</div>
+      <div class="tbox" style="margin-top:14px; border:none">
+        <table style="min-width:420px">
+          <thead><tr><th>Instrumento</th><th>Qué habilita</th></tr></thead>
+          <tbody>
+            <tr><td><b>AA 571 de 2021</b><br/><span style="color:var(--muted); font-size:12px">Política de Español Académico</span></td><td>Reconoce en sus considerandos el bajo desempeño en lectura crítica. La franja del 19,6 % ofrece la línea base cuantitativa para la evaluación quinquenal de impacto.</td></tr>
+            <tr><td><b>AA 597 de 2022</b><br/><span style="color:var(--muted); font-size:12px">Admisión clasificatoria</span></td><td>Suprime el puntaje mínimo de corte y el Nivel Cero, y traslada al interior de la trayectoria la función de nivelación. Su artículo 5 ordena estrategias de permanencia: este análisis es su focalización operativa.</td></tr>
+            <tr><td><b>Res. 00269 de 2026</b><br/><span style="color:var(--muted); font-size:12px">Vicerrectoría de Docencia, 3 de julio</span></td><td>Reglamenta la Política: curso obligatorio de 3 créditos (64 h de interacción y 80 h independientes), cupo preferible de 25 (art. 7) y Capítulo IV para comunidades con trayectorias diferenciadas —cursos habilitables, clasificables y validables, exámenes de clasificación a cargo de la Facultad y proyecto concertado (arts. 15 y 16)—. Es el anclaje directo de las rutas B y C.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Programa Institucional de Español Académico · Facultad de Comunicaciones y Filología · Universidad de Antioquia.<br/>
+    Elaboración propia sobre el informe de seguimiento académico del componente de Educación Inclusiva y Permanencia. Tablero de trabajo para la sesión con la Vicerrectoría de Docencia.
+  </div>
+</footer>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var NS="http://www.w3.org/2000/svg";
+  function el(n,a){var e=document.createElementNS(NS,n);if(a)for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function fmt(n){return n.toLocaleString("es-CO");}
+  function dec(n,d){return n.toLocaleString("es-CO",{minimumFractionDigits:d===undefined?2:d,maximumFractionDigits:d===undefined?2:d});}
+
+  /* ---------- tooltip layer ---------- */
+  var tip=document.getElementById("tip"),cur=null;
+  function showTip(e,html){tip.innerHTML=html;tip.style.opacity="1";moveTip(e);}
+  function moveTip(e){
+    var r=tip.getBoundingClientRect(),x=e.clientX+14,y=e.clientY-r.height-12;
+    if(x+r.width>window.innerWidth-8)x=e.clientX-r.width-14;
+    if(y<8)y=e.clientY+18;
+    tip.style.left=x+"px";tip.style.top=y+"px";
+  }
+  function hideTip(){tip.style.opacity="0";cur=null;}
+  document.addEventListener("mousemove",function(e){
+    var t=e.target.closest?e.target.closest("[data-tip]"):null;
+    if(t){if(t!==cur){cur=t;showTip(e,t.getAttribute("data-tip"));}else{moveTip(e);}}
+    else if(cur){hideTip();}
+  },true);
+  document.addEventListener("mouseleave",hideTip);
+  window.addEventListener("scroll",hideTip,{passive:true});
+
+  /* =========================================================
+     1 · Serie temporal CL / RL
+     ========================================================= */
+  var serie=[["2021-1",73.45,67.95],["2021-2",67.59,66.58],["2022-1",68.36,68.10],["2022-2",65.94,59.71],
+             ["2023-1",58.66,57.38],["2023-2",54.60,52.02],["2024-1",60.98,58.68],["2024-2",52.82,52.90],
+             ["2025-1",58.54,56.11],["2025-2",52.21,51.13],["2026-1",57.42,55.40]];
+  (function(){
+    var W=560,H=300,m={t:18,r:46,b:36,l:36};
+    var iw=W-m.l-m.r, ih=H-m.t-m.b, y0=45, y1=80;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,role:"img","aria-label":"Promedios de Comprensión Lectora y Razonamiento Lógico por periodo, 2021-1 a 2026-1"});
+    var X=function(i){return m.l+ (serie.length===1?0:i*(iw/(serie.length-1)));};
+    var Y=function(v){return m.t+ih-((v-y0)/(y1-y0))*ih;};
+    for(var v=50;v<=80;v+=10){
+      svg.appendChild(el("line",{x1:m.l,x2:m.l+iw,y1:Y(v),y2:Y(v),class:"gridline"}));
+      var tk=el("text",{x:m.l-8,y:Y(v)+4,class:"tick","text-anchor":"end"});tk.textContent=v;svg.appendChild(tk);
+    }
+    svg.appendChild(el("line",{x1:m.l,x2:m.l+iw,y1:m.t+ih,y2:m.t+ih,class:"axisline"}));
+    serie.forEach(function(d,i){
+      if(i%2===0||i===serie.length-1){
+        var t=el("text",{x:X(i),y:m.t+ih+18,class:"tick","text-anchor":"middle"});t.textContent=d[0];svg.appendChild(t);
+      }
+    });
+    [[2,"var(--rl)","RL"],[1,"var(--cl)","CL"]].forEach(function(s){
+      var idx=s[0],col=s[1];
+      var d="";serie.forEach(function(p,i){d+=(i?"L":"M")+X(i)+" "+Y(p[idx]);});
+      svg.appendChild(el("path",{d:d,fill:"none",stroke:col,"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"}));
+      serie.forEach(function(p,i){
+        svg.appendChild(el("circle",{cx:X(i),cy:Y(p[idx]),r:3.2,fill:col,stroke:"var(--surface)","stroke-width":2}));
+      });
+      var last=serie[serie.length-1];
+      var lab=el("text",{x:X(serie.length-1)+9,y:Y(last[idx])+(idx===1?-2:12),class:"vlab"});
+      lab.setAttribute("fill", idx===1?"var(--ink)":"var(--ink-2)");
+      lab.textContent=dec(last[idx]);svg.appendChild(lab);
+    });
+    var cross=el("line",{x1:0,x2:0,y1:m.t,y2:m.t+ih,stroke:"var(--axis)","stroke-width":1,opacity:0});
+    svg.appendChild(cross);
+    serie.forEach(function(d,i){
+      var bw=iw/(serie.length-1);
+      var r=el("rect",{x:X(i)-bw/2,y:m.t,width:bw,height:ih,fill:"transparent"});
+      r.setAttribute("data-tip","<b>"+d[0]+"</b><br>Comprensión Lectora: "+dec(d[1])+"<br>Razonamiento Lógico: "+dec(d[2]));
+      r.addEventListener("mouseenter",function(){cross.setAttribute("x1",X(i));cross.setAttribute("x2",X(i));cross.setAttribute("opacity",1);});
+      r.addEventListener("mouseleave",function(){cross.setAttribute("opacity",0);});
+      svg.appendChild(r);
+    });
+    document.getElementById("fig-serie").appendChild(svg);
+  })();
+
+  /* =========================================================
+     2 · Distribución por nivel de CL (barra 100 %)
+     ========================================================= */
+  var bandas=[["CL ≤ 20","nivel crítico",4328,9.3,"var(--crit)"],["CL 21-40","nivel bajo",4838,10.3,"var(--serious)"],
+              ["CL 41-60","nivel medio",10205,21.8,"var(--mid)"],["CL > 60","nivel alto",27396,58.6,"var(--alto)"]];
+  (function(){
+    var W=560,H=210,m={t:16,r:4,b:8,l:4},iw=W-m.l-m.r,bh=56,gap=2,total=46767;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,role:"img","aria-label":"Distribución de admitidos por nivel de comprensión lectora"});
+    var x=m.l;
+    bandas.forEach(function(b,i){
+      var w=(b[2]/total)*iw-(i<bandas.length-1?gap:0);
+      var g=el("g");
+      g.setAttribute("data-tip","<b>"+b[0]+" · "+b[1]+"</b><br>"+fmt(b[2])+" admitidos<br>"+dec(b[3],1)+" % del total");
+      var r=el("rect",{x:x,y:m.t,width:Math.max(w,1),height:bh,fill:b[4],rx:i===0||i===bandas.length-1?3:0});
+      g.appendChild(r);
+      if(w>54){
+        var t=el("text",{x:x+10,y:m.t+bh/2+5,class:"vlab"});
+        t.setAttribute("fill", (i===2)?"#1b1b17":"#ffffff");
+        t.textContent=dec(b[3],1)+" %";g.appendChild(t);
+      }
+      svg.appendChild(g);
+      x+=(b[2]/total)*iw;
+    });
+    var ly=m.t+bh+30;
+    bandas.forEach(function(b,i){
+      var col=i%2, row=Math.floor(i/2), cx=m.l+col*(iw/2), cy=ly+row*40;
+      svg.appendChild(el("rect",{x:cx,y:cy-10,width:11,height:11,rx:2,fill:b[4]}));
+      var t1=el("text",{x:cx+18,y:cy,class:"vlab"});t1.textContent=b[0]+" · "+fmt(b[2]);svg.appendChild(t1);
+      var t2=el("text",{x:cx+18,y:cy+16,class:"slab"});t2.textContent=b[1]+" — "+dec(b[3],1)+" %";svg.appendChild(t2);
+    });
+    document.getElementById("fig-dist").appendChild(svg);
+  })();
+
+  /* =========================================================
+     3 · Heatmap cruce puntaje total × nivel CL
+     ========================================================= */
+  (function(){
+    var cols=["CL ≤ 20","CL 21-40","CL 41-60","CL > 60"];
+    var rows=[["Total > 60",[0,174,3428,21023]],["Total 51-60",[89,998,2973,4111]],
+              ["Total 41-50",[483,1148,1980,1943]],["Total ≤ 40",[3756,2518,1824,319]]];
+    var bins=[0,1,200,1000,3000,10000];
+    var vars=["var(--hm0)","var(--hm1)","var(--hm2)","var(--hm3)","var(--hm4)","var(--hm5)"];
+    function step(v){var s=0;for(var i=0;i<bins.length;i++){if(v>=bins[i])s=i;}return v===0?0:s;}
+    var W=560,H=280,m={t:26,r:8,b:34,l:92},iw=W-m.l-m.r,ih=H-m.t-m.b;
+    var cw=iw/4, rh=ih/4, gap=2;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,role:"img","aria-label":"Cruce del puntaje total con el nivel de comprensión lectora"});
+    cols.forEach(function(c,j){
+      var t=el("text",{x:m.l+j*cw+cw/2,y:m.t-10,class:"tick","text-anchor":"middle"});t.textContent=c;svg.appendChild(t);
+    });
+    rows.forEach(function(r,i){
+      var t=el("text",{x:m.l-10,y:m.t+i*rh+rh/2+4,class:"slab","text-anchor":"end"});t.textContent=r[0];svg.appendChild(t);
+      r[1].forEach(function(v,j){
+        var s=step(v),g=el("g");
+        g.setAttribute("data-tip","<b>Puntaje "+r[0].replace("Total ","")+" · "+cols[j]+"</b><br>"+fmt(v)+" admitidos<br>"+dec(v/46767*100,1)+" % del total");
+        g.appendChild(el("rect",{x:m.l+j*cw,y:m.t+i*rh,width:cw-gap,height:rh-gap,fill:vars[s],rx:2}));
+        var t2=el("text",{x:m.l+j*cw+(cw-gap)/2,y:m.t+i*rh+(rh-gap)/2+4,class:"vlab","text-anchor":"middle"});
+        t2.setAttribute("fill", s>=4?"var(--hm-ink-flip)":"var(--ink)");
+        t2.textContent=fmt(v);g.appendChild(t2);
+        svg.appendChild(g);
+      });
+    });
+    /* anotación de los 89 casos: fila "Total 51-60" (índice 1), columna CL ≤ 20 (índice 0) */
+    var ax=m.l+cw/2, ay=m.t+rh+rh/2;
+    svg.appendChild(el("rect",{x:m.l,y:m.t+rh,width:cw-gap,height:rh-gap,fill:"none",stroke:"var(--crit)","stroke-width":2,rx:2}));
+    var call=el("text",{x:m.l,y:H-12,class:"slab"});
+    call.setAttribute("fill","var(--crit)");
+    call.textContent="89 admitidos con puntaje intermedio y lectura crítica";
+    svg.appendChild(call);
+    document.getElementById("fig-heat").appendChild(svg);
+
+    var lg=document.getElementById("heat-legend"),labels=["0","1-199","200-999","1.000-2.999","3.000-9.999","≥ 10.000"];
+    labels.forEach(function(l,i){
+      var s=document.createElement("span");
+      s.innerHTML='<i class="key sq" style="background:'+vars[i]+'; outline:1px solid var(--ring)"></i>'+l;
+      lg.appendChild(s);
+    });
+  })();
+
+  /* =========================================================
+     4 · Grupo de menor puntaje total (columnas)
+     ========================================================= */
+  (function(){
+    var d=[["CL ≤ 20",3756,44.6,"var(--crit)","crítico"],["CL 21-40",2518,29.9,"var(--serious)","bajo"],
+           ["CL 41-60",1824,21.7,"var(--mid)","medio"],["CL > 60",319,3.8,"var(--alto)","alto"]];
+    var W=560,H=280,m={t:24,r:10,b:48,l:44},iw=W-m.l-m.r,ih=H-m.t-m.b,max=50;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,role:"img","aria-label":"Distribución del grupo con puntaje total menor o igual a 40 según nivel de comprensión lectora"});
+    for(var v=0;v<=50;v+=10){
+      var y=m.t+ih-(v/max)*ih;
+      svg.appendChild(el("line",{x1:m.l,x2:m.l+iw,y1:y,y2:y,class:v===0?"axisline":"gridline"}));
+      var tk=el("text",{x:m.l-8,y:y+4,class:"tick","text-anchor":"end"});tk.textContent=v+" %";svg.appendChild(tk);
+    }
+    var bw=Math.min(24,iw/d.length*0.42);
+    d.forEach(function(b,i){
+      var cx=m.l+(i+0.5)*(iw/d.length), h=(b[2]/max)*ih, y=m.t+ih-h, g=el("g");
+      g.setAttribute("data-tip","<b>"+b[0]+" · nivel "+b[4]+"</b><br>"+fmt(b[1])+" admitidos<br>"+dec(b[2],1)+" % del grupo de puntaje ≤ 40");
+      g.appendChild(el("path",{d:"M"+(cx-bw/2)+" "+(m.t+ih)+" L"+(cx-bw/2)+" "+(y+4)+" Q"+(cx-bw/2)+" "+y+" "+(cx-bw/2+4)+" "+y+
+        " L"+(cx+bw/2-4)+" "+y+" Q"+(cx+bw/2)+" "+y+" "+(cx+bw/2)+" "+(y+4)+" L"+(cx+bw/2)+" "+(m.t+ih)+" Z",fill:b[3]}));
+      var t=el("text",{x:cx,y:y-9,class:"vlab","text-anchor":"middle"});t.textContent=dec(b[2],1)+" %";g.appendChild(t);
+      var l1=el("text",{x:cx,y:m.t+ih+19,class:"slab","text-anchor":"middle"});l1.textContent=b[0];g.appendChild(l1);
+      var l2=el("text",{x:cx,y:m.t+ih+35,class:"tick","text-anchor":"middle"});l2.textContent=fmt(b[1]);g.appendChild(l2);
+      svg.appendChild(g);
+    });
+    document.getElementById("fig-vuln").appendChild(svg);
+  })();
+
+  /* =========================================================
+     5 · Promedio CL por sede y 6 · por unidad académica
+     ========================================================= */
+  function barrasH(target,data,max,ref,refLab){
+    var W=560,rowH=34,m={t:10,r:52,b:34,l:150};
+    var H=m.t+data.length*rowH+m.b,iw=W-m.l-m.r;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H});
+    var X=function(v){return m.l+(v/max)*iw;};
+    for(var v=0;v<=max;v+=10){
+      svg.appendChild(el("line",{x1:X(v),x2:X(v),y1:m.t,y2:m.t+data.length*rowH,class:v===0?"axisline":"gridline"}));
+      var tk=el("text",{x:X(v),y:m.t+data.length*rowH+18,class:"tick","text-anchor":"middle"});tk.textContent=v;svg.appendChild(tk);
+    }
+    var bh=Math.min(16,rowH*0.5);
+    data.forEach(function(d,i){
+      var y=m.t+i*rowH+rowH/2, g=el("g");
+      g.setAttribute("data-tip","<b>"+d[0]+"</b><br>Promedio de CL: "+dec(d[1])+(d[2]?"<br>"+d[2]:""));
+      var w=Math.max(X(d[1])-m.l,2);
+      g.appendChild(el("path",{d:"M"+m.l+" "+(y-bh/2)+" L"+(m.l+w-4)+" "+(y-bh/2)+" Q"+(m.l+w)+" "+(y-bh/2)+" "+(m.l+w)+" "+(y-bh/2+4)+
+        " L"+(m.l+w)+" "+(y+bh/2-4)+" Q"+(m.l+w)+" "+(y+bh/2)+" "+(m.l+w-4)+" "+(y+bh/2)+" L"+m.l+" "+(y+bh/2)+" Z",fill:d[3]||"var(--cl)"}));
+      var lab=el("text",{x:m.l-12,y:y+4,class:"slab","text-anchor":"end"});lab.textContent=d[0];g.appendChild(lab);
+      var val=el("text",{x:m.l+w+8,y:y+4,class:"vlab"});val.textContent=dec(d[1]);g.appendChild(val);
+      svg.appendChild(g);
+    });
+    if(ref){
+      svg.appendChild(el("line",{x1:X(ref),x2:X(ref),y1:m.t-2,y2:m.t+data.length*rowH+4,stroke:"var(--ink-2)","stroke-width":1,"stroke-dasharray":"4 3"}));
+      var rl=el("text",{x:X(ref),y:m.t+data.length*rowH+32,class:"tick","text-anchor":"middle"});
+      rl.setAttribute("fill","var(--ink-2)");rl.textContent=refLab;svg.appendChild(rl);
+    }
+    target.appendChild(svg);
+  }
+  barrasH(document.getElementById("fig-sedes"),[
+    ["El Carmen de Viboral",28.07,"",null],
+    ["Medellín",27.10,"5.218 admitidos · 62,0 % del grupo",null],
+    ["Turbo",20.38,"",null],
+    ["Caucasia",20.05,"",null],
+    ["Puerto Berrío",20.04,"",null]
+  ],40,25.90,"promedio del grupo 25,90");
+  barrasH(document.getElementById("fig-unidades"),[
+    ["Enfermería",35.98,"",null],
+    ["Filosofía",33.72,"",null],
+    ["Ciencias Sociales",33.26,"",null],
+    ["Nutrición",31.37,"",null],
+    ["Educación Física",22.03,"",null],
+    ["Bibliotecología",21.94,"",null],
+    ["Ciencias Agrarias",21.34,"",null],
+    ["IUEFD",13.27,"Instituto Universitario de Educación Física y Deporte",null]
+  ],40,25.90,"promedio del grupo 25,90");
+
+  /* =========================================================
+     7 · Modalidades: CL vs RL
+     ========================================================= */
+  (function(){
+    var d=[["Examen regular","n = 46.767",59.89,57.94],["Discapacidad visual","n = 1",1.81,26.60],["Discapacidad auditiva","n = 21",41.12,19.17]];
+    var W=760,H=300,m={t:20,r:14,b:54,l:44},iw=W-m.l-m.r,ih=H-m.t-m.b,max=70;
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,role:"img","aria-label":"Promedios de comprensión lectora y razonamiento lógico por modalidad de examen"});
+    for(var v=0;v<=70;v+=10){
+      var y=m.t+ih-(v/max)*ih;
+      svg.appendChild(el("line",{x1:m.l,x2:m.l+iw,y1:y,y2:y,class:v===0?"axisline":"gridline"}));
+      var tk=el("text",{x:m.l-8,y:y+4,class:"tick","text-anchor":"end"});tk.textContent=v;svg.appendChild(tk);
+    }
+    var slot=iw/d.length,bw=24,gap=2;
+    d.forEach(function(row,i){
+      var cx=m.l+(i+0.5)*slot;
+      [[2,"var(--cl)","Comprensión Lectora"],[3,"var(--rl)","Razonamiento Lógico"]].forEach(function(s,k){
+        var v=row[s[0]],h=(v/max)*ih,y=m.t+ih-h;
+        var x=cx-bw-gap/2+k*(bw+gap), g=el("g");
+        g.setAttribute("data-tip","<b>"+row[0]+"</b> ("+row[1]+")<br>"+s[2]+": "+dec(v));
+        g.appendChild(el("path",{d:"M"+x+" "+(m.t+ih)+" L"+x+" "+(y+4)+" Q"+x+" "+y+" "+(x+4)+" "+y+" L"+(x+bw-4)+" "+y+
+          " Q"+(x+bw)+" "+y+" "+(x+bw)+" "+(y+4)+" L"+(x+bw)+" "+(m.t+ih)+" Z",fill:s[1]}));
+        var t=el("text",{x:x+bw/2,y:y-9,class:"vlab","text-anchor":"middle"});t.textContent=dec(v);g.appendChild(t);
+        svg.appendChild(g);
+      });
+      var l1=el("text",{x:cx,y:m.t+ih+22,class:"slab","text-anchor":"middle"});l1.textContent=row[0];svg.appendChild(l1);
+      var l2=el("text",{x:cx,y:m.t+ih+38,class:"tick","text-anchor":"middle"});l2.textContent=row[1];svg.appendChild(l2);
+    });
+    document.getElementById("fig-mod").appendChild(svg);
+  })();
+
+  /* =========================================================
+     8 · Escenarios de dimensionamiento
+     ========================================================= */
+  var escen=[
+    ["Crítico — CL ≤ 20",393.5,"9,3 % de los admitidos"],
+    ["Regional — CL ≤ 40 fuera de Medellín",290.8,"38,0 % del grupo de puntaje ≤ 40"],
+    ["Focalizado — CL ≤ 40",833.3,"19,6 % de los admitidos"],
+    ["Universal — todos los admitidos",4251.5,"modalidad regular"]
+  ];
+  function pintaEscenarios(cupo){
+    var tb=document.getElementById("esc-body");tb.innerHTML="";
+    escen.forEach(function(e,i){
+      var g=Math.ceil(e[1]/cupo),h=g*15;
+      var tr=document.createElement("tr");
+      if(i===2)tr.className="total";
+      tr.innerHTML="<td><b>"+e[0]+"</b><br><span style='color:var(--muted); font-size:12px'>"+e[2]+"</span></td>"+
+        "<td class='num'>"+dec(e[1],1)+"</td><td class='num'>"+fmt(g)+"</td><td class='num'>"+fmt(h)+" h</td>";
+      tb.appendChild(tr);
+    });
+    document.getElementById("f-cupo").textContent=cupo;
+  }
+  var b25=document.getElementById("c25"),b30=document.getElementById("c30");
+  b25.addEventListener("click",function(){b25.setAttribute("aria-pressed","true");b30.setAttribute("aria-pressed","false");pintaEscenarios(25);});
+  b30.addEventListener("click",function(){b30.setAttribute("aria-pressed","true");b25.setAttribute("aria-pressed","false");pintaEscenarios(30);});
+  pintaEscenarios(25);
+
+  /* ---------- nav activa ---------- */
+  var links=[].slice.call(document.querySelectorAll("nav a"));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"));});
+  function onScroll(){
+    var y=window.scrollY+120,k=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)k=i;});
+    links.forEach(function(a,i){a.classList.toggle("on",i===k);});
+  }
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+</script>
+</body>
+</html>
