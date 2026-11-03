@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grabadora de la prueba</title>
+<meta name="description" content="Grabadora de un minuto para la parte de producción oral de la prueba de caracterización del Programa Institucional de Español Académico.">
+<style>
+/* Layout: una sola columna tipo instrumento; bisel de 60 segundos con el botón al centro, medidor, tomas y ayuda. */
+:root {
+  --bg: #f4f6f2;
+  --surface: #ffffff;
+  --ink: #18221d;
+  --muted: #56635c;
+  --line: #d6ddd7;
+  --accent: #1d6a4c;
+  --accent-ink: #ffffff;
+  --rec: #c2372b;
+  --rec-ink: #ffffff;
+  --warn: #9a5c00;
+  --meter-off: #e3e8e4;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1412; --surface: #18201c; --ink: #e6ede8; --muted: #9babA2; --line: #2b3530;
+    --accent: #63bb92; --accent-ink: #0d1a14; --rec: #ff6a5c; --rec-ink: #1b0b09; --warn: #e3a43c; --meter-off: #26302b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1412; --surface: #18201c; --ink: #e6ede8; --muted: #9babA2; --line: #2b3530;
+  --accent: #63bb92; --accent-ink: #0d1a14; --rec: #ff6a5c; --rec-ink: #1b0b09; --warn: #e3a43c; --meter-off: #26302b;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: max(20px, env(safe-area-inset-top, 0px)) max(28px, env(safe-area-inset-bottom, 0px));
+}
+main { max-width: 560px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 6px; }
+.eyebrow { margin: 0; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.7rem, 6vw, 2.2rem); line-height: 1.15; text-wrap: balance; }
+.lede { margin: 0; color: var(--muted); max-width: 46ch; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 18px; display: grid; gap: 16px; justify-items: center; }
+.dial { position: relative; width: min(260px, 72vw); aspect-ratio: 1; max-width: 100%; }
+.dial svg { width: 100%; height: 100%; display: block; transform: rotate(-90deg); }
+.dial .track { fill: none; stroke: var(--meter-off); stroke-width: 10; }
+.dial .progress { fill: none; stroke: var(--rec); stroke-width: 10; stroke-linecap: round; transition: stroke 0.2s; }
+.dial.final .progress { stroke: var(--warn); }
+.dial .tick { stroke: var(--muted); stroke-width: 1.5; }
+.dial .tick.major { stroke-width: 3; }
+.rec-btn {
+  position: absolute; inset: 22%; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--rec); color: var(--rec-ink);
+  font: 600 1.05rem/1.2 var(--font-body); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 0 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+}
+.rec-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.rec-btn:disabled { cursor: default; opacity: 0.85; }
+.rec-btn .glyph { width: 26px; height: 26px; border-radius: 50%; background: currentColor; }
+.rec-btn.is-recording .glyph { border-radius: 4px; width: 22px; height: 22px; }
+.rec-btn .count { font-size: 3rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.timer { margin: 0; font-size: 2.4rem; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.timer.final { color: var(--warn); }
+.meter { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; width: min(320px, 100%); height: 14px; }
+.meter span { background: var(--meter-off); border-radius: 2px; }
+.meter span.on { background: var(--accent); }
+.meter span.on.hot { background: var(--warn); }
+.meter span.on.clip { background: var(--rec); }
+.meter-label { margin: -8px 0 0; font-size: 0.8rem; color: var(--muted); }
+.status { margin: 0; min-height: 1.5em; text-align: center; max-width: 42ch; }
+.status.warn { color: var(--warn); font-weight: 600; }
+
+h2 { margin: 0; font-size: 1.05rem; }
+section { display: grid; gap: 12px; }
+.takes { display: grid; gap: 12px; }
+.take { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.take-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; align-items: baseline; }
+.take-head strong { font-size: 1rem; }
+.take-meta { color: var(--muted); font-size: 0.88rem; font-variant-numeric: tabular-nums; }
+.take audio { width: 100%; }
+.btn { appearance: none; border: 0; border-radius: 10px; padding: 12px 16px; font: 600 1rem/1.2 var(--font-body); cursor: pointer; background: var(--accent); color: var(--accent-ink); justify-self: start; }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.saved { margin: 0; font-size: 0.9rem; color: var(--accent); font-weight: 600; }
+.empty { margin: 0; color: var(--muted); }
+
+ol.steps { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+summary { cursor: pointer; font-weight: 600; }
+details ul { margin: 10px 0 0; padding-left: 1.2em; display: grid; gap: 8px; }
+footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 14px; }
+footer p { margin: 0; }
+.unsupported { background: var(--surface); border: 1px solid var(--warn); border-radius: 12px; padding: 14px; color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Prueba de caracterización · Producción oral</p>
+    <h1>Grabadora de un minuto</h1>
+    <p class="lede">Grabe su relato, escúchelo y descargue el archivo para subirlo al formulario de la prueba. La grabación se detiene sola al cumplir el minuto.</p>
+  </header>
+
+  <div class="unsupported" id="unsupported" hidden>
+    <p><strong>Este navegador no permite grabar.</strong> Abra el enlace en Chrome, Edge, Firefox o Safari actualizados. Si abrió el enlace desde WhatsApp u otra aplicación, cópielo y péguelo en el navegador. Si tampoco funciona, grabe con la grabadora de voz de su celular y avise a su docente.</p>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="dial" id="dial">
+      <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <g id="ticks"></g>
+        <circle class="track" cx="100" cy="100" r="84"></circle>
+        <circle class="progress" id="progress" cx="100" cy="100" r="84"></circle>
+      </svg>
+      <button type="button" class="rec-btn" id="recBtn" aria-describedby="status">
+        <span class="glyph" aria-hidden="true"></span>
+        <span class="label" id="recLabel">Grabar</span>
+      </button>
+    </div>
+    <p class="timer" id="timer" aria-hidden="true">1:00</p>
+    <div class="meter" id="meter" aria-hidden="true"></div>
+    <p class="meter-label">Nivel del micrófono</p>
+    <p class="status" id="status" role="status" aria-live="polite">Pulse «Grabar» y permita el uso del micrófono.</p>
+  </div>
+
+  <section aria-labelledby="takesTitle">
+    <h2 id="takesTitle">Sus tomas</h2>
+    <div class="takes" id="takes">
+      <p class="empty" id="noTakes">Todavía no hay grabaciones. Cada toma aparece aquí para escucharla y descargarla.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="howTitle">
+    <h2 id="howTitle">Cómo hacerlo</h2>
+    <ol class="steps">
+      <li>Pulse «Grabar» y permita el uso del micrófono. Si está en una videollamada, silencie allí su micrófono mientras graba.</li>
+      <li>Después de la cuenta de tres segundos, hable. Si termina antes del minuto, pulse «Terminar». Mientras graba, no cambie de pestaña ni de aplicación.</li>
+      <li>Escuche la toma. Si quiere, grabe otra.</li>
+      <li>Pulse «Descargar» en la toma que va a entregar y súbala en el formulario de la prueba.</li>
+    </ol>
+  </section>
+
+  <details>
+    <summary>Si algo falla</summary>
+    <ul>
+      <li>El navegador no pidió permiso o usted lo negó: pulse el candado o el ícono que está junto a la dirección de la página, permita el micrófono y recargue.</li>
+      <li>El medidor no se mueve cuando usted habla: revise que el micrófono no esté silenciado y que sea el que está usando.</li>
+      <li>Abrió el enlace desde WhatsApp u otra aplicación: cópielo y ábralo en Chrome, Edge, Firefox o Safari.</li>
+      <li>Nada de lo anterior funciona: grabe con la grabadora de voz de su celular, suba ese archivo al formulario y avise a su docente.</li>
+    </ul>
+  </details>
+
+  <footer>
+    <p>La grabación se guarda solo en este dispositivo: esta página no la envía a ningún lugar. El archivo llega a la universidad únicamente cuando usted lo sube al formulario.</p>
+    <p>Programa Institucional de Español Académico · Universidad de Antioquia</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var LIMIT_MS = 60000;
+  var COUNTDOWN_S = 3;
+  var TARGET_RATE = 16000;
+  var R = 84, CIRC = 2 * Math.PI * R;
+
+  var recBtn = document.getElementById('recBtn');
+  var recLabel = document.getElementById('recLabel');
+  var timerEl = document.getElementById('timer');
+  var statusEl = document.getElementById('status');
+  var dial = document.getElementById('dial');
+  var progress = document.getElementById('progress');
+  var meterEl = document.getElementById('meter');
+  var takesEl = document.getElementById('takes');
+  var noTakes = document.getElementById('noTakes');
+
+  var state = 'idle';
+  var stream = null, audioCtx = null, analyser = null, source = null, recorder = null;
+  var chunks = [], startT = 0, stopTimer = null, rafId = 0, meterId = 0, wakeLock = null;
+  var maxLevel = 0, silenceWarned = false, finalAnnounced = false;
+  var takes = [];
+  var segs = [];
+
+  // Bisel: una marca cada 5 s, más gruesa cada 15 s.
+  (function drawTicks() {
+    var g = document.getElementById('ticks');
+    var ns = 'http://www.w3.org/2000/svg';
+    for (var i = 0; i < 12; i++) {
+      var a = (i / 12) * 2 * Math.PI;
+      var major = i % 3 === 0;
+      var r1 = major ? 94 : 96, r2 = 100;
+      var l = document.createElementNS(ns, 'line');
+      l.setAttribute('x1', 100 + r1 * Math.cos(a)); l.setAttribute('y1', 100 + r1 * Math.sin(a));
+      l.setAttribute('x2', 100 + r2 * Math.cos(a)); l.setAttribute('y2', 100 + r2 * Math.sin(a));
+      l.setAttribute('class', major ? 'tick major' : 'tick');
+      g.appendChild(l);
+    }
+  })();
+  progress.style.strokeDasharray = CIRC;
+  progress.style.strokeDashoffset = CIRC;
+
+  for (var i = 0; i < 20; i++) {
+    var s = document.createElement('span');
+    meterEl.appendChild(s); segs.push(s);
+  }
+
+  var supported = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  if (!supported) {
+    document.getElementById('unsupported').hidden = false;
+    recBtn.disabled = true;
+    setStatus('Este navegador no permite grabar.', true);
+  }
+
+  function setStatus(msg, warn) {
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('warn', !!warn);
+  }
+  function fmt(ms) {
+    var s = Math.max(0, Math.ceil(ms / 1000));
+    return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  }
+  function fmtDur(sec) {
+    var s = Math.round(sec);
+    return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  }
+  function fmtSize(bytes) {
+    if (bytes < 1024 * 1024) return Math.max(1, Math.round(bytes / 1024)) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1).replace('.', ',') + ' MB';
+  }
+  function setButton(mode) {
+    recBtn.classList.toggle('is-recording', mode === 'recording');
+    var glyph = recBtn.querySelector('.glyph');
+    var count = recBtn.querySelector('.count');
+    if (count) count.remove();
+    glyph.hidden = false;
+    if (mode === 'idle') {
+      recLabel.textContent = 'Grabar';
+      recBtn.disabled = false;
+      recBtn.setAttribute('aria-label', takes.length ? 'Grabar otra toma' : 'Grabar');
+    } else if (mode === 'recording') {
+      recLabel.textContent = 'Terminar';
+      recBtn.disabled = false;
+      recBtn.setAttribute('aria-label', 'Terminar la grabación');
+    } else if (mode === 'busy') {
+      recLabel.textContent = 'Preparando…';
+      recBtn.disabled = true;
+    }
+  }
+  function showCount(n) {
+    var glyph = recBtn.querySelector('.glyph');
+    glyph.hidden = true;
+    recLabel.textContent = '';
+    var c = recBtn.querySelector('.count');
+    if (!c) { c = document.createElement('span'); c.className = 'count'; recBtn.insertBefore(c, recLabel); }
+    c.textContent = String(n);
+    recBtn.disabled = true;
+  }
+
+  function pickMime() {
+    var list = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/ogg;codecs=opus', 'audio/webm', 'audio/mp4;codecs=mp4a.40.2'];
+    if (!MediaRecorder.isTypeSupported) return '';
+    for (var i = 0; i < list.length; i++) if (MediaRecorder.isTypeSupported(list[i])) return list[i];
+    return '';
+  }
+  function extFor(type) {
+    if (/wav/.test(type)) return 'wav';
+    if (/webm/.test(type)) return 'webm';
+    if (/ogg/.test(type)) return 'ogg';
+    if (/mp4|aac|m4a/.test(type)) return 'm4a';
+    return 'audio';
+  }
+
+  function ensureAudioCtx() {
+    if (!audioCtx) {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) audioCtx = new AC();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function startMeter() {
+    if (!audioCtx || !stream) return;
+    try {
+      source = audioCtx.createMediaStreamSource(stream);
+      analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 2048;
+      source.connect(analyser);
+    } catch (e) { analyser = null; return; }
+    var data = new Float32Array(analyser.fftSize);
+    var tick = function () {
+      if (!analyser) return;
+      if (analyser.getFloatTimeDomainData) analyser.getFloatTimeDomainData(data);
+      var sum = 0, peak = 0;
+      for (var i = 0; i < data.length; i++) { var v = data[i]; sum += v * v; if (Math.abs(v) > peak) peak = Math.abs(v); }
+      var rms = Math.sqrt(sum / data.length);
+      if (state === 'recording') maxLevel = Math.max(maxLevel, rms);
+      var db = rms > 0 ? 20 * Math.log10(rms) : -100;
+      var lit = Math.round(Math.max(0, Math.min(1, (db + 60) / 60)) * 20);
+      for (var k = 0; k < 20; k++) {
+        segs[k].className = k < lit ? ('on' + (k >= 17 ? ' hot' : '') + (k >= 19 && peak > 0.98 ? ' clip' : '')) : '';
+      }
+      meterId = requestAnimationFrame(tick);
+    };
+    meterId = requestAnimationFrame(tick);
+  }
+  function stopMeter() {
+    cancelAnimationFrame(meterId);
+    try { if (source) source.disconnect(); } catch (e) {}
+    source = null; analyser = null;
+    for (var k = 0; k < 20; k++) segs[k].className = '';
+  }
+  function releaseStream() {
+    if (stream) stream.getTracks().forEach(function (t) { t.stop(); });
+    stream = null;
+  }
+
+  function micError(err) {
+    var name = err && err.name;
+    if (name === 'NotAllowedError' || name === 'SecurityError') {
+      setStatus('El navegador no tiene permiso para usar el micrófono. Pulse el candado junto a la dirección, permita el micrófono y recargue la página.', true);
+    } else if (name === 'NotFoundError' || name === 'OverconstrainedError') {
+      setStatus('No se encontró un micrófono. Conecte uno o use la grabadora de voz de su celular.', true);
+    } else if (name === 'NotReadableError' || name === 'AbortError') {
+      setStatus('Otra aplicación está usando el micrófono. Ciérrela o silénciela y vuelva a intentarlo.', true);
+    } else {
+      setStatus('No fue posible abrir el micrófono. Revise los permisos o use la grabadora de voz de su celular.', true);
+    }
+  }
+
+  function arm() {
+    state = 'arming';
+    setButton('busy');
+    setStatus('Esperando el permiso del micrófono…');
+    ensureAudioCtx();
+    navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } })
+      .then(function (s) {
+        stream = s;
+        startMeter();
+        countdown(COUNTDOWN_S);
+      })
+      .catch(function (err) {
+        state = 'idle';
+        setButton('idle');
+        micError(err);
+      });
+  }
+
+  function countdown(n) {
+    state = 'countdown';
+    if (n <= 0) { startRecording(); return; }
+    showCount(n);
+    setStatus('La grabación empieza en ' + n + '…');
+    setTimeout(function () { countdown(n - 1); }, 1000);
+  }
+
+  function startRecording() {
+    var mime = pickMime();
+    try {
+      recorder = mime ? new MediaRecorder(stream, { mimeType: mime, audioBitsPerSecond: 64000 }) : new MediaRecorder(stream);
+    } catch (e) {
+      try { recorder = new MediaRecorder(stream); } catch (e2) { recorder = null; }
+    }
+    if (!recorder) {
+      state = 'idle'; stopMeter(); releaseStream(); setButton('idle');
+      setStatus('Este navegador no pudo iniciar la grabación. Use la grabadora de voz de su celular.', true);
+      return;
+    }
+    chunks = [];
+    maxLevel = 0; silenceWarned = false; finalAnnounced = false;
+    recorder.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = finish;
+    recorder.start(250);
+    startT = performance.now();
+    state = 'recording';
+    setButton('recording');
+    setStatus('Grabando. Hable con calma.');
+    dial.classList.remove('final'); timerEl.classList.remove('final');
+    stopTimer = setTimeout(stopRecording, LIMIT_MS);
+    if (navigator.wakeLock && navigator.wakeLock.request) {
+      navigator.wakeLock.request('screen').then(function (l) { wakeLock = l; }).catch(function () {});
+    }
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function frame() {
+    if (state !== 'recording') return;
+    var el = performance.now() - startT;
+    var left = LIMIT_MS - el;
+    timerEl.textContent = fmt(left);
+    progress.style.strokeDashoffset = CIRC * (1 - Math.min(1, el / LIMIT_MS));
+    if (left <= 10000 && !finalAnnounced) {
+      finalAnnounced = true;
+      dial.classList.add('final'); timerEl.classList.add('final');
+      setStatus('Quedan diez segundos. Vaya cerrando su relato.');
+    }
+    if (el > 4000 && !silenceWarned && maxLevel < 0.008) {
+      silenceWarned = true;
+      setStatus('No se detecta sonido. Revise que el micrófono no esté silenciado; puede terminar y grabar otra toma.', true);
+    }
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function stopRecording() {
+    if (state !== 'recording') return;
+    clearTimeout(stopTimer);
+    cancelAnimationFrame(rafId);
+    state = 'processing';
+    var el = Math.min(LIMIT_MS, performance.now() - startT);
+    recorder._elapsed = el;
+    setButton('busy');
+    recLabel.textContent = 'Procesando…';
+    setStatus('Preparando la toma…');
+    if (wakeLock) { wakeLock.release().catch(function () {}); wakeLock = null; }
+    try { recorder.stop(); } catch (e) { finish(); }
+  }
+
+  function decode(ab) {
+    return new Promise(function (resolve, reject) {
+      var p = audioCtx.decodeAudioData(ab, resolve, reject);
+      if (p && typeof p.then === 'function') p.then(resolve, reject);
+    });
+  }
+  function toWav(buf) {
+    var n = Math.min(buf.length, Math.round(buf.sampleRate * LIMIT_MS / 1000));
+    var ch = buf.numberOfChannels;
+    var mono = new Float32Array(n);
+    for (var c = 0; c < ch; c++) {
+      var d = buf.getChannelData(c);
+      for (var i = 0; i < n; i++) mono[i] += d[i] / ch;
+    }
+    var from = buf.sampleRate, to = from > TARGET_RATE ? TARGET_RATE : from;
+    var out = mono;
+    if (to !== from) {
+      var ratio = from / to, m = Math.floor(n / ratio);
+      out = new Float32Array(m);
+      for (var j = 0; j < m; j++) {
+        var a = Math.floor(j * ratio), b = Math.min(n, Math.floor((j + 1) * ratio));
+        var sum = 0, cnt = 0;
+        for (var k = a; k < b; k++) { sum += mono[k]; cnt++; }
+        out[j] = cnt ? sum / cnt : 0;
+      }
+    }
+    var len = out.length;
+    var view = new DataView(new ArrayBuffer(44 + len * 2));
+    var w = function (o, str) { for (var q = 0; q < str.length; q++) view.setUint8(o + q, str.charCodeAt(q)); };
+    w(0, 'RIFF'); view.setUint32(4, 36 + len * 2, true); w(8, 'WAVE'); w(12, 'fmt ');
+    view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+    view.setUint32(24, to, true); view.setUint32(28, to * 2, true); view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+    w(36, 'data'); view.setUint32(40, len * 2, true);
+    for (var x = 0, o = 44; x < len; x++, o += 2) {
+      var s = Math.max(-1, Math.min(1, out[x]));
+      view.setInt16(o, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+    }
+    return { blob: new Blob([view], { type: 'audio/wav' }), seconds: len / to };
+  }
+
+  function finish() {
+    var type = (recorder && recorder.mimeType) || 'audio/webm';
+    var raw = new Blob(chunks, { type: type });
+    var elapsed = (recorder && recorder._elapsed) || 0;
+    stopMeter();
+    releaseStream();
+    var done = function (blob, seconds) {
+      addTake(blob, seconds);
+      state = 'idle';
+      setButton('idle');
+      timerEl.textContent = '1:00';
+      progress.style.strokeDashoffset = CIRC;
+      dial.classList.remove('final'); timerEl.classList.remove('final');
+      setStatus('Toma lista. Escúchela y descárguela, o grabe otra.');
+    };
+    if (!raw.size) {
+      state = 'idle'; setButton('idle');
+      setStatus('La grabación quedó vacía. Revise el micrófono y vuelva a intentarlo.', true);
+      return;
+    }
+    if (!audioCtx) { done(raw, elapsed / 1000); return; }
+    raw.arrayBuffer().then(decode).then(function (buf) {
+      var r = toWav(buf);
+      done(r.blob, r.seconds);
+    }).catch(function () {
+      done(raw, elapsed / 1000);
+    });
+  }
+
+  function addTake(blob, seconds) {
+    var n = takes.length + 1;
+    var ext = extFor(blob.type);
+    var take = { n: n, blob: blob, url: URL.createObjectURL(blob), name: 'produccion-oral-toma-' + n + '.' + ext, downloaded: false };
+    takes.push(take);
+    noTakes.hidden = true;
+
+    var art = document.createElement('article');
+    art.className = 'take';
+    var head = document.createElement('div'); head.className = 'take-head';
+    var title = document.createElement('strong'); title.textContent = 'Toma ' + n;
+    var meta = document.createElement('span'); meta.className = 'take-meta';
+    meta.textContent = fmtDur(seconds) + ' · ' + ext.toUpperCase() + ' · ' + fmtSize(blob.size);
+    head.appendChild(title); head.appendChild(meta);
+    var audio = document.createElement('audio'); audio.controls = true; audio.preload = 'metadata'; audio.src = take.url;
+    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'btn';
+    btn.textContent = 'Descargar toma ' + n;
+    var saved = document.createElement('p'); saved.className = 'saved'; saved.hidden = true;
+    saved.textContent = 'Descargada como ' + take.name + '. Súbala en el formulario.';
+    btn.addEventListener('click', function () {
+      var a = document.createElement('a');
+      a.href = take.url; a.download = take.name; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); a.remove();
+      take.downloaded = true; saved.hidden = false;
+    });
+    art.appendChild(head); art.appendChild(audio); art.appendChild(btn); art.appendChild(saved);
+    takesEl.insertBefore(art, takesEl.firstChild);
+  }
+
+  recBtn.addEventListener('click', function () {
+    if (state === 'idle') arm();
+    else if (state === 'recording') stopRecording();
+  });
+
+  window.addEventListener('beforeunload', function (e) {
+    if (state === 'recording' || (takes.length && !takes.some(function (t) { return t.downloaded; }))) {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  });
+})();
+</script>
+</body>
+</html>
