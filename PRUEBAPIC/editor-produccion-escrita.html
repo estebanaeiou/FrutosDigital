@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Editor de la prueba</title>
+<meta name="description" content="Editor sin corrector automático para la parte de producción escrita de la prueba de caracterización del Programa Institucional de Español Académico.">
+<style>
+/* Layout: una sola columna; panel con contador y barra de extensión, recuadro de escritura y acciones; luego ayuda. */
+:root {
+  --bg: #f4f6f2;
+  --surface: #ffffff;
+  --ink: #18221d;
+  --muted: #56635c;
+  --line: #d6ddd7;
+  --accent: #1d6a4c;
+  --accent-ink: #ffffff;
+  --band: #d4eadf;
+  --rec: #c2372b;
+  --rec-ink: #ffffff;
+  --warn: #9a5c00;
+  --meter-off: #e3e8e4;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1412; --surface: #18201c; --ink: #e6ede8; --muted: #9baba2; --line: #2b3530;
+    --accent: #63bb92; --accent-ink: #0d1a14; --band: #22392e; --rec: #ff6a5c; --rec-ink: #1b0b09;
+    --warn: #e3a43c; --meter-off: #26302b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1412; --surface: #18201c; --ink: #e6ede8; --muted: #9baba2; --line: #2b3530;
+  --accent: #63bb92; --accent-ink: #0d1a14; --band: #22392e; --rec: #ff6a5c; --rec-ink: #1b0b09;
+  --warn: #e3a43c; --meter-off: #26302b;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: max(20px, env(safe-area-inset-top, 0px)) max(28px, env(safe-area-inset-bottom, 0px));
+}
+main { max-width: 680px; margin: 0 auto; display: grid; gap: 22px; }
+main > * { min-width: 0; }
+header { display: grid; gap: 6px; }
+.eyebrow { margin: 0; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.7rem, 6vw, 2.2rem); line-height: 1.15; text-wrap: balance; }
+.lede { margin: 0; color: var(--muted); max-width: 52ch; }
+h2 { margin: 0; font-size: 1.05rem; }
+section { display: grid; gap: 12px; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 12px; }
+.editor-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 14px; }
+.editor-head label { font-weight: 600; font-size: 1.05rem; }
+.count { color: var(--muted); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.count strong { color: var(--ink); font-size: 1.1rem; }
+
+.gauge { position: relative; height: 8px; border-radius: 4px; background: var(--meter-off); overflow: hidden; }
+.gauge .band { position: absolute; top: 0; bottom: 0; left: 60%; width: 20%; background: var(--band); }
+.gauge .fill { position: absolute; top: 0; bottom: 0; left: 0; width: 0; background: var(--muted); border-radius: 4px; transition: width 0.15s; }
+.gauge.ok .fill { background: var(--accent); }
+.gauge.over .fill { background: var(--warn); }
+.gauge .tick { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--ink); opacity: 0.45; }
+.scale { position: relative; height: 1.2em; margin-top: -6px; font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.scale span { position: absolute; transform: translateX(-50%); }
+.range { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.range.ok { color: var(--accent); font-weight: 600; }
+.range.over { color: var(--warn); font-weight: 600; }
+
+textarea {
+  display: block; width: 100%; min-height: 46vh; resize: vertical;
+  font: 17px/1.6 var(--font-body); color: var(--ink); background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+.meta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 14px; min-height: 1.5em; }
+.status { margin: 0; flex: 1 1 22ch; }
+.status.warn { color: var(--warn); font-weight: 600; }
+.status.ok { color: var(--accent); font-weight: 600; }
+.saved { margin: 0; font-size: 0.85rem; color: var(--muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { appearance: none; border: 0; border-radius: 10px; padding: 12px 16px; font: 600 1rem/1.2 var(--font-body); cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.btn.ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.btn.quiet { background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1.5px var(--line); }
+.btn.danger { background: var(--rec); color: var(--rec-ink); box-shadow: none; }
+.done { margin: 0; color: var(--accent); font-weight: 600; overflow-wrap: anywhere; }
+.clear-row { display: grid; gap: 6px; justify-items: start; }
+
+ol.steps { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+summary { cursor: pointer; font-weight: 600; }
+details ul { margin: 10px 0 0; padding-left: 1.2em; display: grid; gap: 8px; }
+footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 14px; }
+footer p { margin: 0; }
+.noscript { background: var(--surface); border: 1px solid var(--warn); border-radius: 12px; padding: 14px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Prueba de caracterización · Producción escrita</p>
+    <h1>Editor de texto</h1>
+    <p class="lede">Escriba aquí su texto de la parte 4 y descárguelo para subirlo al formulario de la prueba. El editor no corrige la ortografía ni sugiere palabras.</p>
+  </header>
+
+  <noscript><p class="noscript">Esta página necesita JavaScript para contar las palabras y descargar el archivo. Ábrala en Chrome, Edge, Firefox o Safari actualizados.</p></noscript>
+
+  <div class="panel">
+    <div class="editor-head">
+      <label for="texto">Su texto</label>
+      <p class="count" id="count" style="margin:0"><strong id="words">0</strong> palabras · <span id="chars">0</span> caracteres</p>
+    </div>
+    <div class="gauge" id="gauge" aria-hidden="true">
+      <div class="band"></div>
+      <div class="fill" id="fill"></div>
+      <i class="tick" style="left:60%"></i>
+      <i class="tick" style="left:80%"></i>
+    </div>
+    <div class="scale" aria-hidden="true"><span style="left:60%">150</span><span style="left:80%">200</span></div>
+    <p class="range" id="range">La consigna pide de 150 a 200 palabras.</p>
+    <textarea id="texto" name="texto" lang="es" rows="14"
+      spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off"
+      writingsuggestions="false" translate="no"
+      data-gramm="false" data-gramm_editor="false" data-enable-grammarly="false" data-lt-active="false"
+      aria-describedby="range status"
+      placeholder="Escriba aquí su texto."></textarea>
+    <div class="meta">
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <p class="saved" id="saved"></p>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn" id="download">Descargar .txt</button>
+      <button type="button" class="btn ghost" id="copy">Copiar el texto</button>
+    </div>
+    <p class="done" id="done" hidden></p>
+    <div class="clear-row" id="clearRow" hidden>
+      <button type="button" class="btn quiet" id="clear">Borrar el texto de este equipo</button>
+    </div>
+  </div>
+
+  <section aria-labelledby="howTitle">
+    <h2 id="howTitle">Cómo hacerlo</h2>
+    <ol class="steps">
+      <li>Lea la consigna de la parte 4 en el formulario y escriba aquí su texto. El editor no corrige, no sugiere palabras y no permite pegar texto.</li>
+      <li>Revise el contador: la consigna pide de 150 a 200 palabras.</li>
+      <li>Pulse «Descargar .txt» y suba el archivo en la parte 4 del formulario.</li>
+      <li>Si usa un equipo compartido, pulse «Borrar el texto de este equipo» después de subirlo.</li>
+    </ol>
+  </section>
+
+  <details>
+    <summary>Si algo falla</summary>
+    <ul>
+      <li>El teclado del celular cambia o completa palabras: desactive la corrección automática en los ajustes del teclado o escriba en un computador.</li>
+      <li>Cerró la página sin querer: vuelva a abrir el enlace en el mismo navegador; el texto se recupera.</li>
+      <li>El archivo no se descarga: abra el enlace en Chrome, Edge, Firefox o Safari, fuera de WhatsApp. Si sigue igual, avise a su docente.</li>
+      <li>No encuentra el archivo: búsquelo en Descargas; en iPhone, en la app Archivos.</li>
+    </ul>
+  </details>
+
+  <footer>
+    <p>Mientras escribe, el texto se guarda solo en este navegador: esta página no lo envía a ningún lugar. Llega a la universidad únicamente cuando usted sube el archivo al formulario.</p>
+    <p>Programa Institucional de Español Académico · Universidad de Antioquia</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var MIN = 150, MAX = 200, SCALE = 250;
+  var KEY = 'pec-parte4-texto', TTL = 6 * 60 * 60 * 1000;
+
+  var ta = document.getElementById('texto');
+  var wordsEl = document.getElementById('words');
+  var charsEl = document.getElementById('chars');
+  var gauge = document.getElementById('gauge');
+  var fill = document.getElementById('fill');
+  var rangeEl = document.getElementById('range');
+  var statusEl = document.getElementById('status');
+  var savedEl = document.getElementById('saved');
+  var dlBtn = document.getElementById('download');
+  var copyBtn = document.getElementById('copy');
+  var doneEl = document.getElementById('done');
+  var clearRow = document.getElementById('clearRow');
+  var clearBtn = document.getElementById('clear');
+
+  var lastExported = null, saveTimer = 0, statusTimer = 0, armTimer = 0, armed = false, lastState = '';
+
+  var hasLetter;
+  try { hasLetter = new RegExp('[\\p{L}\\p{N}]', 'u'); } catch (e) { hasLetter = /[0-9A-Za-zÀ-ɏ]/; }
+
+  function countWords(t) {
+    var parts = t.match(/\S+/g) || [], n = 0;
+    for (var i = 0; i < parts.length; i++) if (hasLetter.test(parts[i])) n++;
+    return n;
+  }
+  function countChars(t) { return Array.from(t).length; }
+  function fmt(n) { try { return n.toLocaleString('es-CO'); } catch (e) { return String(n); } }
+  function plural(n, one, many) { return fmt(n) + ' ' + (n === 1 ? one : many); }
+  function hora() {
+    try { return new Date().toLocaleTimeString('es-CO', { hour: 'numeric', minute: '2-digit' }); }
+    catch (e) { var d = new Date(); return d.getHours() + ':' + String(d.getMinutes()).padStart(2, '0'); }
+  }
+
+  function setStatus(msg, kind, ms) {
+    clearTimeout(statusTimer);
+    statusEl.textContent = msg;
+    statusEl.className = 'status' + (kind ? ' ' + kind : '');
+    if (ms) statusTimer = setTimeout(function () { statusEl.textContent = ''; statusEl.className = 'status'; }, ms);
+  }
+
+  function update() {
+    var t = ta.value, n = countWords(t), c = countChars(t);
+    wordsEl.textContent = fmt(n);
+    wordsEl.nextSibling.nodeValue = n === 1 ? ' palabra · ' : ' palabras · ';
+    charsEl.textContent = fmt(c);
+    charsEl.nextSibling.nodeValue = c === 1 ? ' carácter' : ' caracteres';
+    fill.style.width = (Math.min(n, SCALE) / SCALE * 100) + '%';
+    var state = n === 0 ? 'empty' : (n < MIN ? 'below' : (n <= MAX ? 'ok' : 'over'));
+    gauge.className = 'gauge' + (state === 'ok' ? ' ok' : (state === 'over' ? ' over' : ''));
+    if (state === 'empty') { rangeEl.textContent = 'La consigna pide de 150 a 200 palabras.'; rangeEl.className = 'range'; }
+    else if (state === 'below') { rangeEl.textContent = 'Faltan ' + plural(MIN - n, 'palabra', 'palabras') + ' para el mínimo de 150.'; rangeEl.className = 'range'; }
+    else if (state === 'ok') { rangeEl.textContent = 'Está dentro de la extensión pedida: de 150 a 200 palabras.'; rangeEl.className = 'range ok'; }
+    else { rangeEl.textContent = 'Supera en ' + plural(n - MAX, 'palabra', 'palabras') + ' el máximo de 200.'; rangeEl.className = 'range over'; }
+    // Solo se anuncia el cambio de tramo, no cada palabra.
+    if (lastState && state !== lastState) {
+      if (state === 'ok') setStatus('Su texto ya está dentro de la extensión pedida.', 'ok', 5000);
+      else if (state === 'over') setStatus('Su texto superó el máximo de 200 palabras.', 'warn', 5000);
+    }
+    lastState = state;
+    return n;
+  }
+
+  function save() {
+    try {
+      if (ta.value) localStorage.setItem(KEY, JSON.stringify({ t: ta.value, at: Date.now() }));
+      else localStorage.removeItem(KEY);
+      savedEl.textContent = ta.value ? 'Guardado en este navegador · ' + hora() : '';
+    } catch (e) {
+      savedEl.textContent = 'Este navegador no guarda el borrador: descargue el archivo antes de cerrar la página.';
+    }
+  }
+  function restore() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return;
+      var d = JSON.parse(raw);
+      if (d && typeof d.t === 'string' && d.t && typeof d.at === 'number' && Date.now() - d.at < TTL) {
+        ta.value = d.t;
+        savedEl.textContent = 'Guardado en este navegador';
+        setStatus('Se recuperó el texto que estaba escribiendo en este navegador.', 'ok', 6000);
+      } else {
+        localStorage.removeItem(KEY);
+      }
+    } catch (e) {}
+  }
+
+  // Sin pegar, arrastrar ni reemplazos automáticos del teclado o del corrector.
+  function block(e, msg) { e.preventDefault(); setStatus(msg, 'warn', 6000); }
+  var PASTE = 'El editor no permite pegar ni arrastrar texto: escríbalo directamente.';
+  ta.addEventListener('paste', function (e) { block(e, PASTE); });
+  ta.addEventListener('drop', function (e) { block(e, PASTE); });
+  ta.addEventListener('beforeinput', function (e) {
+    var t = e.inputType || '';
+    if (t === 'insertFromPaste' || t === 'insertFromPasteAsQuotation' || t === 'insertFromDrop' || t === 'insertFromYank') block(e, PASTE);
+    else if (t === 'insertReplacementText') block(e, 'El editor no acepta correcciones ni sugerencias automáticas: escriba la palabra completa.');
+  });
+
+  ta.addEventListener('input', function () {
+    update();
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(save, 400);
+  });
+
+  function markExported(msg) {
+    lastExported = ta.value;
+    doneEl.textContent = msg;
+    doneEl.hidden = false;
+    clearRow.hidden = false;
+  }
+
+  dlBtn.addEventListener('click', function () {
+    var t = ta.value;
+    if (!t.trim()) { setStatus('Escriba su texto antes de descargarlo.', 'warn', 5000); ta.focus(); return; }
+    var n = countWords(t);
+    var name = 'texto-parte4-' + n + '-palabras.txt';
+    var body = '﻿' + t.replace(/\r\n?/g, '\n').replace(/\n/g, '\r\n');
+    var url = URL.createObjectURL(new Blob([body], { type: 'text/plain;charset=utf-8' }));
+    var a = document.createElement('a');
+    a.href = url; a.download = name; a.style.display = 'none';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
+    save();
+    markExported('Descargado como ' + name + '. Súbalo en la parte 4 del formulario.');
+    setStatus('Archivo descargado.', 'ok', 5000);
+  });
+
+  copyBtn.addEventListener('click', function () {
+    var t = ta.value;
+    if (!t.trim()) { setStatus('Escriba su texto antes de copiarlo.', 'warn', 5000); ta.focus(); return; }
+    function ok() { markExported('Texto copiado.'); setStatus('Texto copiado.', 'ok', 5000); }
+    function legacy() {
+      var start = ta.selectionStart, end = ta.selectionEnd, done = false;
+      ta.focus(); ta.select();
+      try { done = document.execCommand('copy'); } catch (e) {}
+      ta.setSelectionRange(start, end);
+      if (done) ok(); else setStatus('No se pudo copiar. Use «Descargar .txt».', 'warn', 6000);
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(ok, legacy);
+    else legacy();
+  });
+
+  function disarm() {
+    armed = false;
+    clearTimeout(armTimer);
+    clearBtn.textContent = 'Borrar el texto de este equipo';
+    clearBtn.className = 'btn quiet';
+  }
+  clearBtn.addEventListener('click', function () {
+    if (!armed) {
+      armed = true;
+      clearBtn.textContent = 'Pulse otra vez para borrar';
+      clearBtn.className = 'btn danger';
+      armTimer = setTimeout(disarm, 5000);
+      return;
+    }
+    disarm();
+    ta.value = '';
+    lastExported = null;
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    lastState = '';
+    update();
+    savedEl.textContent = '';
+    doneEl.hidden = true;
+    clearRow.hidden = true;
+    setStatus('El texto se borró de este equipo.', 'ok', 5000);
+  });
+
+  window.addEventListener('beforeunload', function (e) {
+    if (ta.value.trim() && ta.value !== lastExported) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  restore();
+  update();
+})();
+</script>
+</body>
+</html>
