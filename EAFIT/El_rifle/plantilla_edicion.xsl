@@ -30,6 +30,9 @@
   <xsl:variable name="entradas" select="//tei:back//tei:app"/>
   <xsl:variable name="notas" select="//tei:back//tei:note[not(ancestor::tei:app)]"/>
   <xsl:variable name="testigos" select="//tei:listWit/tei:witness"/>
+  <xsl:variable name="glosario" select="//tei:back//tei:item[tei:term and tei:gloss]"/>
+  <xsl:variable name="bibliografia" select="//tei:back//tei:listBibl/tei:bibl"/>
+  <xsl:variable name="capitulos" select="//tei:body/tei:div[tei:head]"/>
 
   <xsl:template match="/">
     <html lang="es">
@@ -49,7 +52,9 @@
             <a href="#texto">Texto</a>
             <xsl:if test="$entradas"><a href="#aparato">Aparato</a></xsl:if>
             <xsl:if test="$notas"><a href="#notas">Notas</a></xsl:if>
+            <xsl:if test="$glosario"><a href="#glosario">Glosario</a></xsl:if>
             <xsl:if test="$testigos"><a href="#testimonios">Testimonios</a></xsl:if>
+            <xsl:if test="$bibliografia"><a href="#bibliografia">Bibliografía</a></xsl:if>
             <a href="#criterios">Criterios</a>
           </nav>
           <xsl:if test="//tei:body//tei:choice or //tei:body//tei:supplied">
@@ -84,6 +89,16 @@
           </xsl:if>
 
           <article class="pliego" id="texto">
+            <xsl:if test="count($capitulos) &gt; 2">
+              <details class="indice">
+                <summary>Índice</summary>
+                <ol>
+                  <xsl:for-each select="$capitulos">
+                    <li><a href="#{generate-id()}"><xsl:value-of select="normalize-space(tei:head[1])"/></a></li>
+                  </xsl:for-each>
+                </ol>
+              </details>
+            </xsl:if>
             <xsl:apply-templates select="//tei:text/tei:body"/>
           </article>
         </main>
@@ -100,6 +115,21 @@
         <section class="bloque" id="notas">
           <h2>Notas explicativas</h2>
           <xsl:apply-templates select="$notas"/>
+        </section>
+        </xsl:if>
+
+        <xsl:if test="$glosario">
+        <section class="bloque" id="glosario">
+          <h2>Glosario</h2>
+          <dl class="glosario">
+            <xsl:for-each select="$glosario">
+              <dt>
+                <xsl:if test="tei:term/@xml:id"><xsl:attribute name="id"><xsl:value-of select="tei:term/@xml:id"/></xsl:attribute></xsl:if>
+                <xsl:value-of select="tei:term"/>
+              </dt>
+              <dd><xsl:value-of select="tei:gloss"/></dd>
+            </xsl:for-each>
+          </dl>
         </section>
         </xsl:if>
 
@@ -130,6 +160,27 @@
               </xsl:for-each>
             </tbody>
           </table>
+        </section>
+        </xsl:if>
+
+        <xsl:if test="$bibliografia">
+        <section class="bloque" id="bibliografia">
+          <h2>Bibliografía</h2>
+          <ul class="bibliografia">
+            <xsl:for-each select="$bibliografia">
+              <li>
+                <xsl:if test="@xml:id"><xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute></xsl:if>
+                <xsl:for-each select="*">
+                  <xsl:if test="position() &gt; 1">. </xsl:if>
+                  <xsl:choose>
+                    <xsl:when test="self::tei:title"><em><xsl:value-of select="normalize-space(.)"/></em></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="normalize-space(.)"/></xsl:otherwise>
+                  </xsl:choose>
+                </xsl:for-each>
+                <xsl:if test="not(*)"><xsl:value-of select="normalize-space(.)"/></xsl:if>
+              </li>
+            </xsl:for-each>
+          </ul>
         </section>
         </xsl:if>
 
@@ -226,9 +277,20 @@
 
   <xsl:template match="tei:pb">
     <xsl:variable name="destino" select="substring-after(@facs, '#')"/>
-    <a class="pb" href="#facsimil" id="pb{@n}" data-facs="{$destino}" title="Ver la página {@n} del facsímil">
-      <xsl:if test="not(parent::tei:p)"><xsl:attribute name="class">pb pb-bloque</xsl:attribute></xsl:if>
-      <xsl:text>p. </xsl:text><xsl:value-of select="@n"/>
+    <xsl:variable name="n">
+      <xsl:choose>
+        <xsl:when test="@n"><xsl:value-of select="@n"/></xsl:when>
+        <xsl:otherwise><xsl:value-of select="count(preceding::tei:pb[ancestor::tei:text]) + 1"/></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <a class="pb" id="pb{$n}">
+      <xsl:if test="not(parent::tei:p or parent::tei:l)"><xsl:attribute name="class">pb pb-bloque</xsl:attribute></xsl:if>
+      <xsl:if test="$destino != ''">
+        <xsl:attribute name="href">#facsimil</xsl:attribute>
+        <xsl:attribute name="data-facs"><xsl:value-of select="$destino"/></xsl:attribute>
+        <xsl:attribute name="title">Ver la página <xsl:value-of select="$n"/> del facsímil</xsl:attribute>
+      </xsl:if>
+      <xsl:text>p. </xsl:text><xsl:value-of select="$n"/>
     </a>
   </xsl:template>
 
@@ -238,11 +300,26 @@
   <xsl:template match="tei:body//tei:div">
     <section class="capitulo">
       <xsl:if test="@xml:id"><xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute></xsl:if>
+      <xsl:if test="parent::tei:body and tei:head"><a class="ancla" id="{generate-id()}"></a></xsl:if>
       <xsl:apply-templates/>
     </section>
   </xsl:template>
 
-  <xsl:template match="tei:div/tei:head"><h2 class="cap-titulo"><xsl:apply-templates/></h2></xsl:template>
+  <xsl:template match="tei:body/tei:div/tei:head"><h2 class="cap-titulo"><xsl:apply-templates/></h2></xsl:template>
+  <xsl:template match="tei:div/tei:head" priority="-0.1"><h3 class="cap-titulo sub"><xsl:apply-templates/></h3></xsl:template>
+  <xsl:template match="tei:byline"><p class="firma"><xsl:apply-templates/></p></xsl:template>
+
+  <!-- Voz del glosario: muestra su glosa en la ficha emergente -->
+  <xsl:template match="tei:body//tei:term[@corresp or @ref or @target]">
+    <xsl:variable name="destino" select="substring-after(concat(@corresp, @ref, @target), '#')"/>
+    <xsl:variable name="glosa" select="key('porId', $destino)/../tei:gloss"/>
+    <xsl:choose>
+      <xsl:when test="$glosa">
+        <a class="glosa" href="#{$destino}" data-nota="{normalize-space($glosa)}"><xsl:apply-templates/></a>
+      </xsl:when>
+      <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 
   <xsl:template match="tei:p"><p><xsl:apply-templates/></p></xsl:template>
 
@@ -251,7 +328,7 @@
   <xsl:template match="tei:lb"><br/></xsl:template>
   <xsl:template match="tei:hi[@rend='bold']"><strong><xsl:apply-templates/></strong></xsl:template>
   <xsl:template match="tei:hi[@rend='sup' or @rend='superscript']"><sup><xsl:apply-templates/></sup></xsl:template>
-  <xsl:template match="tei:emph | tei:foreign | tei:term"><em><xsl:apply-templates/></em></xsl:template>
+  <xsl:template match="tei:emph | tei:foreign"><em><xsl:apply-templates/></em></xsl:template>
   <xsl:template match="tei:hi[@rend='italic']"><em><xsl:apply-templates/></em></xsl:template>
   <xsl:template match="tei:hi[@rend='smallcaps']"><span class="versalitas"><xsl:apply-templates/></span></xsl:template>
   <xsl:template match="tei:title"><em><xsl:apply-templates/></em></xsl:template>
@@ -268,7 +345,11 @@
     <a href="{@target}" target="_blank" rel="noopener"><xsl:apply-templates/></a>
   </xsl:template>
 
-  <xsl:template match="tei:ref[starts-with(@target, '#')]">
+  <xsl:template match="tei:ref[starts-with(@target, '#')]" priority="1">
+    <a href="{@target}"><xsl:apply-templates/></a>
+  </xsl:template>
+
+  <xsl:template match="tei:ref[starts-with(@target, '#')][key('porId', substring-after(@target, '#'))[self::tei:note] or not(key('porId', substring-after(@target, '#')))]" priority="2">
     <sup><a class="llamada" href="{@target}" data-ficha="{substring-after(@target, '#')}">
       <xsl:if test="@xml:id"><xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute></xsl:if>
       <xsl:if test="key('porId', substring-after(@target, '#'))/@cert='low'"><xsl:attribute name="class">llamada abierto</xsl:attribute></xsl:if>
@@ -420,6 +501,19 @@ a{color:var(--marca)}
 .capitulo>p:first-of-type{text-indent:0}
 .cap-titulo{text-align:center;font-size:1.1rem;font-weight:normal;letter-spacing:.15em;margin:2.5rem 0 1rem}
 .versalitas{font-variant:small-caps}
+.cap-titulo.sub{font-size:1rem;letter-spacing:.08em;margin:1.75rem 0 .75rem}
+.firma{text-indent:0!important;text-align:center;color:var(--tenue);font-style:italic}
+.indice{font-family:var(--sans);font-size:.9rem;margin-bottom:1.5rem;border-bottom:1px solid var(--linea);padding-bottom:.75rem}
+.indice summary{cursor:pointer;color:var(--tenue)}
+.indice ol{columns:2;column-gap:2rem;margin:.5rem 0 0;padding-left:1.5rem}
+.indice a{text-decoration:none}
+.glosa{color:inherit;text-decoration:none;border-bottom:1px dashed var(--tenue);cursor:help}
+.glosario{display:grid;grid-template-columns:max-content 1fr;gap:.25rem 1.25rem;margin:0}
+.glosario dt{font-style:italic}
+.glosario dd{margin:0}
+.glosario dt:target,.glosario dt:target+dd{background:var(--marca-suave)}
+.bibliografia{padding-left:1.2rem}
+.bibliografia li{margin:.3rem 0;padding-left:1.2rem;text-indent:-1.2rem;list-style:none}
 .estrofa{margin:1rem 0 1rem 2rem}
 .verso{text-indent:-1.5em;padding-left:1.5em}
 .mesa.sin-facsimil{max-width:52rem}
@@ -595,7 +689,7 @@ td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
     el.addEventListener('mouseleave', cerrarFicha);
     el.addEventListener('focus', function () { abrirFicha(el); });
     el.addEventListener('blur', cerrarFicha);
-    if (el.dataset.nota) el.addEventListener('click', function () { abrirFicha(el); });
+    if (el.dataset.nota && el.tagName !== 'A') el.addEventListener('click', function () { abrirFicha(el); });
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarFicha(); });
 })();
