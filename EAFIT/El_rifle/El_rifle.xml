@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="es">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>El rifle</title>
+        <author>Tomás Carrasquilla</author>
+        <editor>Federico Echeverri</editor>
+        <editor>Vale</editor>
+        <respStmt>
+          <resp>Colación de testimonios y aparato crítico</resp>
+          <name>Federico Echeverri</name>
+        </respStmt>
+        <respStmt>
+          <resp>Notas explicativas</resp>
+          <name>Federico Echeverri</name>
+          <name>Vale</name>
+        </respStmt>
+        <respStmt xml:id="JH">
+          <resp>Notas del editor</resp>
+          <name>JH</name>
+        </respStmt>
+        <respStmt xml:id="MAI">
+          <resp>Nota explicativa</resp>
+          <name>Miguel Arango Isaza</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Edición digital en preparación; sin datos de publicación.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listWit>
+          <witness xml:id="A">
+            <bibl type="edition">
+              <title level="a">El rifle</title>
+              <title level="j">El Liberal Ilustrado</title>
+              <pubPlace>Bogotá</pubPlace>
+              <date when="1915">1915</date>
+            </bibl>
+          </witness>
+          <witness xml:id="B">
+            <bibl type="edition">
+              <title>El rifle</title>
+              <date when="1952">1952</date>
+            </bibl>
+          </witness>
+          <witness xml:id="C">
+            <bibl type="edition">
+              <title>El rifle</title>
+              <date when="1958">1958</date>
+            </bibl>
+          </witness>
+          <witness xml:id="D">
+            <bibl type="edition">
+              <title>El rifle</title>
+              <date when="1996">1996</date>
+            </bibl>
+          </witness>
+          <witness xml:id="E">
+            <bibl type="edition">
+              <title>El rifle</title>
+              <date when="2008">2008</date>
+            </bibl>
+          </witness>
+        </listWit>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>Edición crítica digital de «El rifle», de Tomás Carrasquilla, sobre el texto publicado en <title level="j">El Liberal Ilustrado</title> (Bogotá, 1915), con aparato crítico de cinco testimonios, notas explicativas y facsímil del testimonio base. La colación se realizó con LERA para Versioning Machine 5.0.</p>
+      </projectDesc>
+      <editorialDecl>
+        <p>
+          <list>
+            <item n="1">Texto base: testimonio A (1915).</item>
+            <item n="2">Las regularizaciones de acentuación, puntuación y mayúsculas se codifican con choice, orig y reg; se conservan las formas dialectales y coloquiales del texto. Los signos que el testimonio omite y el editor repone se codifican con supplied.</item>
+            <item n="3">El aparato crítico es externo: cada lugar de variación se marca en el texto con seg y se enlaza con su entrada app del back mediante corresp, en ambas direcciones. El lem declara los testimonios que comparten la lectura del texto base.</item>
+            <item n="4">Las variantes se clasifican con la tipología declarada en classDecl. Cuando una variante pertenece a dos categorías, la principal va en type y la secundaria en subtype.</item>
+            <item n="5">Las notas explicativas se numeran en el orden de lectura y se llaman en la primera aparición del lema; cada llamada apunta a su nota y cada nota devuelve el vínculo a su llamada.</item>
+            <item n="6">El facsímil del testimonio A se declara en facsimile, con una surface por página. Cada cambio de página se marca en el punto exacto del texto con pb, cuyo atributo facs apunta a la surface correspondiente; cuando el cambio de página parte una palabra, el pb lleva break="no".</item>
+            <item n="7">El atributo cert="low" señala los lugares abiertos: entradas del aparato, notas o regularizaciones que deben revisarse contra el facsímil antes de darse por cerradas.</item>
+          </list>
+        </p>
+      </editorialDecl>
+      <classDecl>
+        <taxonomy xml:id="tipologia-variantes">
+          <category xml:id="orthographic">
+            <catDesc>Ortográfica: diferencias gráficas sin cambio fonológico.</catDesc>
+          </category>
+          <category xml:id="morphological">
+            <catDesc>Morfológica: diferencias de morfología flexiva.</catDesc>
+          </category>
+          <category xml:id="syntactic">
+            <catDesc>Sintáctica: diferencias de categoría gramatical o de función oracional.</catDesc>
+          </category>
+          <category xml:id="semantic">
+            <catDesc>Semántica: diferencias de significado léxico entre formas de la misma categoría.</catDesc>
+          </category>
+          <category xml:id="typographic">
+            <catDesc>Tipográfica: diferencias de puntuación y de mayúsculas.</catDesc>
+          </category>
+          <category xml:id="pragmatic">
+            <catDesc>Pragmática: diferencias de registro o de variación diatópica.</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+      <variantEncoding method="other" location="external"/>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="es">Español</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-11-11">Revisión de la codificación del facsímil: espacio de nombres TEI declarado en la raíz; direcciones de graphic convertidas a enlaces directos de imagen; pb reubicados (el de la página 1 antes del primer párrafo, break="no" en el corte de «cuerpo»); variantEncoding con method="other"; tipo doble de app3 repartido en type y subtype; signo de apertura repuesto con supplied en lugar de un orig vacío; place retirado del div de notas; resp="#JH" en las notas 12 y 19; cert="low" en tres regularizaciones que parecen alterar una lectura legítima del testimonio (Pensara, A estar, estampía) y en la nota 11, que pide verificación; nota editorial en app7 sobre la lectura de B.</change>
+      <change when="2026-11-08">Fusión del archivo de notas explicativas y del archivo de colación en un solo documento conforme al modelo FrutosDigital: estructura TEI válida, testimonios en sourceDesc, aparato externo con enlaces bidireccionales entre seg y app, notas renumeradas en orden de lectura y tipología de variantes revisada.</change>
+    </revisionDesc>
+  </teiHeader>
+  <!--
+    Facsímil del testimonio A. Cada graphic apunta a la imagen directa de Drive
+    (thumbnail?id=IDENTIFICADOR), no a la página de vista previa (file/d/…/view),
+    que no puede mostrarse dentro de un HTML. Los archivos deben estar compartidos
+    como «cualquier persona con el enlace». Si las imágenes se suben al repositorio,
+    basta con cambiar url por la ruta relativa, por ejemplo url="facsimiles/p1.jpg".
+  -->
+  <facsimile>
+    <surface xml:id="page1" n="1">
+      <graphic url="https://drive.google.com/thumbnail?id=15oBRCIDKTG9pRJZDj3h8QtvMzUQdMn-W&amp;sz=w2000"/>
+    </surface>
+    <surface xml:id="page2" n="2">
+      <graphic url="https://drive.google.com/thumbnail?id=1dVmnVU_uw1eOJCC4sqefK_Dw7S4tV-9D&amp;sz=w2000"/>
+    </surface>
+    <surface xml:id="page3" n="3">
+      <graphic url="https://drive.google.com/thumbnail?id=1LFMQQYmDBr7Ztyl2kbhNHgyHLvI0KMfK&amp;sz=w2000"/>
+    </surface>
+    <surface xml:id="page4" n="4">
+      <graphic url="https://drive.google.com/thumbnail?id=1aLZXChg9D2TpAdg2XeopeupBhQRSkwf4&amp;sz=w2000"/>
+    </surface>
+    <surface xml:id="page5" n="5">
+      <graphic url="https://drive.google.com/thumbnail?id=1RrJcyiwrZ3-BjP4U6j9uhcXBaHEAMNbX&amp;sz=w2000"/>
+    </surface>
+    <surface xml:id="page6" n="6">
+      <graphic url="https://drive.google.com/thumbnail?id=1ffbectOofI-x1A5u03qI29BtHGO7a-l6&amp;sz=w2000"/>
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+      <div xml:id="cap1" type="chap" n="1">
+        <pb n="1" facs="#page1"/>
+        <p>La mañana refulge gloriosa<ref xml:id="n_note1" n="1" target="#note1">1</ref> y las vitrinas de todos los almacenes están de gala, de alegría y paz en el Señor. En esa víspera clásica se exhiben con ingenua elegancia, para tentación de chicuelos y de papás, cuantos juguetes, comestibles y ociosidades han creado las industrias nacionales y extranjeras. Gentes de toda clase y condición atisban aquí, husmean allá, trasiegan por dondequiera, en busca de los regalos que, en aquella noche de venturanzas, ha de traer el Niño Dios a la rapacería de la familia. Demandaderas y sirvientes van y vienen, cargados de cajas y envoltorios; los obsequios se cruzan, los presentes se cambian, mientras la horda mendicante implora e implora en ese momento cristiano en que los corazones se ablandan.</p>
+        <p>Un caballero, de aire noble y ya maduro, observa desde una esquina del Capitolio aquel agitarse vertiginoso de la colmena. Su aire revela hondos pesares. ¿Cómo no? Es un señor sin hijos, separado de su mujer y forastero en la capital. La soledad y el hielo de su vida<ref xml:id="n_note2" n="2" target="#note2">2</ref> le acosan en este día en que se rinde el culto a la familia, se prende el lar de los afectos y se piensa en los ausentes y en los muertos queridos.</p>
+        <p>La felicidad que nota en <choice><orig>tánta</orig><reg>tanta</reg></choice> cara extraña le hace más acerba su desgracia.</p>
+        <p>—<hi rend="italic">¿Embolo<ref xml:id="n_note3" n="3" target="#note3">3</ref>, mesio<ref xml:id="n_note4" n="4" target="#note4">4</ref>?</hi> —le dice un granujilla hasta de once años, con voz arrulladora de súplica. El hombre hace una señal de asentimiento, pone un pie sobre la caja y el menestrello empieza.</p>
+        <p>Está astroso, desharrapado, roto; pero sus manitas y sus pies son escultóricos, sus uñas encañonadas y pulidas. En medio de aquel desaseo se adivina en esas extremidades el proceso de una estirpe aristocrática. En torno del raído casquete se alborotan unos bucles castaños que enmarcan una carita de tono ardiente, con facciones de ángel. Hay en sus movimientos, manipuleo y ademanes, esa gracia indecible de los niños cuando ejecutan con esmero algún trabajo.</p>
+        <p>El hombre lo estudia.</p>
+        <p>—¿Cómo te llamas?</p>
+        <p>—¿Yo, patroncito? Me llamo Tista Arana. Y muestra unos dientes de rata y pone en el señor unos ojos rasgados, claros y luminosos como la mañana.</p>
+        <p>—¿Tienes padres?</p>
+        <p>—No tengo más que mi madrina. Mi madrecita <seg type="app" xml:id="a_app1" corresp="#app1">se me murió</seg> cuando tenía seis años. ¡Era muy linda! Y mi taita me llevó donde mi madrina. Como vivía en la casa de junto... El taba casao con ella.</p>
+        <p>—¿Y murió también tu padre?</p>
+        <p>—Se cayó de un andamio, aquí en el Capítolio, y se le salieron los sesos.</p>
+        <p>—¿Y tu madrina te quiere mucho?</p>
+        <p>—Ni sé qué le diga a su mercé.</p>
+        <p>—¿Te pega?</p>
+        <p>—Me curte muy duro cuando no le junto hartos pesos y cuando toma chicha<ref xml:id="n_note5" n="5" target="#note5">5</ref>, y también cuando se me rasga la ropa. Ayer me jartó a totes. Es muy fregada.</p>
+        <p>—¿Y cuánto ganas al día?</p>
+        <p>¿Yo, patroncito? Pues unas veces apenas pa pagale la comida, que son doce pesos, y otras, cuando más, algunos veinticinco. Los grandes sí consiguen mucho.</p>
+        <p>Pasa a éstas un fámulo<ref xml:id="n_note6" n="6" target="#note6">6</ref> con unos paquetes y, al caérsele uno, salta al andén un riflecito sumamente cuco.</p>
+        <p>—¡Cómo gozarán los hijos de los ricos!— exclama Tista medio transportado—¡Vea ese rifle, patroncito!</p>
+        <p>—¿Quisieras <seg type="app" xml:id="a_app2" corresp="#app2">uno así?</seg></p>
+        <p>—¿Y qué me gano con querer?</p>
+        <p>—Pues, ¡quién sabe!</p>
+        <p>El señor le paga veinte pesos por el lustre y lo lleva a un almacén para que escoja un rifle o lo que quiera.</p>
+        <p>El rapaz no puede creer aquel sueño, no puede comprender acto tan raro. <choice><orig>Pensara</orig><reg cert="low">Pensará</reg></choice> que el patroncito se burla, a no ser por la paga tan enorme que ha recibido. Entra tembloroso, la cabeza baja, cambiando de colores. No puede oír, no puede hablar. Pero uno de los dependientes, que sabe su oficio, viene en su ayuda. Que escogiera el chico zoquete<ref xml:id="n_note7" n="7" target="#note7">7</ref> lo que a bien tuviese, ya que la fortuna le sorprendía. Le alcanza tambores, espadas, <pb n="2" facs="#page2"/>cornetas, carrón, animales. Un <hi rend="italic">rifle</hi>, articula al cabo el chicuelo. Le sacan varios y elige uno de salón y aire comprimido. ¡Qué maravilla! La lata parece acero, la caja es un primor y mide casi una vara. «No es tan zoquete,» dice una compradora. ¡Qué zoquete: <seg type="app" xml:id="a_app3" corresp="#app3">si es</seg> un experto! En su turbación desarticula el arma y, con sus trémulas manitas, hace jugar el mecanismo. Le dan un dardo amarillo, lo pone con precisión y hace puntería con mucha monada a un elefante. A ser blanco le acertara el Guillermito Tell en la propia trompa. «¡Qué chirriado!,» exclaman. Explica, entonces, cómo ha visto el tiro en el salón del Bosque y cómo los niños de un míster le han prestado sus rifles, cuando ha ido a Chapinero a lustrarles el calzado.</p>
+        <p>Una docena de flechas acompaña el rifle. Le envuelven todo aquello y lo recibe en un desvanecimiento<ref xml:id="n_note8" n="8" target="#note8">8</ref> de ensueño. Dos granujas del oficio y varios mendiguillos le rodean. ¡Qué envidia la de aquellas criaturas! ¡Qué bocas las que abren! ¡Cómo se les transfigura el colega y oómo miran al caballero extraordinario! El caballero paga y sale apresurado. Ya no tiene cara triste: tres pesos de dicha verdadera bien pueden aliviar un millón de pesadumbres. Pero va pensando, a la vez, que la vida tiene muchos dolores absurdos.</p>
+        <p>Tista le alcanza, con los ojos humedecidos.</p>
+        <p>—Dígame su mercé ónde vive p'ir a embolarle de balde todos los días y hacerle los mandaos.</p>
+        <p>—¡Gracias, Tista Arana! Ya no podrás servirme mucho: pasado mañana me voy.</p>
+        <p>—¿A dónde, patroncito?</p>
+        <p>—A Cúcuta, donde estoy a tus órdenes.</p>
+        <p>—¡A Cúcuta!... (Y una ráfaga negra pasa por aquel cielo).</p>
+        <p>—¡y cómo se llama su mercé?</p>
+        <p>—El Sr. Equis. Para servirte.</p>
+        <p>Y el Sr. Equis se embebe entre la turbamulta de la calle.</p>
+        <p>Los granujas siguen a Tista, lo cercan, se lo disputan, lo adulan. Aquel rifle caído del cielo le ha conquistado en un instante alta posición y gran renombre. Sino que aquel corazón de niño, que no ha sentido el hálito de otro corazón hidalgo; que, al abrirse a la vida del afecto, no ha conocido un <choice><orig>sér</orig><reg>ser</reg></choice> que le proteja, que por su <choice><orig>sér</orig><reg>ser</reg></choice> se interese, que le arroje un mendrugo<ref xml:id="n_note9" n="9" target="#note9">9</ref> de cariño, siente ahora, con esa intuición de la niñez desamparada, haber entrevisto la felicidad para perderla al punto. Esto, que el inocente paria no puede comprender, le amarga la posesión repentina de su tesoro.</p>
+        <p>—¿Dónde serpa Cúcuta, ala?—dice al más prócer<ref xml:id="n_note10" n="10" target="#note10">10</ref> de sus flamantes tagarotes<ref xml:id="n_note11" n="11" target="#note11">11</ref>.</p>
+        <p>—Eso es muy lejos: ¡por allá en los Llanos!</p>
+        <p>—¿No es cierto, ala, que el Sr. Equis no me dio limosna como a un chino sucio, sino que me dio un regalo como a un niñito suyo? Es un señor muy bueno.</p>
+        <p>—Sí: eso fue un regalo, que vale mucha plata. ¿No viste, pues, que pagó tres billetes de cien pesos ? Vendelo pa que comprés ropa</p>
+        <p>—¡No, ala! Yo quiero más mi rifle que muchos fluxes. Yo mantenía mucha gana de rifle y me lo dio él</p>
+        <p>—Yo consigo esta noche el blanco y mañana me voy a tirar al Chorro de Padilla<ref xml:id="n_note12" n="12" target="#note12">12</ref>. Yo compro más flechas cuando se me acaben. Yo sé apuntar mucho.</p>
+        <p>Tiró calle arriba, hacia su casa, no tanto por buscar el almuerzo, cuanto por guardar el regalo y contarle a su madrina la estupenda historia. Vivían por Las Aguas, en esa barriada que se extiende falda arriba, entre eucaliptos y cerezos, como banda dispersa do perdices. José Luis, el geógrafo consejero, le sigue hasta allá, por ver si estrenan el arma envidiada.</p>
+        <p>La niña Belén, madrina del héroe, está a la puerta, medio tomada por la chicha. Oye el relato, admira el rifle, ve cómo se maneja; pero no encuentra el acontecimiento verosímil. Si era hurto de los dos facinerosos, que se confesaran con Cristo. Ni el llanto del uno, ni las protestas del otro, ni la entrega do los dineros ganados la sacan de su sospecha. <choice><orig>Tánto</orig><reg>Tanto</reg></choice> moteja a José Luis de instigador y urdemales, que el pobre no tiene más remedio que marcharse a la <choice><orig>estampía</orig><reg cert="low">estampida</reg></choice>.</p>
+        <p>«¡Guardá eso horita mismo! —le vocea al triste mocozuelo—Y yo averiguaré hoy mismo diónde lo sacastes. ¡Y ya sabés!: si vienen aquí los policías a poner pereque, te doy una muenda que te habés de acordar de yo toda tu puerca vida. Andá a almorzar y salí ligero pal trabajo, q’hoy es día bueno y mañana necesito pa las Pascuas.»</p>
+        <p>¡Caramba con su madrina! Mientras más trabada de lengua, más violenta para echarle a él unas de machete y otras de cañafístula. ¿Por qué sería así su madrina? El cuitado, entre si rabio o lloro, guarda rifle y flechas, bajo la estera del camastro<ref xml:id="n_note13" n="13" target="#note13">13</ref> calandrajiento<ref xml:id="n_note14" n="14" target="#note14">14</ref> donde dormía, por allá en el rincón más oscuro del tugurio<ref xml:id="n_note15" n="15" target="#note15">15</ref>. Toma en volandas el pedazo de pan negro, las dos papas y el plato de cuchuco, ya con nata arrugada por el frío, y<choice><orig>....</orig><reg>...</reg></choice> otra vez en busca de la vida.</p>
+      </div>
+      <div xml:id="cap2" type="chap" n="2">
+        <head type="level2">II</head>
+        <p>La niña Belén cierra las puertas de su alcázar, se tira sobre el jergón y descabeza un sueñecito de dos horas. Despiértase tan bien, que hasta se siente hermosa y más apta que nunca para la pelea.</p>
+        <p>No es ni vieja: apenas frisa en las tres docenas; y a no ser por los efectos de la chicha, que ya principan a manifestarse en ese cuer<pb n="3" facs="#page3" break="no"/>po gentil, aún quebrara corazones la viuda del maestro Arana.</p>
+        <p>Por lo mismo que su matrimonio no fue, propiamente, el paraíso de las dichas, ni ella el espejo de las casadas, aspira a segundas nupcias; que un clavo saca otro clavo, y al ladrón arrepentido hay que dejarlo entrar para que muestre su enmienda.</p>
+        <pb n="4" facs="#page4"/>
+        <p>Es su designado para tan alto puesto nada menos que el maestro Ricardo Albarracín, viudo con dos hijos, zapatero de viejo, que tiene por allí cerca un simulacro de taller. Y como el amor fue siempre la gran fuente de inspiraciones, cátame que a la ñifla Belencito le viene, en tal momento, una idea, una idea redentora. Dicho y hecho.</p>
+        <p>Hace arqueo, saca plata y sale; se entra a un tenducho<ref xml:id="n_note16" n="16" target="#note16">16</ref>; merca por treinta pesos un mamarracho<ref xml:id="n_note17" n="17" target="#note17">17</ref> de muñeca, manufacturada en el país y hasta una libra de confites<ref xml:id="n_note18" n="18" target="#note18">18</ref> ordinarios. Torna a su casa, se emperejila, se pone cintajos en la cabeza, se echa encima los mejores trapos. Saca las flechas y el rifle; trata de doblarlo y no puede. Se lo amarra entonces en la cintura con la caja hacia arriba y cubre el cañoncito con el delantal. Toma lo otro, cubre todo con el pañolón, cierra, y<choice><orig>....</orig><reg>...</reg></choice> caminito de mi dicha.</p>
+        <p>Ni el más leve escrúpulo la escuece. ¿Por qué? ¿Qué iba a hacer ese chino feróstico con el tal escopetín? Holgazanear, molestar, poner pereque o matar a algún cristiano. Sí. Era muy capaz de eso y de mucho más si a mano le venía. Si era tan perverso como la infame que lo había echado al mundo: un culebrón, una tatacoa<ref xml:id="n_note19" n="19" target="#note19">19</ref>. El zarcucio éste la tenía jubilada. No había salido de él porque<choice><orig>.. .</orig><reg>...</reg></choice> porque siempre la ayudaba ¡valiera la verdad!</p>
+        <p>Era la Niña Belén una de <choice><orig>tántas</orig><reg>tantas</reg></choice> infelices que llevan en su sangre la tuberculosis del vicio. Nacida y criada entre el foco, fue un milagro el que hubiese conservado sus pulmones hasta su matrimonio. Pero este santo estado, que a <choice><orig>tántos</orig><reg>tantos</reg></choice> salva, la perdió a ella de un modo galopante. No pudo, por más que lo pidiese a cuanto Cristo hubo, juntar a la de esposa la corona de madre, ni supo guardar aquélla cual debiera. El tal Arana le resultó, desde el principio, muy partidario de la poligamia; y ella tuvo por lógico y equitativo acogerse a la ley mosaica de ojo por ojo y diente por diente.</p>
+        <p>Las mutuas hazañas de aquel matrimonio endiablado se resolvían en una epopeya palpitante de pescozones a la aurora y escandaleras al ocaso. El cónyuge le prendió, junto al suyo, otro lar, con mucha leña y mucha llamarada. En él se recogía, porque lloviera o porque hiciese sol; en él cifró sus delicias; en él se consiguió lo que no pudo en la incubadora bendecida: un polluelo, como un sol. Pero lo bueno nunca dura. Murió el ave de arrullo melodioso y el nido se deshizo. ¿Qué iba a hacer el pobre pajarraco? Traerle el pichón a la gorriona abandonada para que lo abrigase bajo el plumaje helado de una maternidad postiza.</p>
+        <p>Sentíase la mísera en la picota del ridículo. Así y todo bregó por querer de algún modo aquel inocente; que no hay mujer que no sea madre en cualquier forma. Mas no pudo mover aquel carillo. En ese corazón leproso no había una fibra siquiera donde pudiesen brotar tan santas caridades. Por fortuna que el padre velaba por su chico y le asistía cuanto un hombre pueda hacerlo. <choice><orig>Tánto</orig><reg>Tanto</reg></choice> le quiso, que cualquier día le reconoció por escritura pública. Esto envenenaba más, si era posible, a la esposa infecunda. Preparándose estaba para abandonar por siempre aquel techo que le era insoportable, cuando le llevaron muerto y destrozado al esposo aborrecido. Y era tal el tósigo que acendraba aquella entraña, que la viuda sólo vio en aquella tragedia el castigo del culpable y su propia liberación.</p>
+        <p>A más no poder retuvo en el suyo al huerfanillo: amigos y allegados lograron que entendiese que, si le abandonaba en manos extrañas, ponía en riesgo la mitad de dos barracas y de un lote, que le pertenecía, legalmente, como herencia de su marido. Ni escuela, ni enseñanza de ninguna especie para aquella criatura que parecía sobrar en la tierra. Su dulzura y docilidad las tomaba la madrastra a hipocresía y falsedad, viendo en él trasunto fidelísimo de su madre. Pronto lo mandó a mendigar y, como era tan lindo y tan simpático, como imploraba con una vocesita deliciosa, siempre llevaba algo a la casa. El mismo, sin que a Belén se le ocurriese tal oficio, se fue entablando en el de limpiabotas, y figuraba en el gremio como el más chiquitín y andrajoso. De allí adelante lo fue explotando, a más y mejor, la desgraciada mujerzuela.</p>
+        <p>Henchida de esperanzas se encamina, un tanto envarada por el rifle, al taller de su adorado tormento. Hállalo solo y muy apurado, porque tiene compromisos para el día siguiente, y el oficialillo aprendiz ya se ha declarado en vacaciones. Harto se le alcanzan al remendón las pretensiones de la viuda, de quien tiene las peores referencias. Así es que se pone en guardia acogiendo la sirena con alguna displicencia. Pero ella no amaina por tan poco. Todavía en pie, le dice muy seductora:</p>
+        <p>—«Hoy no vengo hacele ningún encargo, Ricardito. Es que tenemos, esta noche, una parrandita, donde mi comadre Isaura Primisiero; y, como yo soy una de las alferas, vengo a convídalo. ¿No es cierto que no me desaira?</p>
+        <p>—Mucho le agradezco (sin levantar los ojos del trabajo). Y, desde que pueda, iré con mucho gusto; pero creo que no acabo hasta muy tarde.</p>
+        <p>—Asómese, aunque sea un momento. Hay novena y van unos piscos que tocan primoroso y una muchacha calentana que canta muy bien. ¡Vaya que no le pesa! ¡Allá verá loa bambucos que vamos a echar!</p>
+        <pb n="5" facs="#page5"/>
+        <p>—Haré lo posible; pero no quedo comprometido</p>
+        <p>—<supplied reason="omitted-in-original">¡</supplied>Vaya! No le hace que sea tarde. Venía, también, a trele los aguinaldos pa sus dos chinitos. Como soy tan reservada pa todas, pa todas mis cosas, los treigo muy escondidos. ¡Vea cómo vengo! (Alza él los ojos; ella pone en la mesa, flechas, muñeca y confites y se zafa el rifle). Resulta que, como tengo <choice><orig>tántas</orig><reg>tantas</reg></choice> amigas que tienen chinos, no alcanzo pa todos. Esto no es más que pa los preferidos. Este riflecito, con la cajita de flechas, pa Estebitan; la mona<ref xml:id="n_note20" n="20" target="#note20">20</ref> pa Carmencita; y estos confites pa que se los reparta a juntos.</p>
+        <p>—¡Pero, Belén!...¿Cómo se puso en esas? —excalama el padre, deponiendo un tantico sus esquiveces.</p>
+        <p>—¡Eso no vale nada, Ricardito! Y pa eso semos las amigas: pa complacer a los amigos en lo que podamos. Y vea: yo quero q'estos regalitos se los dé usté, como cosa suya: La gente es tan fregada que, si comprende q'es regalo mío ¡quién sabe lo que dirán!</p>
+        <p>Belén se sienta; Ricardo desenvuelve el rifle.</p>
+        <p>—!Ah, caray! ¡Este es un regalo de rico! Esto le debió costar muchísimo.. Con la mona y los dulces era suficiente</p>
+        <p>—Yo quiero regalarle a Estebitan algo que le llame la atención: como está tan grande y tan entendido y tan chirriado<choice><orig>....</orig><reg>...</reg></choice> A la niña, como tavía <seg type="app" xml:id="a_app4" corresp="#app4">está tan patojita</seg>, ai le compré ese embustico. Es hasta pecao dale juguetes buenos a los chiquitos, pa que los rompan al momento.</p>
+        <p>Ricardo examina el arma, presa de encontradas cavilaciones. Calcula su precio y los recursos de la regaladora y aquello no lo compagina. La viuda se va ofuscando.</p>
+        <p>—Vea, niña Belén —murmura <choice><orig>luégo</orig><reg>luego</reg></choice>— Con mucha pena le digo que no es decente que yo le acepte este regalo. Usté quiere que pase como mío y yo soy un hombre muy pobre. Debo dos meses del arriendo del rancho; y el dueño, que vive en la casa de junto, me ha amenazado con quitarme los muebles, si no le pago al fin del mes. Si él ve este rifle a mi muchachito, me pega la insultada del siglo. Con que mejor sería que le hiciera el regalo a otro amigo más pudiente.</p>
+        <p>—¡Imposible, Ricardito! ¡<seg type="app" xml:id="a_app5" corresp="#app5">Eso</seg> sería un <seg type="app" xml:id="a_app6" corresp="#app6">desaire</seg> horrible! Hagamos una cosa<choice><orig>....</orig><reg>...</reg></choice></p>
+        <p>Suspende, se queda lela, la cara se le desfigura. <choice><orig>A</orig><reg cert="low">De</reg></choice> estar en pie, se fuera al suelo redonda. En la puerta ha surgido, como brotado de la tierra, Tista en persona. Trae sobre la caja de su oficio un disco de cartón. Los tres guardan expectante silencio. Al fin lo rompe el rapazuelo.</p>
+        <p>—Madrina, aquí le treigo lo que junté. Me vine desde ahora, porque no hay a quién embolale: to los cachacos y los guaches de botines tan ya emparrandaos. Ya los policías saben que el rifle no es robao. Yo y José Luis les contamos todo y llevamos testigos. El señor que me lo regaló <seg type="app" xml:id="a_app7" corresp="#app7">no se llama nada el Sr. Equis:</seg> es un dotor de leyes que se llama Javier Villablanca. Vive en el <hi rend="italic">Hotel Astor</hi>. Fuimos dond'él y él le dijo, también, al policía; <choice><orig>y. ..</orig><reg>y...</reg></choice></p>
+        <p>¿Es este el rifle?</p>
+        <p>—Por supuesto, mestro Ricardo. Y ¿pa qué lo trajo, madrina?</p>
+        <p>Belén salta del asiento y se dispara a la calle. El zapatero, descompuesto y tembloroso, agarra el resto del regalo y se lanza tras ella:</p>
+        <p>—«Vea, mi sia Belén —le grita ronco— <choice><orig>Llévese</orig><reg>llévese</reg></choice> su mona y sus confites, no sea que resulten con dueños.»</p>
+        <p>Oye ¿cómo no oír? pero no vuelve el rostro. Va volando, sonámbula, enchichada con un brebaje enloquecedor, que nunca ha probado.</p>
+        <p>El remendón no acaba de enterarse, porque Tista, por instinto de hidalguía y por temor de su madrastra, trata de tergiversarle los hechos. Ricardo lo despacha, en hora mala, con todos los presentes.</p>
+        <p>¡Oh, su madrina! Quería regalarle su rifle al chino Esteban. ¿Por qué sería así su madrina? Su corazoncito se le va apretando. Siente angustia, susto, piensa unas cosas vagas que le causan miedo y que le dan tristeza. Ya no piensa en ir, después de la comida, a estrenar el arma. Ya no se ufana de llevarla, ni de ser su dueño exclusivo. No se le ocurre, tampoco, probar de los confites.</p>
+        <p>Prosigue indeciso. ¿Subiría o no a la casa, desde ahora? Tiene que subir, irremediablemente, para entregarle a su madrina la plata y la encomienda. ¿A que se exponía, si no? Avanza, pero se detiene en cualquier parte, ensimismado y caviloso. Encuentra conocidos y no les ve; le hablan y no les oye; le rodean, y se retira. «¡Chino gediondo!¡Chino creído!» —le grita un émulo. «¡No cabe en el pellejo por ese rifle!» —le grita otro. «¡Te lo robaste, ladrón!¡Sos un ladrón!» Nada contesta. Sigue despacio y por ahí se sienta en un pretil.</p>
+        <p>Ay!¡ Si él se fuera para Los Llanos, con el Dr. Villablanca! Le lustraría el calzado, le limpiaría la ropa, le ensillaría el caballo, le pondría las polainas y el espolín; le haría todo, sin que le pagase un peso. Y no le hacía que el doctor le curtiese. De él no le dolerían ni regaños ni totes. Era un patrón tan bueno, tan bizarro con los pobrecitos. ¡Ay, Los Llanos!</p>
+        <p>Pasan niñeras e institutrices, con sus chiquitines que vuelven de meriendas del <hi rend="italic">Chorro de Padilla</hi>. Pasan carruajes que van de francachela hacia <hi rend="italic">La Cuna de Venus</hi>; pasan las murgas de artesanos punteando sus liras, rasgando sus tiples; pasa gente regocijada y bulliciosa; y Tista. en el pretil, apoyado en <pb n="6" facs="#page6"/>el rifle. ¿Por qué, se estaría acordando, ahora, de su madrecita? ¡Era tan linda! ¡Le daba <choice><orig>tántas</orig><reg>tantas</reg></choice> cosas!</p>
+        <p>Una nube se desgrana pictórica y Tista corre. Cuando se acerca a la barraca, asoma la madrina, le llama por señas y se entra. No bien el chico traspasa aquel umbral, la puerta gira rauda, Belén tuerce la llave y la tormenta estalla. «¡Este arrastrao! ¡Este bandido!» Le arrebata frenética el rifle y, contra un banco, contra una piedra, con los pies, con las rodillas, con los dientes, lo abolla, lo tuerce, lo quiebra, logra partirlo. Sale al patinejo, contra el vallado termina la obra y lanza, falda abajo, pedazo por pedazo. Vuela adentro, hace añicos la muñeca, avienta los confites, salta, pisotea, pulveriza, epiléptica, posesa.</p>
+        <p>Tista, hasta entonces paralizado, da un alarido de dolor y espanto. Se queda seco y articula <choice><orig>luégo</orig><reg>luego</reg></choice>:</p>
+        <p>—«¡Me lo quebró, me lo botó, porque el mestro Ricardo no la quiere:</p>
+        <p>—¡Cálla, desgraciao<choice><orig>....</orig><reg>...</reg></choice> o te mato!</p>
+        <p>Le ase de la greña, le arrastra, le da contra el suelo.</p>
+        <p>—¡Máteme, madrina! —grita enloquecido— ¡Máteme, pero es por eso! ¡No la quiere! ¡No la quiere!</p>
+        <p>Lo pisa, lo golpea. No lo aplasta de una vez, porque ella misma da consigo en tierra, presa de espantosas convulsiones. Tista brinca, como una rana, y se mete debajo de una mesa. Echa sangre por boca y por narices.</p>
+        <p>Belén sigue en el suelo revolcándose. De pronto da un corcovo y queda rígida. El niño acesa acurrucado en su escondite. El agua cae a torrentes y la noche se inicia.</p>
+        <p>La hembra se sacude al rato. Da un corcovo y se encabrita. Llora y suspira, gime y solloza. Mucho ha sufrido en esta perra vida; pero esta afrenta indecente ¡ni en su infierno! Se muere. Mas ¡qué morir ni qué demonios!: ¡Chicha, mucha chicha! ¡Aguardiente, harto aguardiente! ¡Y reñir y acabar, con esa tolimense tiznada!</p>
+        <p>Se alza, se estriga, se yergue.</p>
+        <p>—«¡Aver la plata, maldito!»—vocifera trágica.</p>
+        <p>Tista busca entre sus desgarrones y le entrega lo que encuentra. Trastea ella por un baúl y saca un puñalejo, recuerdo de un su amigo. Sale en seguida, y deja bajo llave al infeliz.</p>
+        <p>Apenas solo, desata los raudales de su llanto. Tiembla, tirita, los golpes le duelen, le duelen mucho. Tan pronto le viene un frío que le llega hasta los huesos; tan pronto un calor que le sofoca. Siente sed, siente que su carita se crece en dolorosa tirantez, que sus ojos se van tapando. Se tira en su esterilla. No sabe si duerme, o si vela o si sueña. Le parece que oye horas, que oye cohetes y músicas lejanas. Al fin oye claro y distinto las campanas. Repican muy duro.</p>
+        <p>Los ángeles entonan el <hi rend="italic">gloria in excelsis Deo</hi> y el niño se arrodilla e impreca: «¡Madrecita querida! ¡Lleváme p’onde vos! ¡Ya no quiero ir a Los Llanos! ¡Lleváme madrecita!».</p>
+      </div>
+    </body>
+    <back>
+      <div xml:id="apparatus" type="apparatus">
+        <head>Aparato crítico</head>
+        <listApp>
+          <app xml:id="app1" corresp="#a_app1" type="syntactic">
+            <lem wit="#A">se me murió</lem>
+            <rdg wit="#B #C #D #E">se murió</rdg>
+          </app>
+          <app xml:id="app2" corresp="#a_app2" type="syntactic">
+            <lem wit="#A #C #D #E">uno así?</lem>
+            <rdg wit="#B">uno?</rdg>
+          </app>
+          <app xml:id="app3" corresp="#a_app3" type="syntactic" subtype="pragmatic">
+            <lem wit="#A">si es</lem>
+            <rdg wit="#B #C #D #E">es</rdg>
+          </app>
+          <app xml:id="app4" corresp="#a_app4" type="syntactic">
+            <lem wit="#A #C #D #E">está tan patojita</lem>
+            <rdg wit="#B">está patojita</rdg>
+          </app>
+          <app xml:id="app5" corresp="#a_app5" type="semantic">
+            <lem wit="#A #C #D #E">Eso</lem>
+            <rdg wit="#B">Esto</rdg>
+          </app>
+          <app xml:id="app6" corresp="#a_app6" type="semantic">
+            <lem wit="#A #C #D #E">desaire</lem>
+            <rdg wit="#B">desastre</rdg>
+          </app>
+          <app xml:id="app7" corresp="#a_app7" type="orthographic" cert="low">
+            <lem wit="#A">no se llama nada el Sr. Equis:</lem>
+            <rdg wit="#C #D #E">no se llama nada el señor Equis:</rdg>
+            <rdg wit="#B">cuenta conocidos y no los ve;</rdg>
+            <note>La lectura atribuida a B corresponde a otro pasaje («Encuentra conocidos y no les ve») y parece un desajuste de la colación automática; debe verificarse contra el testimonio de 1952.</note>
+          </app>
+        </listApp>
+      </div>
+      <div xml:id="notes" type="notes">
+        <head>Notas explicativas</head>
+        <note xml:id="note1" n="1" target="#n_note1">«La mañana refulge gloriosa»: la mañana brilla intensamente. Refulgir significa resplandecer o emitir una luz viva.</note>
+        <note xml:id="note2" n="2" target="#n_note2">«La soledad y el hielo de su vida»: metáfora que representa la tristeza, el aislamiento y la falta de afecto del personaje.</note>
+        <note xml:id="note3" n="3" target="#n_note3" cert="low">Embolar</note>
+        <note xml:id="note4" n="4" target="#n_note4" resp="#MAI">Mesio: Debido al contexto finisecular de Bogotá de finales del siglo XIX, con presencia destacada de extranjeros, el personaje Tista Arana intenta imitar la fórmula de tratamiento de «señor» en francés: «monsieur», con fonética castellana: «mesio» (N. de Miguel Arango Isaza).</note>
+        <note xml:id="note5" n="5" target="#n_note5">Chicha: En gran parte de América Latina, es una bebida que se obtiene de la fermentación o infusión de cereales, frutas o tubérculos.</note>
+        <note xml:id="note6" n="6" target="#n_note6">Fámulo: Criado o sirviente. El término tiene un carácter literario y poco frecuente en el habla cotidiana actual.</note>
+        <note xml:id="note7" n="7" target="#n_note7">Zoquete: Persona torpe o de poco entendimiento; también puede referirse a un pedazo de madera. En el relato se emplea para hablar del rifle de juguete.</note>
+        <note xml:id="note8" n="8" target="#n_note8">Desvanecimiento: Pérdida momentánea del conocimiento o de la fuerza. También puede significar desaparición gradual.</note>
+        <note xml:id="note9" n="9" target="#n_note9">Mendrugo: Trozos pequeños de pan duro o sobrante. En la escena, se ofrecen como comida a los niños.</note>
+        <note xml:id="note10" n="10" target="#n_note10">Prócer: Persona de alta consideración social, prestigio o importancia pública.</note>
+        <note xml:id="note11" n="11" target="#n_note11" cert="low">Tagarotes: En el texto, se refiere a personas o personajes relacionados con el ambiente de los jugadores y sus compañías; verificar el uso.</note>
+        <note xml:id="note12" n="12" target="#n_note12" resp="#JH">Chorro de Padilla: Es una de las principales fuentes de agua dulce de Bogotá. Proviene del río San Francisco y limita con el Parque Nacional Olaya Herrera (N. del E. JH).</note>
+        <note xml:id="note13" n="13" target="#n_note13">Camastro: Cama pobre, incómoda o improvisada.</note>
+        <note xml:id="note14" n="14" target="#n_note14">Calandrajiento: Muy sucio, andrajoso o cubierto de harapos; es una voz de uso poco común.</note>
+        <note xml:id="note15" n="15" target="#n_note15">Tugurio: Vivienda pequeña, pobre o en malas condiciones.</note>
+        <note xml:id="note16" n="16" target="#n_note16">Tenducho: Tienda pequeña, modesta o de poca importancia.</note>
+        <note xml:id="note17" n="17" target="#n_note17">Mamarracho: Persona de aspecto ridículo o grotesco; también puede aplicarse a algo mal hecho o poco elegante.</note>
+        <note xml:id="note18" n="18" target="#n_note18">Confites: Dulces pequeños, generalmente recubiertos de azúcar.</note>
+        <note xml:id="note19" n="19" target="#n_note19" resp="#JH">Tatacoa: Serpiente venenosa del norte de Colombia (N. del E. JH).</note>
+        <note xml:id="note20" n="20" target="#n_note20">Mona: Muñeca o figura de juguete, según el uso coloquial que sugiere el contexto.</note>
+      </div>
+    </back>
+  </text>
+</TEI>
