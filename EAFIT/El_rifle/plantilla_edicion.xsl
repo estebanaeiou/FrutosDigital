@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Dispositio textus: TEI P5 → HTML de lectura con facsímil sinóptico.
+  Plantilla de dispositio textus: TEI P5 → HTML de lectura con facsímil sinóptico.
+  Sirve para cualquier edición con esta arquitectura (modelo FrutosDigital):
+    · texto en body, dividido en div, con pb/@facs, seg[@type='app'], ref y choice;
+    · aparato (app con lem y rdg) y notas (note) en el back;
+    · testimonios en listWit (el primero se toma como texto base);
+    · facsimile con una surface por página (opcional).
+  Los bloques que el XML no trae (facsímil, aparato, notas, testimonios) se omiten.
   XSLT 1.0 (corre con lxml, xsltproc o cualquier navegador).
   El HTML resultante es autónomo: estilos y guion van dentro del archivo.
 -->
@@ -10,38 +16,56 @@
   exclude-result-prefixes="tei">
 
   <xsl:output method="html" encoding="UTF-8" indent="no" doctype-system="about:legacy-compat"/>
-  <xsl:strip-space elements="tei:TEI tei:teiHeader tei:text tei:body tei:back tei:div tei:listApp tei:app tei:choice tei:facsimile tei:surface tei:listWit tei:witness tei:bibl tei:list"/>
+  <xsl:strip-space elements="tei:TEI tei:teiHeader tei:text tei:body tei:back tei:div tei:listApp tei:app tei:choice tei:facsimile tei:surface tei:listWit tei:witness tei:bibl tei:list tei:lg"/>
 
   <xsl:key name="porId" match="*[@xml:id]" use="@xml:id"/>
+  <xsl:key name="llamadaDe" match="tei:ref[@target]" use="substring-after(@target, '#')"/>
+
+  <xsl:variable name="base" select="//tei:listWit/tei:witness[1]"/>
+  <xsl:variable name="rotuloBase">
+    <xsl:text>Testimonio</xsl:text>
+    <xsl:if test="$base/@xml:id"><xsl:text> </xsl:text><xsl:value-of select="$base/@xml:id"/></xsl:if>
+  </xsl:variable>
+  <xsl:variable name="laminas" select="//tei:facsimile/tei:surface"/>
+  <xsl:variable name="entradas" select="//tei:back//tei:app"/>
+  <xsl:variable name="notas" select="//tei:back//tei:note[not(ancestor::tei:app)]"/>
+  <xsl:variable name="testigos" select="//tei:listWit/tei:witness"/>
 
   <xsl:template match="/">
     <html lang="es">
       <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title><xsl:value-of select="//tei:titleStmt/tei:title"/> · edición crítica digital</title>
+        <title><xsl:value-of select="//tei:titleStmt/tei:title[1]"/> · edición crítica digital</title>
         <style><xsl:value-of select="$css" disable-output-escaping="yes"/></style>
       </head>
       <body>
         <header class="cabecera">
           <div class="cabecera-titulo">
             <p class="autor"><xsl:value-of select="//tei:titleStmt/tei:author"/></p>
-            <h1><xsl:value-of select="//tei:titleStmt/tei:title"/></h1>
+            <h1><xsl:value-of select="//tei:titleStmt/tei:title[1]"/></h1>
           </div>
           <nav aria-label="Secciones">
             <a href="#texto">Texto</a>
-            <a href="#aparato">Aparato</a>
-            <a href="#notas">Notas</a>
-            <a href="#testimonios">Testimonios</a>
+            <xsl:if test="$entradas"><a href="#aparato">Aparato</a></xsl:if>
+            <xsl:if test="$notas"><a href="#notas">Notas</a></xsl:if>
+            <xsl:if test="$testigos"><a href="#testimonios">Testimonios</a></xsl:if>
             <a href="#criterios">Criterios</a>
           </nav>
-          <div class="conmutador" role="group" aria-label="Modo de lectura">
-            <button type="button" id="modo-critico" aria-pressed="true">Lectura crítica</button>
-            <button type="button" id="modo-testimonio" aria-pressed="false">Testimonio 1915</button>
-          </div>
+          <xsl:if test="//tei:body//tei:choice or //tei:body//tei:supplied">
+            <div class="conmutador" role="group" aria-label="Modo de lectura">
+              <button type="button" id="modo-critico" aria-pressed="true">Lectura crítica</button>
+              <button type="button" id="modo-testimonio" aria-pressed="false">
+                <xsl:text>Testimonio</xsl:text>
+                <xsl:if test="$base/tei:bibl/tei:date"><xsl:text> </xsl:text><xsl:value-of select="$base/tei:bibl/tei:date"/></xsl:if>
+              </button>
+            </div>
+          </xsl:if>
         </header>
 
         <main class="mesa">
+          <xsl:if test="not($laminas)"><xsl:attribute name="class">mesa sin-facsimil</xsl:attribute></xsl:if>
+          <xsl:if test="$laminas">
           <aside class="visor" id="facsimil" aria-label="Facsímil">
             <div class="visor-barra">
               <button type="button" id="facs-ant" aria-label="Página anterior">‹</button>
@@ -54,26 +78,32 @@
               <p id="facs-aviso" hidden="hidden">No se pudo cargar la imagen. Compruebe que el archivo esté compartido como «cualquier persona con el enlace» o ábrala con el botón de arriba.</p>
             </div>
             <ol id="facs-lista" hidden="hidden">
-              <xsl:apply-templates select="//tei:facsimile/tei:surface"/>
+              <xsl:apply-templates select="$laminas"/>
             </ol>
           </aside>
+          </xsl:if>
 
           <article class="pliego" id="texto">
             <xsl:apply-templates select="//tei:text/tei:body"/>
           </article>
         </main>
 
+        <xsl:if test="$entradas">
         <section class="bloque" id="aparato">
           <h2>Aparato crítico</h2>
           <p class="leyenda">Lema ] variantes. Las siglas remiten a la tabla de testimonios. En óxido, los lugares abiertos.</p>
-          <xsl:apply-templates select="//tei:back//tei:app"/>
+          <xsl:apply-templates select="$entradas"/>
         </section>
+        </xsl:if>
 
+        <xsl:if test="$notas">
         <section class="bloque" id="notas">
           <h2>Notas explicativas</h2>
-          <xsl:apply-templates select="//tei:back//tei:div[@xml:id='notes']/tei:note"/>
+          <xsl:apply-templates select="$notas"/>
         </section>
+        </xsl:if>
 
+        <xsl:if test="$testigos">
         <section class="bloque" id="testimonios">
           <h2>Testimonios</h2>
           <table>
@@ -101,26 +131,43 @@
             </tbody>
           </table>
         </section>
+        </xsl:if>
 
         <section class="bloque" id="criterios">
           <h2>Criterios de edición</h2>
-          <p><xsl:apply-templates select="//tei:projectDesc/tei:p/node()"/></p>
-          <ol>
-            <xsl:for-each select="//tei:editorialDecl//tei:item">
-              <li><xsl:value-of select="."/></li>
-            </xsl:for-each>
-          </ol>
-          <h3>Tipología de variantes</h3>
-          <ul>
-            <xsl:for-each select="//tei:taxonomy/tei:category">
-              <li><xsl:value-of select="tei:catDesc"/></li>
-            </xsl:for-each>
-          </ul>
+          <xsl:for-each select="//tei:projectDesc/tei:p">
+            <p><xsl:apply-templates/></p>
+          </xsl:for-each>
+          <xsl:choose>
+            <xsl:when test="//tei:editorialDecl//tei:item">
+              <ol>
+                <xsl:for-each select="//tei:editorialDecl//tei:item">
+                  <li><xsl:value-of select="."/></li>
+                </xsl:for-each>
+              </ol>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:for-each select="//tei:editorialDecl//tei:p">
+                <p><xsl:value-of select="."/></p>
+              </xsl:for-each>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:if test="//tei:taxonomy/tei:category">
+            <h3>Tipología de variantes</h3>
+            <ul>
+              <xsl:for-each select="//tei:taxonomy/tei:category">
+                <li><xsl:value-of select="tei:catDesc"/></li>
+              </xsl:for-each>
+            </ul>
+          </xsl:if>
           <h3>Responsables</h3>
           <ul>
+            <xsl:for-each select="//tei:titleStmt/tei:editor[not(//tei:titleStmt/tei:respStmt)]">
+              <li>Edición: <xsl:value-of select="."/></li>
+            </xsl:for-each>
             <xsl:for-each select="//tei:titleStmt/tei:respStmt">
               <li><xsl:value-of select="tei:resp"/>:
-                <xsl:for-each select="tei:name">
+                <xsl:for-each select="tei:name | tei:persName | tei:orgName">
                   <xsl:if test="position() &gt; 1">, </xsl:if>
                   <xsl:value-of select="."/>
                 </xsl:for-each>
@@ -165,6 +212,10 @@
           <xsl:attribute name="data-alt">https://lh3.googleusercontent.com/d/<xsl:value-of select="$id"/>=w2000</xsl:attribute>
           <xsl:attribute name="data-enlace">https://drive.google.com/file/d/<xsl:value-of select="$id"/>/view</xsl:attribute>
         </xsl:when>
+        <xsl:when test="starts-with($url, 'data:')">
+          <!-- Imagen incrustada en el propio HTML: no hay dirección externa que abrir. -->
+          <xsl:attribute name="data-src"><xsl:value-of select="$url"/></xsl:attribute>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:attribute name="data-src"><xsl:value-of select="$url"/></xsl:attribute>
           <xsl:attribute name="data-enlace"><xsl:value-of select="$url"/></xsl:attribute>
@@ -184,14 +235,23 @@
   <!-- ───────── Texto ───────── -->
   <xsl:template match="tei:body"><xsl:apply-templates/></xsl:template>
 
-  <xsl:template match="tei:div[@type='chap']">
-    <section class="capitulo" id="{@xml:id}"><xsl:apply-templates/></section>
+  <xsl:template match="tei:body//tei:div">
+    <section class="capitulo">
+      <xsl:if test="@xml:id"><xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute></xsl:if>
+      <xsl:apply-templates/>
+    </section>
   </xsl:template>
 
   <xsl:template match="tei:div/tei:head"><h2 class="cap-titulo"><xsl:apply-templates/></h2></xsl:template>
 
   <xsl:template match="tei:p"><p><xsl:apply-templates/></p></xsl:template>
 
+  <xsl:template match="tei:lg"><div class="estrofa"><xsl:apply-templates/></div></xsl:template>
+  <xsl:template match="tei:l"><div class="verso"><xsl:apply-templates/></div></xsl:template>
+  <xsl:template match="tei:lb"><br/></xsl:template>
+  <xsl:template match="tei:hi[@rend='bold']"><strong><xsl:apply-templates/></strong></xsl:template>
+  <xsl:template match="tei:hi[@rend='sup' or @rend='superscript']"><sup><xsl:apply-templates/></sup></xsl:template>
+  <xsl:template match="tei:emph | tei:foreign | tei:term"><em><xsl:apply-templates/></em></xsl:template>
   <xsl:template match="tei:hi[@rend='italic']"><em><xsl:apply-templates/></em></xsl:template>
   <xsl:template match="tei:hi[@rend='smallcaps']"><span class="versalitas"><xsl:apply-templates/></span></xsl:template>
   <xsl:template match="tei:title"><em><xsl:apply-templates/></em></xsl:template>
@@ -204,8 +264,13 @@
     </a>
   </xsl:template>
 
-  <xsl:template match="tei:ref[@target]">
-    <sup><a class="llamada" id="{@xml:id}" href="{@target}" data-ficha="{substring-after(@target, '#')}">
+  <xsl:template match="tei:ref[@target and not(starts-with(@target, '#'))]">
+    <a href="{@target}" target="_blank" rel="noopener"><xsl:apply-templates/></a>
+  </xsl:template>
+
+  <xsl:template match="tei:ref[starts-with(@target, '#')]">
+    <sup><a class="llamada" href="{@target}" data-ficha="{substring-after(@target, '#')}">
+      <xsl:if test="@xml:id"><xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute></xsl:if>
       <xsl:if test="key('porId', substring-after(@target, '#'))/@cert='low'"><xsl:attribute name="class">llamada abierto</xsl:attribute></xsl:if>
       <xsl:apply-templates/>
     </a></sup>
@@ -214,7 +279,7 @@
   <xsl:template match="tei:choice[tei:orig and tei:reg]">
     <span class="choice" tabindex="0">
       <xsl:attribute name="data-nota">
-        <xsl:text>Testimonio A: «</xsl:text><xsl:value-of select="tei:orig"/>
+        <xsl:value-of select="$rotuloBase"/><xsl:text>: «</xsl:text><xsl:value-of select="tei:orig"/>
         <xsl:text>» · Regularizado: «</xsl:text><xsl:value-of select="tei:reg"/><xsl:text>»</xsl:text>
         <xsl:if test="tei:reg/@cert='low'"> · Regularización dudosa: revisar.</xsl:if>
       </xsl:attribute>
@@ -225,14 +290,14 @@
   </xsl:template>
 
   <xsl:template match="tei:choice[tei:sic and tei:corr]">
-    <span class="choice" tabindex="0" data-nota="Testimonio A: «{tei:sic}» · Enmendado: «{tei:corr}»">
+    <span class="choice" tabindex="0" data-nota="{$rotuloBase}: «{tei:sic}» · Enmendado: «{tei:corr}»">
       <span class="reg"><xsl:apply-templates select="tei:corr/node()"/></span>
       <span class="orig"><xsl:apply-templates select="tei:sic/node()"/></span>
     </span>
   </xsl:template>
 
   <xsl:template match="tei:supplied">
-    <span class="choice supplied" tabindex="0" data-nota="Signo repuesto por el editor; falta en el testimonio A.">
+    <span class="choice supplied" tabindex="0" data-nota="Signo repuesto por el editor; falta en el testimonio base.">
       <span class="reg"><xsl:apply-templates/></span>
     </span>
   </xsl:template>
@@ -241,7 +306,7 @@
   <xsl:template match="tei:app">
     <p class="entrada" id="{@xml:id}">
       <xsl:if test="@cert='low'"><xsl:attribute name="class">entrada abierto</xsl:attribute></xsl:if>
-      <a class="volver" href="{@corresp}" title="Volver al texto"><xsl:value-of select="count(preceding::tei:app) + 1"/></a>
+      <a class="volver" href="{@corresp}" title="Volver al texto"><xsl:value-of select="count(preceding::tei:app[ancestor::tei:back]) + 1"/></a>
       <span class="cuerpo-ficha">
         <span class="lem"><xsl:value-of select="tei:lem"/></span>
         <xsl:text> </xsl:text><xsl:call-template name="siglas"><xsl:with-param name="wit" select="tei:lem/@wit"/></xsl:call-template>
@@ -279,10 +344,23 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="tei:div[@xml:id='notes']/tei:note">
+  <xsl:template match="tei:back//tei:note[not(ancestor::tei:app)]">
+    <xsl:variable name="llamada" select="key('llamadaDe', @xml:id)[1]"/>
     <p class="entrada" id="{@xml:id}">
       <xsl:if test="@cert='low'"><xsl:attribute name="class">entrada abierto</xsl:attribute></xsl:if>
-      <a class="volver" href="{@target}" title="Volver al texto"><xsl:value-of select="@n"/></a>
+      <a class="volver" title="Volver al texto">
+        <xsl:attribute name="href">
+          <xsl:choose>
+            <xsl:when test="starts-with(@target, '#')"><xsl:value-of select="@target"/></xsl:when>
+            <xsl:when test="$llamada/@xml:id">#<xsl:value-of select="$llamada/@xml:id"/></xsl:when>
+            <xsl:otherwise>#texto</xsl:otherwise>
+          </xsl:choose>
+        </xsl:attribute>
+        <xsl:choose>
+          <xsl:when test="@n"><xsl:value-of select="@n"/></xsl:when>
+          <xsl:otherwise><xsl:value-of select="count(preceding::tei:note[ancestor::tei:back][not(ancestor::tei:app)]) + 1"/></xsl:otherwise>
+        </xsl:choose>
+      </a>
       <span class="cuerpo-ficha">
         <xsl:apply-templates/>
         <xsl:if test="@cert='low'"><span class="tipo">nota por completar o verificar</span></xsl:if>
@@ -332,6 +410,7 @@ a{color:var(--marca)}
 #facs-aviso{font-family:var(--sans);font-size:.85rem;color:var(--tenue);padding:2rem 1rem;margin:0}
 @media (min-width:62rem){
   .mesa{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}
+  .mesa.sin-facsimil{grid-template-columns:1fr}
   .visor{position:sticky;top:4rem;height:calc(100vh - 5rem)}
   .visor-lamina{flex:1;max-height:none}
 }
@@ -341,6 +420,9 @@ a{color:var(--marca)}
 .capitulo>p:first-of-type{text-indent:0}
 .cap-titulo{text-align:center;font-size:1.1rem;font-weight:normal;letter-spacing:.15em;margin:2.5rem 0 1rem}
 .versalitas{font-variant:small-caps}
+.estrofa{margin:1rem 0 1rem 2rem}
+.verso{text-indent:-1.5em;padding-left:1.5em}
+.mesa.sin-facsimil{max-width:52rem}
 
 .pb{display:inline-block;margin:0 .25em;padding:0 .4em;font-family:var(--mono);font-size:.7rem;line-height:1.5;text-indent:0;vertical-align:.15em;
   border:1px solid var(--linea);border-radius:3px;color:var(--tenue);text-decoration:none;background:var(--fondo)}
@@ -394,7 +476,8 @@ td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
 (function () {
   'use strict';
 
-  /* ── Visor de facsímil ── */
+  /* ── Visor de facsímil (solo si el XML trae facsimile) ── */
+  if (document.getElementById('facsimil')) (function () {
   var laminas = [].map.call(document.querySelectorAll('#facs-lista li'), function (li) {
     return { id: li.dataset.id, n: li.dataset.n, src: li.dataset.src, alt: li.dataset.alt, enlace: li.dataset.enlace };
   });
@@ -418,7 +501,7 @@ td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
     img.alt = 'Facsímil, página ' + l.n;
     img.src = l.src;
     rotulo.textContent = 'Facsímil · p. ' + l.n + ' de ' + laminas.length;
-    abrir.href = l.enlace || l.src;
+    if (l.enlace) { abrir.href = l.enlace; abrir.hidden = false; } else { abrir.hidden = true; }
     ant.disabled = i === 0;
     sig.disabled = i === laminas.length - 1;
     lamina.classList.remove('ampliada');
@@ -449,6 +532,7 @@ td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
   }
   marcas.forEach(function (m) {
     m.addEventListener('click', function (e) {
+      pausa = Date.now() + 900;
       mostrar(indiceDe(m.dataset.facs));
       /* En pantalla ancha el visor ya está a la vista: no hace falta saltar. */
       if (ancho.matches) e.preventDefault();
@@ -469,17 +553,20 @@ td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
     pendiente = true;
     requestAnimationFrame(function () { pendiente = false; seguir(); });
   }, { passive: true });
-  if (laminas.length) mostrar(0); else document.getElementById('facsimil').hidden = true;
+  if (laminas.length) mostrar(0);
+  })();
 
   /* ── Lectura crítica / testimonio ── */
   var bc = document.getElementById('modo-critico'), bt = document.getElementById('modo-testimonio');
+  if (bc && bt) {
+    bc.addEventListener('click', function () { modo(false); });
+    bt.addEventListener('click', function () { modo(true); });
+  }
   function modo(testimonio) {
     document.body.classList.toggle('testimonio', testimonio);
     bc.setAttribute('aria-pressed', String(!testimonio));
     bt.setAttribute('aria-pressed', String(testimonio));
   }
-  bc.addEventListener('click', function () { modo(false); });
-  bt.addEventListener('click', function () { modo(true); });
 
   /* ── Fichas emergentes ── */
   var ficha = document.getElementById('ficha');

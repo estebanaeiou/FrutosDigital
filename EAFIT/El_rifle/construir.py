@@ -36,6 +36,6 @@ print(f'Diagnóstico en verde: {len(nn)} pb, '
       f'{len(xml.xpath("//tei:app", namespaces=T))} app, '
       f'{len(xml.xpath("//tei:back//tei:note[@n]", namespaces=T))} notas.')
 
-html = etree.XSLT(etree.parse(str(AQUI / 'el_rifle.xsl')))(xml)
+html = etree.XSLT(etree.parse(str(AQUI / 'plantilla_edicion.xsl')))(xml)
 (AQUI / 'index.html').write_bytes(etree.tostring(html, method='html', encoding='UTF-8', doctype='<!DOCTYPE html>'))
 print('index.html generado.')
